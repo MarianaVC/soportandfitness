@@ -5,7 +5,12 @@ var Types = keystone.Field.Types;
  * N Model
  * ==========
  */
-var N = new keystone.List('N');
+var N = new keystone.List('N',{
+	sigular: 'Usuario administrador',
+    label: 'Usuarios administradores',	
+	plural: 'Usuarios administradores'
+
+});
 
 N.add({
 	name: { type: Types.Name, required: true, index: true },
