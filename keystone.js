@@ -27,6 +27,8 @@ keystone.init({
 	'session': true,
 	'auth': true,
 	'user model': 'N',
+	
+	'cookie secret': Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 8),
 });
 
 // Load your project's Models
