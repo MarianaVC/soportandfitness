@@ -9,7 +9,8 @@ var Types = keystone.Field.Types;
 var Home = new keystone.List('Home',{
 	map: {name:'title'},
 	noedit: true,
-	nocreate: true
+	nocreate: true,
+	hidden: true
 });
 
 
