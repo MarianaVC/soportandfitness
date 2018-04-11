@@ -1,3 +1,215 @@
-// Override Bootstrap variables in this file, e.g.
+.close{
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 3px;
 
-$font-size-base: 14px;
+	&:before, &:after{
+		content: '';
+		display: block;
+		position: absolute;
+		z-index: -1;
+		width: 100%;
+		height: 3px;
+		background: #ffffff;
+		@include border-radius(2px);
+	}
+	&:before{
+		@include rotateZ(45deg);
+	}
+	&:after{
+		@include rotateZ(-45deg);
+	}
+}
+
+.menu{
+	width: 100%;
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	visibility: hidden;
+	@include transition(visibility 0s 0.35s);
+
+	&.open{
+		visibility: visible;
+		@include transition(visibility 0s 0s);
+		& .menu__close{
+			opacity: 1;
+		}
+
+		& .menu__container{
+			overflow: auto;
+			@include translate3d(0, 0, 0);
+
+			@media (min-width: $desktop){
+				width: auto;
+			}
+		}
+	}
+
+	@media (min-width: $desktop){
+		position: relative;
+		visibility: visible;
+		width: auto;
+	}
+
+	& .desktop-show{
+		display: none;
+		@media (min-width: $desktop){
+			display: block;
+		}
+	}
+
+	& .desktop-hide{
+		@media (min-width: $desktop){
+			display: none;
+		}
+	}
+
+	&__container{
+		@include display-flex;
+		@include align-items(center);
+		@include translate3d(-100%, 0, 0);
+		@include transition(transform 0.35s ease-in-out);
+		@include absolute-full-container;
+		right: initial;
+		background-color: #000;
+		width: 270px;
+
+		@media (min-width: $desktop){
+			@include container;
+			@include translate3d(0, 0, 0);
+			position: relative;
+			background: none;
+			display: block;
+		}
+	}
+
+	&__overlay{
+		@include absolute-full-container;
+		@media (min-width: $desktop){
+			display: none;
+		}
+	}
+	&__list{
+		@include box-sizing(border-box);
+		max-height: 80vh;
+		overflow: auto;
+		width: 100%;
+
+		@media (min-width: $desktop){
+			@include display-flex;
+			padding: 0 2em;
+			width: initial;
+		}
+	}
+
+	&__item{
+		@include box-sizing(border-box);
+		position: relative;
+		text-align: left;
+		text-transform: uppercase;
+		width: 100%;
+		&:after{
+			display: block;
+			content: '';
+			position: absolute;
+			background-color: #545454;
+			bottom: 0;
+			left: 2.5em;
+			right: 2em;
+			height: 1px;
+		}
+
+		@media (min-width: $desktop){
+			text-align: center;
+			width: auto;
+
+			&:after{
+				left: 0;
+				right: 0;
+				bottom: 0;
+				top: 0;
+				width: 2px;
+				height: 100%;
+				background-color: $red;
+			}
+		}
+	}
+
+	&__link{
+		@include OswaldRegular;
+		@include fontSize(25px);
+		text-decoration: none;
+		display: block;
+		position: relative;
+		color: #fff;
+		padding: 0.75em 1em;
+		z-index: 1;
+		& i{
+			margin: 0 0.5em 0 0;
+		}
+		@media (min-width: $desktop){
+			padding: 0.25em 0.5em;
+			@include fontSize(18px);
+			& i{
+				display: none;
+			}
+		}
+	}
+
+	&__close{
+		position: absolute;
+		background: none;
+		outline: none;
+		border: none;
+		padding: 2.5em 1em;
+		top: 0;
+		right: 0;
+		color: #fff;
+		width: 70px;
+		opacity: 0;
+
+		@include transition(all 0.25s);
+
+		@media (min-width: $desktop){
+			display: none;
+		}
+	}
+}
+
+body.desktop{
+	.menu{
+		&__item{
+			&:after{
+				@include transition(all 0.25s);
+			}
+			&:hover{
+				&:after{
+					height: 100%;
+					left: 0;
+					right: 0;
+				}
+			}
+			@media (min-width: $desktop){
+				&:hover{
+					&:after{
+						width: 100%;
+					}
+				}
+			}
+		}
+
+		&__link{
+			@include transition(all 0.25s);
+			
+			@media (min-width: $desktop){
+				&:hover{
+					color: #fff;
+				}
+			}
+		}
+	}
+}

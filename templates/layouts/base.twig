@@ -6,7 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+		<link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
 		<link href="/css/site.css" rel="stylesheet">
 
 		{% block css %}{% endblock %}
@@ -15,71 +15,72 @@
 	<body>
 		<!-- header -->
 		<header id="header" class="header">
-			<a href="/" class="header__logo" title="Sport&Fitness">
-				<picture>
-					<source srcset="/images/logo.png" media="(max-width: 960px)">
-					<source srcset="/images/logo-lg.png">
-					<img srcset="/images/logo.png" alt="Logo Sport&Fitness">
-				</picture>
-			</a>
+			<div class="header__container">
+				<a href="/" class="header__logo" title="Sport&Fitness">
+					<picture>
+						<source srcset="/images/logo.png" media="(max-width: 960px)">
+						<source srcset="/images/logo-lg.png">
+						<img srcset="/images/logo.png" alt="Logo Sport&Fitness">
+					</picture>
+				</a>
+				<button title="Ver menu" class="header__burger toggleMenu"><i class="burger"></i></button>
 
-			<nav id="menu" class="menu">
-				<div class="menu__overlay toggleMenu"></div>
-				<div class="menu__container">
+				<nav id="menu" class="header__menu menu">
+					<div class="menu__overlay toggleMenu"></div>
 					<button title="Cerrar menu" class="menu__close toggleMenu"><i class="close"></i></button>
-
-					<ul class="menu__list">
-						<li class="menu__item">
-							<a href="/"
-							   class="menu__link"
-							   title="Home"
-							   target="_self"><i class="icon-home"></i> Home</a>
-						</li>
-						<li class="menu__item">
-							<a href="/nosotros"
-							   class="menu__link"
-							   title="Nosotros"
-							   target="_self"><i class="icon-logo"></i> Nosotros</a>
-						</li>
-						<li class="menu__item">
-							<a href="/instalaciones"
-							   class="menu__link"
-							   title="Instalaciones"
-							   target="_self"><i class="icon-cards"></i> Instalaciones</a>
-						</li>
-						<li class="menu__item">
-							<a href="/ubicaciones"
-							   class="menu__link"
-							   title="Ubicaciones"
-							   target="_self"><i class="icon-pin"></i> Ubicaciones</a>
-						</li>
-						<li class="menu__item">
-							<a href="/actividades"
-							   class="menu__link"
-							   title="Actividades"
-							   target="_self"><i class="icon-bottle"></i> Actividades</a>
-						</li>
-						<li class="menu__item">
-							<a href="/promociones"
-							   class="menu__link"
-							   title="Promociones"
-							   target="_self"><i class="icon-promo"></i> Promociones</a>
-						</li>
-						<li class="menu__item">
-							<a href="/contacto"
-							   class="menu__link"
-							   title="Contacto"
-							   target="_self"><i class="icon-cloud"></i> Contacto</a>
-						</li>
-					</ul>
-				</div>
-			</nav>
-			<button title="Ver menu" class="menu__burger toggleMenu"><i class="close"></i></button>
+					<div class="menu__container">
+						<ul class="menu__list">
+							<li class="menu__item">
+								<a href="/"
+								   class="menu__link"
+								   title="Home"
+								   target="_self"><i class="icon-home"></i> Home</a>
+							</li>
+							<li class="menu__item">
+								<a href="/nosotros"
+								   class="menu__link"
+								   title="Nosotros"
+								   target="_self"><i class="icon-logo"></i> Nosotros</a>
+							</li>
+							<li class="menu__item">
+								<a href="/instalaciones"
+								   class="menu__link"
+								   title="Instalaciones"
+								   target="_self"><i class="icon-cards"></i> Instalaciones</a>
+							</li>
+							<li class="menu__item">
+								<a href="/ubicaciones"
+								   class="menu__link"
+								   title="Ubicaciones"
+								   target="_self"><i class="icon-pin"></i> Ubicaciones</a>
+							</li>
+							<li class="menu__item">
+								<a href="/actividades"
+								   class="menu__link"
+								   title="Actividades"
+								   target="_self"><i class="icon-bottle"></i> Actividades</a>
+							</li>
+							<li class="menu__item">
+								<a href="/promociones"
+								   class="menu__link"
+								   title="Promociones"
+								   target="_self"><i class="icon-promo"></i> Promociones</a>
+							</li>
+							<li class="menu__item">
+								<a href="/contacto"
+								   class="menu__link"
+								   title="Contacto"
+								   target="_self"><i class="icon-cloud"></i> Contacto</a>
+							</li>
+						</ul>
+					</div>
+				</nav>
+			</div>
 		</header>
 		<!-- /header -->
 
 		<!-- body -->
-		<div class="body">
+		<div class="main-content">
 			{% block content %}{% endblock %}
 		</div>
 		<!-- /body -->
@@ -151,6 +152,7 @@
 		<!-- /fonts -->
 
 		<script src="/js/jquery/jquery-1.11.3.min.js"></script>
+		<script src="/js/base.js"></script>
 
 		{% block js %}{% endblock %}
 	</body>

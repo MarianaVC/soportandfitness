@@ -7,7 +7,7 @@ module.exports = {
     sassWatchDir: './public/styles/**/*.scss',
     sassConfig: {
         compass: true,
-        sourcemap: true,
+        //sourcemap: true,
         lineNumbers: true,
         //style: "expanded",
         style: "compressed",
