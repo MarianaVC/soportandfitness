@@ -30,7 +30,16 @@
 {% block content %}
 	<div class="home">
 	<!-- slider -->
-		<ul class="main-slider">
+		<ul class="main-slider mainSlider owl-carousel">
+			<li class="main-slider__item" style="background-image:url(/images/slide-1.jpg);">
+				<div class="main-slider__container">
+					<div class="main-slider__data">
+						<h1 class="main-slider__title">Entrenamiento en suspensión</h1>
+						<p class="main-slider__description">Rompe los obstáculos</p>
+						<a href="#" class="main-slider__button button" title="Horarios">Horarios</a>
+					</div>
+				</div>
+			</li>
 			<li class="main-slider__item" style="background-image:url(/images/slide-1.jpg);">
 				<div class="main-slider__container">
 					<div class="main-slider__data">
@@ -47,7 +56,37 @@
 		<div class="home-block home-block--branches">
 			<div class="home-block__container">
 				<h3 class="home-block__title">Sucursales</h3>
-				<ul class="branches-carousel">
+				<ul class="branches-carousel smallCarousel owl-carousel">
+					<li class="branches-carousel__item">
+						<a href="#" class="branches-carousel__link" title="Ajusco" style="background-image:url();">
+							<p class="branches-carousel__title">Ajusco</p>
+						</a>
+					</li>
+					<li class="branches-carousel__item">
+						<a href="#" class="branches-carousel__link" title="Ajusco" style="background-image:url();">
+							<p class="branches-carousel__title">Ajusco</p>
+						</a>
+					</li>
+					<li class="branches-carousel__item">
+						<a href="#" class="branches-carousel__link" title="Ajusco" style="background-image:url();">
+							<p class="branches-carousel__title">Ajusco</p>
+						</a>
+					</li>
+					<li class="branches-carousel__item">
+						<a href="#" class="branches-carousel__link" title="Ajusco" style="background-image:url();">
+							<p class="branches-carousel__title">Ajusco</p>
+						</a>
+					</li>
+					<li class="branches-carousel__item">
+						<a href="#" class="branches-carousel__link" title="Ajusco" style="background-image:url();">
+							<p class="branches-carousel__title">Ajusco</p>
+						</a>
+					</li>
+					<li class="branches-carousel__item">
+						<a href="#" class="branches-carousel__link" title="Ajusco" style="background-image:url();">
+							<p class="branches-carousel__title">Ajusco</p>
+						</a>
+					</li>
 					<li class="branches-carousel__item">
 						<a href="#" class="branches-carousel__link" title="Ajusco" style="background-image:url();">
 							<p class="branches-carousel__title">Ajusco</p>
@@ -77,7 +116,49 @@
 		<div class="home-block">
 			<div class="home-block__container">
 				<h3 class="home-block__title">Actividades fitness</h3>
-				<ul class="fitness-carousel">
+				<ul class="fitness-carousel smallCarousel owl-carousel">
+					<li class="fitness-carousel__item">
+						<a href="#" class="fitness-carousel__link" title="Rítmos latinos" style="background-image:url();">
+							<p class="fitness-carousel__title">
+								<span>Rítmos</span>latinos
+							</p>
+						</a>
+					</li>
+					<li class="fitness-carousel__item">
+						<a href="#" class="fitness-carousel__link" title="Rítmos latinos" style="background-image:url();">
+							<p class="fitness-carousel__title">
+								<span>Rítmos</span>latinos
+							</p>
+						</a>
+					</li>
+					<li class="fitness-carousel__item">
+						<a href="#" class="fitness-carousel__link" title="Rítmos latinos" style="background-image:url();">
+							<p class="fitness-carousel__title">
+								<span>Rítmos</span>latinos
+							</p>
+						</a>
+					</li>
+					<li class="fitness-carousel__item">
+						<a href="#" class="fitness-carousel__link" title="Rítmos latinos" style="background-image:url();">
+							<p class="fitness-carousel__title">
+								<span>Rítmos</span>latinos
+							</p>
+						</a>
+					</li>
+					<li class="fitness-carousel__item">
+						<a href="#" class="fitness-carousel__link" title="Rítmos latinos" style="background-image:url();">
+							<p class="fitness-carousel__title">
+								<span>Rítmos</span>latinos
+							</p>
+						</a>
+					</li>
+					<li class="fitness-carousel__item">
+						<a href="#" class="fitness-carousel__link" title="Rítmos latinos" style="background-image:url();">
+							<p class="fitness-carousel__title">
+								<span>Rítmos</span>latinos
+							</p>
+						</a>
+					</li>
 					<li class="fitness-carousel__item">
 						<a href="#" class="fitness-carousel__link" title="Rítmos latinos" style="background-image:url();">
 							<p class="fitness-carousel__title">
@@ -118,4 +199,15 @@
 	<!-- /visit -->
 
 	</div>
+{% endblock %}
+
+{% block js %}
+	<script src="/js/owl.carousel.min.js"></script>
+	<script src="/js/home.js"></script>
+
+	<script type="text/javascript" src="/js/map.js"></script>
+	<script async defer
+	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnQNdZNCZJVCZr7Uy4YQdNNihMKC7-xaY&callback=PinMap.start">
+	</script>
+
 {% endblock %}
