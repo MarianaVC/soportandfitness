@@ -6,9 +6,9 @@ var Types = keystone.Field.Types;
  * ==========
  */
 var N = new keystone.List('N',{
-	sigular: 'Usuario administrador',
-    label: 'Usuarios administradores',	
-	plural: 'Usuarios administradores'
+	sigular: 'Usuario admin',
+    label: 'Usuario admin',	
+	plural: 'Usuarios admin'
 
 });
 
