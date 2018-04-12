@@ -1,0 +1,75 @@
+.visit-block{
+	@include fullBackground;
+	@include box-sizing(border-box);
+
+	background-image: url(/images/visit.jpg);
+	background-color: #000;
+	padding: 2em 0;
+	width: 100%;
+
+	@media (min-width: $tablet-min){
+		padding: 4em 0;
+	}
+	
+	&__container{
+		@include container;
+		padding: 0 2em;
+		text-align: center;
+
+		@media (min-width: $tablet-min){
+			@include display-flex;
+			@include align-items(center);
+			padding: 0;
+		}
+	}
+	
+	&__left{
+		@media (min-width: $tablet-min){
+			width: 30%;
+		}
+	}
+	
+	&__right{
+
+		@media (min-width: $tablet-min){
+			text-align: right;
+			width: 70%;
+		}
+	}
+	
+	&__title{
+		@include OswaldRegular;
+		@include fontSize(16px);
+		text-transform: uppercase;
+		color: #fff;
+		
+		@media (min-width: $tablet-min){
+			@include fontSize(26px);
+		}
+
+		@media (min-width: $desktop){
+			@include fontSize(35px);
+		}
+	}
+	
+	&__description{
+		@include fontSize(14px);
+		text-transform: uppercase;
+		color: #fff;
+		
+		@media (min-width: $tablet-min){
+			@include fontSize(15px);
+		}
+
+		@media (min-width: $desktop){
+			@include fontSize(16px);
+		}
+	}
+	&__map{
+		margin: 1em 0;
+		
+		@media (min-width: $tablet-min){
+			margin: 0 0 1em 0;
+		}
+	}
+}
