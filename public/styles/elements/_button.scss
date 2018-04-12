@@ -1,0 +1,49 @@
+@mixin button($text, $background, $htext, $hbackground){
+	text-decoration: none;
+	position: relative;
+	display: inline-block;
+	padding: 0.25em 0.5em;
+	text-transform: uppercase;
+	text-align: center;
+	cursor: pointer;
+	outline: none;
+	color: $text;
+	background-color: $background;
+	border: 2px solid $background;
+
+	@include fontSize(15px);
+	@include OswaldRegular;
+	@include transition(all 0.35s ease-in-out);
+
+	&:hover{
+		color: $htext;
+		background-color: $hbackground;
+	}
+
+}
+
+.button{
+	text-decoration: none;
+	position: relative;
+	display: inline-block;
+	padding: 0.25em 0.5em;
+	text-transform: uppercase;
+	text-align: center;
+	cursor: pointer;
+	outline: none;
+	color: #fff;
+	background-color: $gray-light;
+	border: 2px solid $gray-light;
+
+	@include fontSize(15px);
+	@include OswaldRegular;
+	@include transition(all 0.35s ease-in-out);
+}
+
+body.desktop{
+	.button:hover{
+		color: #fff;
+		background-color: #000;
+		border: 2px solid #000;
+	}
+}

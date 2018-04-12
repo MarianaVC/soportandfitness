@@ -1,0 +1,33 @@
+.home-block{
+	@include box-sizing(border-box);
+	padding: 2em 0;
+	width: 100%;
+
+	&--branches{
+		background-color: #e5e5e5;
+	}
+
+	&__container{
+		@include container;
+		padding: 0 2em;
+
+		@media (min-width: $desktop){
+			padding: 0;
+		}
+	}
+	
+	&__title{
+		@include OswaldRegular;
+		@include fontSize(16px);
+		text-transform: uppercase;
+		text-align: center;
+		
+		@media (min-width: $tablet-min){
+			@include fontSize(26px);
+		}
+
+		@media (min-width: $desktop){
+			@include fontSize(35px);
+		}
+	}
+}

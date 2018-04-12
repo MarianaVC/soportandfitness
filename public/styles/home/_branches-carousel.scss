@@ -1,0 +1,65 @@
+.branches-carousel{
+	width: 80%;
+	position: relative;
+
+	&__item{
+		position: relative;
+		display: block;
+		width: 150px;
+		@media (min-width: $tablet-min){
+			width: 300px;
+		}
+
+		@media (min-width: $desktop){
+			width: 350px;
+		}
+	}
+
+	&__link{
+		@include aspect-ratio(7,5);
+		@include fullBackground;
+		width: 100%;
+		display: block;
+		color: #fff;
+		text-decoration: none;
+		position: relative;
+
+		&:after{
+			@include absolute-full-container;
+			display: block;
+			content: '';
+			background-color: rgba(0,0,0,0.3);
+
+			@include transition(background-color 0.35s ease-in-out);
+		}
+	}
+
+	&__title{
+		@include fontSize(16px);
+		text-transform: uppercase;
+		position: absolute;
+		line-height: 1;
+		bottom: 0.75em;
+		right: 0.75em;
+		z-index: 1;
+
+		@media (min-width: $tablet-min){
+			@include fontSize(20px);
+		}
+
+		@media (min-width: $desktop){
+			@include fontSize(30px);
+		}
+	}
+}
+
+body.desktop{
+	.branches-carousel{
+		&__link:hover{
+
+			&:after{
+				background-color: rgba(0,0,0,0.15);
+			}
+		}
+	}
+}

@@ -1,0 +1,69 @@
+.promos-block{
+	@include fullBackground;
+
+	background-image: url(/images/promos.jpg);
+	background-color: #000;
+	background-position: 0% 50%;
+	width:100%;
+	height: 200px;
+	padding: 2em 0;
+
+
+	@media (min-width: $desktop){
+		height: 400px;
+		background-position: 50%;
+	}
+
+	&__container{
+		@include display-flex;
+		@include justify-content(flex-end);
+		@include align-items(center);
+		@include container;
+		padding: 0 2em;
+		height: 100%;
+
+		@media (min-width: $desktop){
+			padding: 0;
+		}
+	}
+
+	&__data{
+		@include border-radius(20px);
+		max-width: 180px;
+		text-align: center;
+		color: #fff;
+		padding: 1em;
+		background-color: rgba(0,0,0,0.8);
+
+		@media (min-width: $desktop){
+			background-color: transparent;
+			text-align: right;
+			max-width: 300px;
+		}
+	}
+
+	&__title{
+		@include OswaldSemi;
+		@include fontSize(18px);
+		text-transform: uppercase;
+		margin: 0 0 1em 0;
+
+		@media (min-width: $desktop){
+			@include fontSize(25px);
+			text-align: center;
+		}
+	}
+
+	&__description{
+		@include fontSize(13px);
+		text-transform: uppercase;
+		margin: 0 0 1em 0;
+		@media (min-width: $desktop){
+			@include fontSize(17px);
+			text-align: center;
+		}
+	}
+
+	&__button{
+	}
+}

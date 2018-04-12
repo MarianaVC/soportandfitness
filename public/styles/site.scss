@@ -16,3 +16,18 @@
 @import "base/header";
 @import "base/menu";
 @import "base/footer";
+
+// Elements files
+// ============
+@import "elements/button";
+
+
+// Home files
+// ============
+@import "home/main-slider";
+@import "home/home-block";
+@import "home/branches-carousel";
+@import "home/transform-block";
+@import "home/fitness-carousel";
+@import "home/promos-block";
+@import "home/visit-block";

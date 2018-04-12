@@ -1,0 +1,112 @@
+.transform-block{
+	@include display-flex;
+	@include justify-content(center);
+	@include align-items(center);
+	@include fullBackground;
+
+	background-image: url(/images/transform.jpg);
+	background-color: #000;
+	width:100%;
+	height: 200px;
+
+	@media (min-width: $desktop){
+		height: 500px;
+	}
+
+	&__title{
+		@include display-flex;
+		@include flex-wrap(wrap);
+		@include justify-content(center);
+		@include OswaldSemi;
+		@include fontSize(20px);
+		text-transform: uppercase;
+		max-width: 70%;
+		margin: 0 auto;
+		color: #fff;
+		letter-spacing: 0.25em;
+		line-height: 1;
+		
+		@media (min-width: $desktop){
+			@include fontSize(50px);
+		}
+	}
+	
+	&__random{
+		@include display-flex;
+		position: relative;
+		margin: 0 0 0 0.5em;
+		height: 1.2em;
+	}
+	&__animate{
+		overflow: hidden;
+		display: inline-block;
+		position: relative;
+
+		-webkit-animation: mask 1.5s infinite linear;
+				animation: mask 1.5s infinite linear;
+
+		& .animate-1{
+			-webkit-animation: opacity 4.5s infinite linear;
+					animation: opacity 4.5s infinite linear;
+		}
+
+		& .animate-2{
+			-webkit-animation: opacity 4.5s infinite linear;
+					animation: opacity 4.5s infinite linear;
+			animation-delay: 1.5s;
+		}
+
+		& .animate-3{
+			-webkit-animation: opacity 4.5s infinite linear;
+					animation: opacity 4.5s infinite linear;
+			animation-delay: 3s;
+		}
+		& span:not(:first-child){
+			position: absolute;
+			left: 0;
+			opacity: 0;
+		}
+	}
+}
+
+body.desktop{
+	.transform-block{
+		background-attachment: fixed;
+	}
+}
+
+@keyframes mask{
+	0%,100%{
+		height: 0;
+	}
+	50%{
+		height: 1.2em;
+	}
+}
+
+@-webkit-keyframes mask{
+	0%,100%{
+		height: 0;
+	}
+	50%{
+		height: 1.2em;
+	}
+}
+
+@keyframes opacity{
+	0%,1.33%,32%,100%{
+		opacity: 0;
+	}
+	14%,19.32%{
+		opacity: 1;
+	}
+}
+
+@-webkit-keyframes opacity{
+	0%,1.33%,32%,100%{
+		opacity: 0;
+	}
+	16.66%{
+		opacity: 1;
+	}
+}

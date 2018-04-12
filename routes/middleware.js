@@ -22,6 +22,13 @@ exports.initLocals = function (req, res, next) {
 		{ label: 'Home', key: 'home', href: '/' },
 	];
 	res.locals.user = req.user;
+	
+	res.locals.url = {
+		url: req.url,
+		host: req.get('host'),
+		fullUrl: 'http://sportandfitnessgym.com.mx' + req.originalUrl
+	}
+
 	next();
 };
 

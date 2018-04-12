@@ -1,0 +1,77 @@
+.main-slider{
+	&__item{
+		@include fullBackground;
+		background-position: 60% 50%;
+		background-color: #d4d3d8;
+		width: 100%;
+		height: 80vw;
+		max-height: 420px;
+
+		@media (min-width: $desktop){
+			background-position: 50%;
+			height: 60vw;
+			min-height: 420px;
+			max-height: 500px;
+		}
+	}
+
+	&__container{
+		@include display-flex;
+		@include align-items(center);
+		@include container;
+		padding: 0 2em;
+		height: 100%;
+
+		@media (min-width: $desktop){
+			padding: 0;
+		}
+	}
+
+	&__data{
+		max-width: 70%;
+		@media (min-width: $tablet-min){
+			margin: 0 0 0 3em;
+		}
+
+		@media (min-width: $desktop){
+			margin: 0 0 0 6em;
+		}
+	}
+
+	&__title{
+		@include fontSize(13px);
+		text-transform: uppercase;
+		line-height: 1;
+
+		&:before{
+			content: '';
+			display: inline-block;
+			margin: 0 2px -2px 0;
+			width: 2px;
+			height: 1em;
+			background-color: $red;
+		}
+
+		@media (min-width: $desktop){
+			@include fontSize(15px);
+		}
+	}
+
+	&__description{
+		@include OswaldSemi;
+		@include fontSize(20px);
+		text-transform: uppercase;
+		margin: 0 0 1em;
+		@media (min-width: $desktop){
+			@include fontSize(40px);
+		}
+	}
+
+	&__button{
+		@include fontSize(18px);
+
+		@media (min-width: $desktop){
+			@include fontSize(22px);
+		}
+	}
+}
