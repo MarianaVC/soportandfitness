@@ -7,9 +7,12 @@
 // ============
 @import "utils/colors";
 @import "utils/variables";
+@import "utils/mixins";
+@import "utils/fonts";
 
 // Base files
 // ============
+@import "base/base";
 @import "base/header";
 @import "base/menu";
 @import "base/footer";

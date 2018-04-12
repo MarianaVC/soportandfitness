@@ -1,3 +1,132 @@
-// Override Bootstrap variables in this file, e.g.
+.footer{
+	background-color: #000;
+	color: #fff;
+	position: relative;
+	width: 100%;
+	text-align: center;
 
-$font-size-base: 14px;
+	@media (min-width: $tablet-min){
+		text-align: left;
+	}
+
+	&__container{
+		@include display-flex;
+		@include flex-wrap(wrap);
+		@include justify-content(space-between);
+		@include container;
+		padding: 2em;
+	}
+
+	&__logo{
+		width: 60px;
+		margin: 0 auto;
+		& img, & picture{
+			@include setImg;
+		}
+
+		@media (min-width: $desktop){
+			width: 100px;
+		}
+	}
+
+	&__block{
+		width: 100%;
+
+		&--big{
+		}
+
+		@media (min-width: $tablet-min){
+			width: 30%;
+		}
+
+		@media (min-width: $desktop){
+			width: 25%;
+			&--big{
+				width: 30%;
+				margin: 0 0 0 20%;
+			}
+
+		}
+	}
+
+	&__link{
+		@include OswaldRegular;
+		@include fontSize(18px);
+		text-decoration: none;
+		color: #fff;
+		text-transform: uppercase;
+		margin: 0.75em 0;
+		display: block;
+
+		@media (min-width: $desktop){
+			@include fontSize(20px);
+		}
+	}
+
+	&__list{
+		display:  block;
+		&__item{
+			display: block;
+		}
+		&__link{
+			@include fontSize(16px);
+			text-decoration: none;
+			color: #fff;
+			margin: 0 0 0.5em 0;
+
+			@media (min-width: $desktop){
+				@include fontSize(18px);
+				margin: 0;
+			}
+		}
+	}
+
+	&__sociales{
+		@include display-flex;
+		@include justify-content(flex-end);
+		&__item{
+			margin: 1em;
+		}
+		&__link{
+			@include fontSize(30px);
+			display: block;
+			text-decoration: none;
+			color: #fff;
+
+			@media (min-width: $desktop){
+				@include fontSize(50px);
+			}
+		}
+	}
+
+	&__text{
+		@include OswaldRegular;
+		@include fontSize(16px);
+		text-transform: uppercase;
+		margin: 1em 0 2em;
+
+		@media (min-width: $desktop){
+			@include fontSize(18px);
+		}
+	}
+}
+
+body.desktop{
+	.footer{
+
+		&__link:hover{
+			text-decoration: underline;
+		}
+
+		&__list{
+			&__link:hover{
+				text-decoration: underline;
+			}
+		}
+
+		&__sociales{
+			&__link{
+			}
+		}
+	}
+}

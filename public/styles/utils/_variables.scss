@@ -1,3 +1,16 @@
-// Override Bootstrap variables in this file, e.g.
+/* screen */
+$desktop-container: 1200px;
+$desktop: 960px;
+$tablet:  959px;
+$tablet-min: 768px;
+$phone:  767px;
 
+/* font */
 $font-size-base: 14px;
+$font-color-base: #000;
+
+$body-color-base: #fff;
+
+/* header */
+$desktop-header: 85px;
+$mobile-header: 67px;
