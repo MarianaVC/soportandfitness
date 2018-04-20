@@ -1,7 +1,13 @@
 .branches-carousel{
-	width: 80%;
+	width: 90%;
 	position: relative;
-	margin: 2em 0 0 0;
+	margin: 2em auto 0;
+
+	& .owl-nav{
+		font-size: 2em;
+		left: 0;
+		right: 0;
+	}
 
 	&__item{
 		position: relative;

@@ -10,6 +10,10 @@
 @import "utils/mixins";
 @import "utils/fonts";
 
+// Plugins files
+// =============
+@import "plugins/owl/owl.carousel";
+
 // Base files
 // ============
 @import "base/base";

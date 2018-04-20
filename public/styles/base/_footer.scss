@@ -83,9 +83,9 @@
 
 	&__sociales{
 		@include display-flex;
-		@include justify-content(flex-end);
+		@include justify-content(center);
 		&__item{
-			margin: 1em;
+			margin: 1em 1.5em;
 		}
 		&__link{
 			@include fontSize(30px);

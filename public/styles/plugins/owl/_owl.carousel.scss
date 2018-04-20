@@ -1,0 +1,42 @@
+@import 'core';
+@import 'animate';
+@import 'autoheight';
+@import 'lazyload';
+@import 'video';
+
+.owl-carousel{
+	& .owl-nav{
+		@include fontSize(24px);
+		position: absolute;
+		left: 1em;
+		right: 1em;
+		top: 50%;
+	}
+	& .owl-prev{
+		@include translateY(-50%);
+		position: absolute;
+		left: -1em;
+	}
+	& .owl-next{
+		@include translateY(-50%);
+		position: absolute;
+		right: -1em;
+	}
+	& .disabled{
+		display: none;
+	}
+	.owl-carousel {
+		touch-action: none;
+	}
+}
+.owl-dots {
+	position: absolute;
+    bottom: 2em;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+.owl-dot {
+	display: inline-block;
+    padding: 0.65em;
+}
