@@ -11,8 +11,8 @@ var Twig = require('twig');
 // and documentation.
 
 keystone.init({
-	'name': 'sportandfitness',
-	'brand': 'sportandfitness',
+	'name': 'Sport & Fitness Gym',
+	'brand': 'Sport & Fitness Gym',
 
 	'sass': 'public',
 	'static': 'public',
@@ -52,7 +52,9 @@ keystone.set('routes', require('./routes'));
 keystone.set('nav', {
 	'usuarios':'ns',
 	'sucursales': 'sucursals',
-	'slide': 'slides'
+	'slides': 'slides',
+	'galerías': 'galleries',
+	'promociones': 'promotions'
 });
 
 // Start Keystone to connect to your database and initialise the web server
