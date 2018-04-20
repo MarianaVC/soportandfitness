@@ -7,26 +7,27 @@ var Types = keystone.Field.Types;
  */
 
 var Sucursal = new keystone.List('Sucursal',{
-	map: {name: 'nombre'},
+	map: {name: 'name'},
 	track: {createdAt:true,createdBy:true,updatedAt:true,updatedBy:true},
 	sigular: 'Sucursal',
 	plural: 'Sucursales',
-    label: 'Sucursal',	
+  label: 'Sucursal',	
 });
 
+
 Sucursal.add('Sucursal',{
-  nombre: { type: String, required: true },
-  direccion: { type: String, initial: true ,required: true},
-  altitud: { type: String, initial: true ,required: true },
-  logintud: { type: String, initial: true ,required: true },
-  imagen: { type: Types.CloudinaryImage, initial:true ,publicID: 'slug' },
+  name: { type: String, required: true, initial: true, label: 'Nombre' },
+  address: { type: String, initial: true, required: true, label: 'Dirección'},
+  latitude: { type: String, initial: true, required: true, label:'Altitud'},
+  longitude: { type: String, initial: true, required: true, label: 'Longitud'},
+  telefono: { type: String, initial: true, required: true, label: 'Teléfono'},
+  opening_soon: { type: Boolean, initial: true, required: true, label: '¿Es próxima apertura?'},
+  imagen: { type: Types.CloudinaryImage, initial: true, publicID: 'slug', label:'Imagen principal' },
 });
 
 /**
  * Registration
  */
 
-
-
-Sucursal.defaultColumns = 'nombre, direccion';
+Sucursal.defaultColumns = 'name, address';
 Sucursal.register();
