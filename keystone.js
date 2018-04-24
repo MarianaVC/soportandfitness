@@ -54,7 +54,8 @@ keystone.set('nav', {
 	'sucursales': 'sucursals',
 	'slides': 'slides',
 	'galerías': 'galleries',
-	'promociones': 'promotions'
+	'promociones': 'promotions',
+	'actividades': 'fitness-activities'
 });
 
 // Start Keystone to connect to your database and initialise the web server
