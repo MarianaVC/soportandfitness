@@ -21,11 +21,12 @@
 				display: block;
 				width: 16px;
 				height: 16px;
-				border: 2px solid $red;
+				border: 2px solid #fff;
 				background-color: rgba($red,0);
 			}
 			&.active span{
 				background-color: rgba($red,1);
+				border: 2px solid $red;
 			}
 		}
 	}
