@@ -34,4 +34,4 @@ node_modules
 .sass-cache/**/*.scssc
 
 # Ignore videos
-/public/videos/
+#/public/videos/
