@@ -1,0 +1,64 @@
+.home-link{
+	@include fullBackground;
+	display: block;
+	color: $red;
+	text-decoration: none;
+	position: relative;
+	
+	@include transition(color 0.35s ease-in-out);
+
+	&:before{
+		@include absolute-full-container;
+		display: block;
+		content: '';
+		@include transition(background-color 0.35s ease-in-out);
+	}
+	&--branches{
+		&:before{
+			background-color: rgba(#fff,0.6);
+		}
+	}
+
+	&--fitness{
+		background-image: url(/images/fitness.jpg);
+
+		color: #fff;
+
+		&:before{
+			background-color: rgba($red,0.6);
+		}
+	}
+
+	&__container{
+		@include container;
+		padding: 4em 2em;
+
+		@media (min-width: $desktop){
+			padding: 6em 8em;
+		}
+	}
+
+	&__title{
+		@include fontSize(25px);
+		@include OswaldRegular;
+		text-align: right;
+		text-transform: uppercase;
+
+		@media (min-width: $desktop){
+			@include fontSize(50px);
+			display: inline-block;
+			max-width: 290px;
+		}
+
+	}
+}
+
+body.desktop{
+	.home-link:hover{
+		color: #fff;
+		
+		&:before{
+			background-color: rgba(#000,0.6);
+		}
+	}
+}

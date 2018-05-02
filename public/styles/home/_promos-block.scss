@@ -17,53 +17,57 @@
 	&__container{
 		@include display-flex;
 		@include justify-content(flex-end);
-		@include align-items(center);
+		@include align-items(flex-end);
 		@include container;
 		padding: 0 2em;
 		height: 100%;
 
 		@media (min-width: $desktop){
+			@include align-items(center);
 			padding: 0;
 		}
 	}
 
 	&__data{
 		@include border-radius(20px);
-		max-width: 180px;
+		max-width: 220px;
 		text-align: center;
 		color: #fff;
 		padding: 1em;
-		background-color: rgba(0,0,0,0.8);
 
 		@media (min-width: $desktop){
-			background-color: transparent;
 			text-align: right;
 			max-width: 300px;
 		}
 	}
 
 	&__title{
-		@include OswaldSemi;
-		@include fontSize(18px);
+		@include OswaldRegular;
+		@include fontSize(25px);
 		text-transform: uppercase;
-		margin: 0 0 1em 0;
+		letter-spacing: 0.2em;
 
+		@media (min-width: $desktop){
+			@include fontSize(40px);
+			text-align: center;
+		}
+	}
+
+	&__description{
+		@include OswaldRegular;
+		@include fontSize(17px);
+		text-transform: uppercase;
+		letter-spacing: 0.2em;
+		& span{
+			font-size: 1.2em;
+		}
 		@media (min-width: $desktop){
 			@include fontSize(25px);
 			text-align: center;
 		}
 	}
 
-	&__description{
-		@include fontSize(13px);
-		text-transform: uppercase;
-		margin: 0 0 1em 0;
-		@media (min-width: $desktop){
-			@include fontSize(17px);
-			text-align: center;
-		}
-	}
-
 	&__button{
+		margin: 0.5em 0 0;
 	}
 }

@@ -92,7 +92,7 @@
 			display: block;
 			text-decoration: none;
 			color: #fff;
-
+			@include transition(all 0.35s ease-in-out);
 			@media (min-width: $desktop){
 				@include fontSize(50px);
 			}
@@ -125,7 +125,8 @@ body.desktop{
 		}
 
 		&__sociales{
-			&__link{
+			&__link:hover{
+				color: $red;
 			}
 		}
 	}

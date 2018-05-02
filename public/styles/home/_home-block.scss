@@ -3,10 +3,6 @@
 	padding: 2em 0;
 	width: 100%;
 
-	&--branches{
-		background-color: #e5e5e5;
-	}
-
 	&__container{
 		@include container;
 		padding: 0 2em;
