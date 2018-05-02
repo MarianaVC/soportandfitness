@@ -31,7 +31,8 @@ Slide.add({
   description: { type: String, initial: true ,required: true},
   image: {type: Types.CloudinaryImage, initial:true ,publicID: 'slug' },
   home: {type: Types.Relationship, ref: 'Home', initial: true,default : '5acd22d9e2b2517348a8d36b'},
-  video: {type: Types.File, storage: storage}
+  video: {type: String, initial:false, required:false},
+  link: {type: String, initial:false, required:false}
 
 });
 
