@@ -6,6 +6,11 @@ require('dotenv').config();
 var keystone = require('keystone');
 var Twig = require('twig');
 
+// Disable twig's bulit-in template caching, express handles it
+Twig:
+			cache: false
+			debug: true
+
 // Initialise Keystone with your project's configuration.
 // See http://keystonejs.com/guide/config for available options
 // and documentation.
