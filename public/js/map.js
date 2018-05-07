@@ -14,6 +14,7 @@ var PinMap = function(){
 	var MINZOOM = 13;
 	var MINVAL = 1;
 	var MAXVAL = 11;
+	var _pin = {'lat':'19.432608','lng':'-99.133209','name':'Ejemplo 1','phone':'0123456789'}
 
 	function initMap() {
 		map = new google.maps.Map(document.getElementById('map'), {
@@ -22,21 +23,22 @@ var PinMap = function(){
 			minZoom:MINZOOM,
 			center: {lat: lat, lng: lng}//ubicación por default
 		});
+		placeMarker(map, _pin);
 	}
 
 	function placeMarker(map, pin){
 		var marker = new google.maps.Marker({
-			position: {lat: parseFloat(pin['latitud']), lng: parseFloat(pin['longitud']) },
+			position: {lat: parseFloat(pin['lat']), lng: parseFloat(pin['lng']) },
 			map: map,
-			title: pin['nombresucursal']
+			title: pin['name']
 		});
 
 		marker.setIcon(({
-			url: '/static/site/img/pin.svg',
-			size: new google.maps.Size(40, 70),
+			url: '/images/pin.png',
+			size: new google.maps.Size(40, 50),
 			origin: new google.maps.Point(0, 0),
-			anchor: new google.maps.Point(20, 35),
-			scaledSize: new google.maps.Size(24, 42)
+			anchor: new google.maps.Point(20, 25),
+			scaledSize: new google.maps.Size(20, 25)
 		}));
 
 		var infoWindow = new google.maps.InfoWindow({
@@ -50,11 +52,8 @@ var PinMap = function(){
 
 	function dataMarker(pin){
 		var str = '<div class="info-window">'
-		str += '<p>' + pin['nombrecomercial'] + ' - ' + pin['nombresucursal'] + '</p>';
-		str += '<span>' + pin['direccion'] + '</span>';
-		str += '<span>' + pin['colonia'] + ' CP: ' + pin['cp'] + '</span>';
-		str += '<span>' + pin['ciudad'] + ', ' + pin['estado'] + '</span>';
-		str += '<span>Tel: (' + pin['lada'] + ') ' + pin['telefono'] + '</span>';
+		str += '<p>' + pin['name'] + '</p>';
+		str += '<span>' + pin['phone'] + '</span>';
 		str += '</div>';
 		return str;
 	}

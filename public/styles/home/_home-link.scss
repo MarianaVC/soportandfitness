@@ -4,7 +4,6 @@
 	color: #fff;
 	text-decoration: none;
 	position: relative;
-	text-shadow: 1px 1px 2px #00000;
 	
 	@include transition(color 0.35s ease-in-out);
 
@@ -43,6 +42,7 @@
 		@include OswaldRegular;
 		text-align: right;
 		text-transform: uppercase;
+		text-shadow: 3px 3px 8px #000000;
 
 		@media (min-width: $desktop){
 			@include fontSize(50px);
@@ -56,12 +56,12 @@
 body.desktop{
 	.home-link--branches:hover{
 		&:before{
-			background-color: rgba($red,0.6);
+			background-color: rgba(#000,0.6);
 		}
 	}
 	.home-link--fitness:hover{
 		&:before{
-			background-color: rgba(#fff,0.6);
+			background-color: rgba(#000,0.6);
 		}
 	}
 }
