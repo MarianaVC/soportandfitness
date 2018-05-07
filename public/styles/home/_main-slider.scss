@@ -82,6 +82,13 @@
 			}
 		}
 
+		&--video{
+			right: 50%;
+			bottom: 50%;
+
+			@include transform(translate3d(50%, 50%, 0));
+		}
+
 		@media (min-width: $desktop){
 			padding: 0;
 		}
