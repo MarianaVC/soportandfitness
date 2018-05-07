@@ -14,7 +14,7 @@ var PinMap = function(){
 	var MINZOOM = 13;
 	var MINVAL = 1;
 	var MAXVAL = 11;
-	var _pin = {'lat':'19.432608','lng':'-99.133209','name':'Ejemplo 1','phone':'0123456789'}
+	var _pin = {'lat':'19.432608','lng':'-99.133209','name':'Lomas Estrella','phone':'0123456789'}
 
 	function initMap() {
 		map = new google.maps.Map(document.getElementById('map'), {

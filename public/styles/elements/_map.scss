@@ -1,10 +1,9 @@
 .info-window{
 	@include box-sizing(border-box);
 	padding: 1em 1.5em;
-	max-width: 220px;
+	text-align: center;
 
 	@media (min-width: $desktop){
-		max-width: 300px;
 	}
 
 	& p{
