@@ -147,4 +147,10 @@
 			@include fontSize(22px);
 		}
 	}
+
+	&__only-image{
+		@include absolute-full-container;
+		display: block;
+		content: '';
+	}
 }

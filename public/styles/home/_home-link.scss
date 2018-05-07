@@ -1,9 +1,10 @@
 .home-link{
 	@include fullBackground;
 	display: block;
-	color: $red;
+	color: #fff;
 	text-decoration: none;
 	position: relative;
+	text-shadow: 1px 1px 2px #00000;
 	
 	@include transition(color 0.35s ease-in-out);
 
@@ -14,6 +15,7 @@
 		@include transition(background-color 0.35s ease-in-out);
 	}
 	&--branches{
+		background-image: url(/images/branches.jpg);
 		&:before{
 			background-color: rgba(#fff,0.6);
 		}
@@ -21,8 +23,6 @@
 
 	&--fitness{
 		background-image: url(/images/fitness.jpg);
-
-		color: #fff;
 
 		&:before{
 			background-color: rgba($red,0.6);
@@ -54,11 +54,14 @@
 }
 
 body.desktop{
-	.home-link:hover{
-		color: #fff;
-		
+	.home-link--branches:hover{
 		&:before{
-			background-color: rgba(#000,0.6);
+			background-color: rgba($red,0.6);
+		}
+	}
+	.home-link--fitness:hover{
+		&:before{
+			background-color: rgba(#fff,0.6);
 		}
 	}
 }

@@ -38,11 +38,16 @@
 	}
 	
 	&__title{
+		@include border-radius(4em);
 		@include OswaldRegular;
 		@include fontSize(16px);
 		text-transform: uppercase;
 		color: #fff;
-		
+		background: $red;
+		display: inline-block;
+		padding: 0 0.5em;
+		margin: 0 0 1em;
+
 		@media (min-width: $tablet-min){
 			@include fontSize(26px);
 		}
