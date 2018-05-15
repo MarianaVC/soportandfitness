@@ -1,0 +1,177 @@
+.activity-popup{
+	@include box-sizing(border-box);
+	width: 100%;
+	max-width: 900px;
+	max-height: 90%;
+	position: relative;
+	overflow: hidden;
+	background: radial-gradient(lighten($gray,15%), $gray);
+	color: #fff;
+	padding: 2em;
+
+	@media (min-width: $tablet-min){
+		max-height: 535px;
+	}
+
+	&:before, &:after{
+		display: block;
+		content: '';
+		position: absolute;
+		left: 0;
+		top: 0;
+
+		@include transform(translate3d(-50%, -50%, 0) rotateZ(45deg));
+	}
+
+	&:before{
+		background-color: $dark-red;
+		width: 150px;
+		height: 150px;
+
+		@media (min-width: $tablet-min){
+			width: 300px;
+			height: 300px;
+		}
+	}
+
+	&:after{
+		background-color: #b52c33;
+		width: 75px;
+		height: 75px;
+
+		@media (min-width: $tablet-min){
+			width: 200px;
+			height: 200px;
+		}
+	}
+
+	&__top{
+		@include display-flex;
+		@include flex-wrap(wrap);
+		@include align-items(flex-end);
+		width: 100%;
+		position: relative;
+
+		&__left{
+			width: 70%;
+		}
+		&__right{
+			width: 30%;
+			text-align: center;
+		}
+	}
+
+	&__title{
+		@include OswaldBold;
+		@include fontSize(25px);
+		color: $red;
+		text-transform: uppercase;
+		line-height: 1;
+		-webkit-text-stroke: 0.03em #fff;
+		text-shadow:
+			 0.05em  0.05em 0 #fff,
+			-0.05em -0.05em 0 #fff,  
+			 0.05em -0.05em 0 #fff,
+			-0.05em  0.05em 0 #fff,
+			 0.05em  0.05em 0 #fff;
+
+		@media (min-width: $tablet-min){
+			@include fontSize(30px);
+		}
+
+		@media (min-width: $desktop){
+			@include fontSize(40px);
+		}
+	}
+
+	&__icon-calories{
+		width: 40px;
+		height: 50px;
+		display: block;
+		margin: 0 auto 0.5em;
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-image: url(/images/calories.jpg);
+
+		@media (min-width: $desktop){
+			width: 66px;
+			height: 90px;
+		}
+	}
+
+	&__calories{
+		@include DosisBold;
+		@include fontSize(16px);
+		width: 100%;
+		max-width: 5.5em;
+		margin: 0 auto;
+		color: $red;
+		line-height: 1;
+		-webkit-text-stroke: 0.02em #fff;
+		text-align: center;
+		text-shadow:
+			 0.05em  0.05em 0 #fff,
+			-0.05em -0.05em 0 #fff,  
+			 0.05em -0.05em 0 #fff,
+			-0.05em  0.05em 0 #fff,
+			 0.05em  0.05em 0 #fff;
+
+		@media (min-width: $tablet-min){
+			@include fontSize(20px);
+		}
+
+		@media (min-width: $desktop){
+			@include fontSize(25px);
+		}
+	}
+
+	&__bottom{
+		@include display-flex;
+		@include flex-wrap(wrap);
+		@include justify-content(space-around);
+		width: 100%;
+		position: relative;
+		margin: 1.5em 0 0;
+
+		&__left{
+			width: 60%;
+			text-align: center;
+		}
+		&__right{
+			@include box-sizing(border-box);
+			width: 35%;
+			padding: 0 2em;
+		}
+	}
+
+	&__description{
+		@include fontSize(15px);
+
+		@media (min-width: $tablet-min){
+			@include fontSize(16px);
+		}
+
+		@media (min-width: $desktop){
+			@include fontSize(18px);
+		}
+	}
+
+	&__branches{
+	}
+
+	&__subtitle{
+	}
+
+	&__branch{
+	}
+
+	&__play{
+	}
+
+	&__icon-play{
+	}
+
+	&__close{
+	}
+}

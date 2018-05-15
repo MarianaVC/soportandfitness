@@ -86,8 +86,15 @@
 			&:after{
 				right: 50%;
 				bottom: 50%;
+				width: 120px;
+				height: 80px;
+				background-position: right bottom;
 
 				@include transform(translate3d(50%, 50%, 0));
+				@media (min-width: $desktop){
+					width: 240px;
+					height: 155px;
+				}
 			}
 		}
 

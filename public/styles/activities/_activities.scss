@@ -1,0 +1,24 @@
+.activities{
+	background-color: #fff;
+	padding: 1em 0;
+
+	&__container{
+		@include container;
+	}
+
+	&__title{
+		@include OswaldRegular;
+		@include fontSize(16px);
+		text-transform: uppercase;
+		color: $red;
+		margin: 1em 0 1em 1em;
+		
+		@media (min-width: $tablet-min){
+			@include fontSize(26px);
+		}
+
+		@media (min-width: $desktop){
+			@include fontSize(35px);
+		}
+	}
+}

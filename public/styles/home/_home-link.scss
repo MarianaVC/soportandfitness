@@ -42,7 +42,7 @@
 		@include OswaldRegular;
 		text-align: right;
 		text-transform: uppercase;
-		text-shadow: 3px 3px 8px #000000;
+		text-shadow: 0 0 15px #000000;
 
 		@media (min-width: $desktop){
 			@include fontSize(50px);

@@ -56,6 +56,19 @@
 			@include fontSize(35px);
 		}
 	}
+
+	&__button{
+		margin: 0 0 1em;
+		@include fontSize(16px);
+
+		@media (min-width: $tablet-min){
+			@include fontSize(26px);
+		}
+
+		@media (min-width: $desktop){
+			@include fontSize(35px);
+		}
+	}
 	
 	&__description{
 		@include fontSize(14px);

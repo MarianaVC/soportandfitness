@@ -26,7 +26,6 @@
 @import "elements/button";
 @import "elements/map";
 
-
 // Home files
 // ============
 @import "home/main-slider";
@@ -37,3 +36,9 @@
 @import "home/fitness-carousel";
 @import "home/promos-block";
 @import "home/visit-block";
+
+// Activities files
+// ============
+@import "activities/activities";
+@import "activities/activities-list";
+@import "activities/activity-popup";

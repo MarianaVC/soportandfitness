@@ -1,0 +1,60 @@
+.activities-list{
+	@include display-flex;
+	@include flex-wrap(wrap);
+	width: 100%;
+
+	@media (min-width: $tablet-min){
+		padding: 0 1em;
+		max-width: 1050px;
+		margin: 0 auto;
+		@include box-sizing(border-box);
+	}
+
+	&__item{
+		position: relative;
+		width: 32%;
+	}
+
+	&__btn{
+		position: relative;
+		width: 100%;
+		background: transparent;
+		border: none;
+		outline: none;
+		padding: 0;
+		display: block;
+		cursor: pointer;
+	}
+
+	&__video{
+		@include absolute-full-container;
+	}
+
+	&__img{
+		@include setImg;
+	}
+
+	&__title{
+		@include OswaldRegular;
+		@include fontSize(14px);
+		text-transform: uppercase;
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: 0.5em;
+		color: #fff;
+		text-shadow: 0 0 10px #000000;
+		text-align: left;
+		padding: 0 1em 0 0.75em;
+		line-height: 1;
+
+		@media (min-width: $tablet-min){
+			@include fontSize(28px);
+			padding: 0 2em 0 0.75em;
+		}
+
+		@media (min-width: $desktop){
+			@include fontSize(35px);
+		}
+	}
+}
