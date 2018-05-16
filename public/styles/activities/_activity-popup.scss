@@ -1,16 +1,19 @@
 .activity-popup{
 	@include box-sizing(border-box);
 	width: 100%;
-	max-width: 900px;
+	max-width: 700px;
 	max-height: 90%;
 	position: relative;
 	overflow: hidden;
 	background: radial-gradient(lighten($gray,15%), $gray);
 	color: #fff;
-	padding: 2em;
+	padding: 2.75em;
 
 	@media (min-width: $tablet-min){
 		max-height: 535px;
+	}
+	@media (min-width: $desktop){
+		max-width: 900px;
 	}
 
 	&:before, &:after{
@@ -28,7 +31,7 @@
 		width: 150px;
 		height: 150px;
 
-		@media (min-width: $tablet-min){
+		@media (min-width: $desktop){
 			width: 300px;
 			height: 300px;
 		}
@@ -39,7 +42,7 @@
 		width: 75px;
 		height: 75px;
 
-		@media (min-width: $tablet-min){
+		@media (min-width: $desktop){
 			width: 200px;
 			height: 200px;
 		}
@@ -64,7 +67,7 @@
 
 	&__title{
 		@include Aero;
-		@include fontSize(25px);
+		@include fontSize(22px);
 		color: $red;
 		text-transform: uppercase;
 		line-height: 1;
@@ -93,7 +96,7 @@
 		background-size: contain;
 		background-repeat: no-repeat;
 		background-position: center;
-		background-image: url(/images/calories.jpg);
+		background-image: url(/images/calories.png);
 
 		@media (min-width: $desktop){
 			width: 66px;
@@ -239,30 +242,13 @@
 		background-size: contain;
 		background-repeat: no-repeat;
 		background-position: center;
-		background-image: url(/images/play.jpg);
+		background-image: url(/images/play.png);
 
-		@media (min-width: $tablet-min){
+		@media (min-width: $desktop){
 			width: 115px;
 			height: 80px;
 		}
 
-	}
-
-	&__close{
-		@include fontSize(16px);
-		@include border-radius(50%);
-		background: $red;
-		color: #fff;
-		text-align: center;
-		border: none;
-		outline: none;
-		width: 30px;
-		height: 30px;
-		line-height: 20px;
-		position: absolute;
-		right: 0.5em;
-		top: 0.5em;
-		cursor: pointer;
 	}
 }
 
@@ -271,12 +257,6 @@ body.desktop{
 		&__branch{
 			&:hover{
 				text-decoration: underline;
-			}
-		}
-		&__close{
-			@include transition(background 0.35s ease-in-out);
-			&:hover{
-				background: #000;
 			}
 		}
 	}

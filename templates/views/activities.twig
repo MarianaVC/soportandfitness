@@ -35,10 +35,99 @@
 
 			<ul class="activities-list">
 				<li class="activities-list__item">
-					<button class="activities-list__btn activityBtn">
-						<div class="activityVideo activities-list__video" data-video="/videos/test.mp4"></div>
+					<button id="popup-1" class="activities-list__btn openPopup">
+						<div class="activityVideo activities-list__video" data-video="/videos/hover.mp4" data-poster="/images/activity.jpg"></div>
 						<img src="/images/activity.jpg" alt="" class="activities-list__img">
-						<h2 class="activities-list__title">Entrenamiento en suspensión</h2>
+						<h2 class="activities-list__title"><span class="hover">Entrenamiento en suspensión</span></h2>
+					<!-- popup -->
+						<div class="activity-popup popupContent">
+							<div class="activity-popup__top">
+								<div class="activity-popup__top__left">
+									<h2 class="activity-popup__title">Entrenamiento en suspensión</h2>
+								</div>
+								<div class="activity-popup__top__right">
+									<span class="activity-popup__icon-calories"></span>
+									<p class="activity-popup__calories">700 calorías quemadas por clase</p>
+								</div>
+							</div>
+							<div class="activity-popup__bottom">
+								<div class="activity-popup__bottom__left">
+									<p class="activity-popup__description">Lorem ipsum dolor sit amet, vis ex dolore suscipit recusabo. Nam eros diceret ut, eu mei dicat eirmod. Sed elit interesset ne. Ex audiam scriptorem pro, ius erant phaedrum honestatis cu.</p>
+								</div>
+								<div class="activity-popup__bottom__right">
+									<div class="activity-popup__branches">
+										<p class="activity-popup__subtitle">Encuéntrala en:</p>
+										<a href="#" class="activity-popup__branch" title="Sucursal Ajusco">Sucursal Ajusco</a>
+									</div>
+									<a href="#" class="activity-popup__play" title="Ver video"><span class="activity-popup__icon-play"></span></a>
+								</div>
+							</div>
+						</div>
+					<!-- /popup -->
+					</button>
+				</li>
+				<li class="activities-list__item">
+					<button id="popup-2" class="activities-list__btn openPopup">
+						<div class="activityVideo activities-list__video" data-video="/videos/hover.mp4" data-poster="/images/activity.jpg"></div>
+						<img src="/images/activity.jpg" alt="" class="activities-list__img">
+						<h2 class="activities-list__title"><span class="hover">Actividad 2</span></h2>
+					<!-- popup -->
+						<div class="activity-popup popupContent">
+							<div class="activity-popup__top">
+								<div class="activity-popup__top__left">
+									<h2 class="activity-popup__title">Actividad 2</h2>
+								</div>
+								<div class="activity-popup__top__right">
+									<span class="activity-popup__icon-calories"></span>
+									<p class="activity-popup__calories">700 calorías quemadas por clase</p>
+								</div>
+							</div>
+							<div class="activity-popup__bottom">
+								<div class="activity-popup__bottom__left">
+									<p class="activity-popup__description">Lorem ipsum dolor sit amet, vis ex dolore suscipit recusabo. Nam eros diceret ut, eu mei dicat eirmod. Sed elit interesset ne. Ex audiam scriptorem pro, ius erant phaedrum honestatis cu.</p>
+								</div>
+								<div class="activity-popup__bottom__right">
+									<div class="activity-popup__branches">
+										<p class="activity-popup__subtitle">Encuéntrala en:</p>
+										<a href="#" class="activity-popup__branch" title="Sucursal Ajusco">Sucursal Ajusco</a>
+									</div>
+									<a href="#" class="activity-popup__play" title="Ver video"><span class="activity-popup__icon-play"></span></a>
+								</div>
+							</div>
+						</div>
+					<!-- /popup -->
+					</button>
+				</li>
+				<li class="activities-list__item">
+					<button id="popup-3" class="activities-list__btn openPopup">
+						<div class="activityVideo activities-list__video" data-video="/videos/hover.mp4" data-poster="/images/activity.jpg"></div>
+						<img src="/images/activity.jpg" alt="" class="activities-list__img">
+						<h2 class="activities-list__title"><span class="hover">Actividad 3</span></h2>
+					<!-- popup -->
+						<div class="activity-popup popupContent">
+							<div class="activity-popup__top">
+								<div class="activity-popup__top__left">
+									<h2 class="activity-popup__title">Actividad 3</h2>
+								</div>
+								<div class="activity-popup__top__right">
+									<span class="activity-popup__icon-calories"></span>
+									<p class="activity-popup__calories">700 calorías quemadas por clase</p>
+								</div>
+							</div>
+							<div class="activity-popup__bottom">
+								<div class="activity-popup__bottom__left">
+									<p class="activity-popup__description">Lorem ipsum dolor sit amet, vis ex dolore suscipit recusabo. Nam eros diceret ut, eu mei dicat eirmod. Sed elit interesset ne. Ex audiam scriptorem pro, ius erant phaedrum honestatis cu.</p>
+								</div>
+								<div class="activity-popup__bottom__right">
+									<div class="activity-popup__branches">
+										<p class="activity-popup__subtitle">Encuéntrala en:</p>
+										<a href="#" class="activity-popup__branch" title="Sucursal Ajusco">Sucursal Ajusco</a>
+									</div>
+									<a href="#" class="activity-popup__play" title="Ver video"><span class="activity-popup__icon-play"></span></a>
+								</div>
+							</div>
+						</div>
+					<!-- /popup -->
 					</button>
 				</li>
 			</ul>
@@ -46,33 +135,19 @@
 		</div>
 	</div>
 
-	<div class="activity-popup">
-		<div class="activity-popup__top">
-			<div class="activity-popup__top__left">
-				<h2 class="activity-popup__title">Entrenamiento en suspensión</h2>
-			</div>
-			<div class="activity-popup__top__right">
-				<span class="activity-popup__icon-calories"></span>
-				<p class="activity-popup__calories">700 calorías quemadas por clase</p>
-			</div>
+	<div id="popup" class="popup">
+		<div class="popup__overlay closePopup"></div>
+		<div class="popup__content">
+			<div id="popContent"></div>
+			<button class="popup__btn popup__btn--close closePopup">x</button>
+			<button class="popup__btn popup__btn--prev prevPopup"><</button>
+			<button class="popup__btn popup__btn--next nextPopup">></button>
 		</div>
-		<div class="activity-popup__bottom">
-			<div class="activity-popup__bottom__left">
-				<p class="activity-popup__description">Lorem ipsum dolor sit amet, vis ex dolore suscipit recusabo. Nam eros diceret ut, eu mei dicat eirmod. Sed elit interesset ne. Ex audiam scriptorem pro, ius erant phaedrum honestatis cu.</p>
-			</div>
-			<div class="activity-popup__bottom__right">
-				<div class="activity-popup__branches">
-					<p class="activity-popup__subtitle">Encuéntrala en:</p>
-					<a href="#" class="activity-popup__branch" title="Sucursal Ajusco">Sucursal Ajusco</a>
-				</div>
-				<a href="#" class="activity-popup__play" title="Ver video"><span class="activity-popup__icon-play"></span></a>
-			</div>
-		</div>
-		<button class="activity-popup__close">x</button>
 	</div>
 
 {% endblock %}
 
 {% block js %}
+	<script src="/js/popup.js"></script>
 	<script src="/js/activities.js"></script>
 {% endblock %}

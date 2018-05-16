@@ -1,6 +1,7 @@
 .activities-list{
 	@include display-flex;
 	@include flex-wrap(wrap);
+	@include justify-content(space-between);
 	width: 100%;
 
 	@media (min-width: $tablet-min){
@@ -10,9 +11,21 @@
 		@include box-sizing(border-box);
 	}
 
+	& .activity-popup{
+		display: none;
+	}
+
 	&__item{
 		position: relative;
 		width: 32%;
+		margin: 0.35rem 0;
+		@media (min-width: $tablet-min){
+			margin: 0.5rem 0;
+		}
+
+		@media (min-width: $desktop){
+			margin: 0.75em 0;
+		}
 	}
 
 	&__btn{
@@ -28,10 +41,22 @@
 
 	&__video{
 		@include absolute-full-container;
+		& video{
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+		}
 	}
 
 	&__img{
 		@include setImg;
+		opacity: 1;
+		position: relative;
+		@include transition(all 0.35s ease-in-out);
 	}
 
 	&__title{
@@ -48,6 +73,26 @@
 		padding: 0 1em 0 0.75em;
 		line-height: 1;
 
+		& .hover{
+			display: inline-block;
+			position: relative;
+			z-index: 1;
+			&:before{
+				content:'';
+				display: block;
+				position: absolute;
+				z-index: -1;
+				top: 0;
+				bottom: 0;
+				left:0;
+				right: 100%;
+				background-color: $red;
+
+				@include transition(all 0.35s ease-in-out);
+			}
+			
+		}
+
 		@media (min-width: $tablet-min){
 			@include fontSize(28px);
 			padding: 0 2em 0 0.75em;
@@ -55,6 +100,21 @@
 
 		@media (min-width: $desktop){
 			@include fontSize(35px);
+		}
+	}
+}
+
+body.desktop{
+	.activities-list{
+		&__btn:hover{
+			& .activities-list__img{
+				opacity: 0;
+			}
+			& .activities-list__title{
+				& .hover:before{
+					right: 0;
+				}
+			}
 		}
 	}
 }
