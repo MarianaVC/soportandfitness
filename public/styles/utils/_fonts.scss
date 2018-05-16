@@ -2,6 +2,19 @@
     "Fonts" styles
 -------------------------------- */
 
+@font-face {
+	font-family: 'Aero';
+	src:url('/fonts/Aero.ttf.woff') format('woff'),
+		url('/fonts/Aero.ttf.svg#Aero') format('svg'),
+		url('/fonts/Aero.ttf.eot'),
+		url('/fonts/Aero.ttf.eot?#iefix') format('embedded-opentype'); 
+	font-weight: normal;
+	font-style: normal;
+}
+
+@mixin Aero() {
+	font-family: 'Aero', sans-serif;
+}
 
 @mixin OswaldLight() {
 	font-family: 'Oswald', sans-serif;
