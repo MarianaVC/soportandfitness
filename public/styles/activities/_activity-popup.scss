@@ -10,10 +10,10 @@
 	padding: 2.75em;
 
 	@media (min-width: $tablet-min){
-		max-height: 535px;
+		max-height: 655px;
 	}
 	@media (min-width: $desktop){
-		max-width: 900px;
+		max-width: 1100px;
 	}
 
 	&:before, &:after{
@@ -67,7 +67,7 @@
 
 	&__title{
 		@include Aero;
-		@include fontSize(22px);
+		font-size: 5.75vw;
 		color: $red;
 		text-transform: uppercase;
 		line-height: 1;
@@ -165,16 +165,16 @@
 
 	&__description{
 		@include OswaldRegular;
-		@include fontSize(15px);
+		@include fontSize(16px);
 		text-align: justify;
 
 		@media (min-width: $tablet-min){
-			@include fontSize(16px);
+			@include fontSize(18px);
 			text-align: center;
 		}
 
 		@media (min-width: $desktop){
-			@include fontSize(18px);
+			@include fontSize(21px);
 		}
 	}
 

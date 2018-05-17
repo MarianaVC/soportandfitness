@@ -15,11 +15,13 @@ var Popup = function(){
 		content = target.find('.popupContent').clone();
 		$('#popContent').html(content);
 		$('#popup').addClass('active');
+		$('body').css('overflow', 'hidden');
 	}
 	
 	function closePopup(e){
 		e.preventDefault();
 		$('#popup').removeClass('active');
+		$('body').css('overflow', 'visible');
 	}
 	
 	function prevPopup(e){

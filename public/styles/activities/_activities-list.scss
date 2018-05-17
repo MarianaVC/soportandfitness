@@ -19,6 +19,7 @@
 		position: relative;
 		width: 32%;
 		margin: 0.35rem 0;
+		overflow: hidden;
 		@media (min-width: $tablet-min){
 			margin: 0.5rem 0;
 		}
@@ -71,7 +72,7 @@
 		text-shadow: 0 0 10px #000000;
 		text-align: left;
 		padding: 0 1em 0 0.75em;
-		line-height: 1;
+		line-height: 1.25;
 
 		& .hover{
 			display: inline-block;
@@ -84,8 +85,8 @@
 				z-index: -1;
 				top: 0;
 				bottom: 0;
-				left:0;
-				right: 100%;
+				left: -1em;
+				right: calc(100% + 1em);
 				background-color: $red;
 
 				@include transition(all 0.35s ease-in-out);
@@ -112,7 +113,7 @@ body.desktop{
 			}
 			& .activities-list__title{
 				& .hover:before{
-					right: 0;
+					right: -0.5em;
 				}
 			}
 		}
