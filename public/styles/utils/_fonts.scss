@@ -63,11 +63,11 @@
 
 @font-face {
 	font-family: 'sport';
-	src:  url('/fonts/sport.eot?srowdq');
-	src:  url('/fonts/sport.eot?srowdq#iefix') format('embedded-opentype'),
-	      url('/fonts/sport.ttf?srowdq') format('truetype'),
-	      url('/fonts/sport.woff?srowdq') format('woff'),
-	      url('/fonts/sport.svg?srowdq#sport') format('svg');
+	src:  url('/fonts/sport.eot?e5l0d4');
+	src:  url('/fonts/sport.eot?e5l0d4#iefix') format('embedded-opentype'),
+	      url('/fonts/sport.ttf?e5l0d4') format('truetype'),
+	      url('/fonts/sport.woff?e5l0d4') format('woff'),
+	      url('/fonts/sport.svg?e5l0d4#sport') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -87,6 +87,9 @@
 	-moz-osx-font-smoothing: grayscale;
 }
 
+.icon-building:before { content: "\e90c"; }
+.icon-check-list:before { content: "\e90d"; }
+.icon-weight:before { content: "\e90e"; }
 .icon-agreements:before { content: "\e90b"; }
 .icon-bottle:before { content: "\e900"; }
 .icon-cards:before { content: "\e901"; }

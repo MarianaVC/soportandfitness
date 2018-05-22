@@ -1,0 +1,349 @@
+.about{
+	background-color: #fff;
+	padding: 0;
+
+	&__container{
+		@include container;
+		@include display-flex;
+		@include flex-wrap(wrap);
+		@include justify-content(space-around);
+
+		&--block{
+			display: block;
+		}
+	}
+
+	&__title{
+		@include OswaldRegular;
+		@include fontSize(16px);
+		text-transform: uppercase;
+		color: $red;
+		margin: 1em 0 1em 1em;
+		
+		@media (min-width: $tablet-min){
+			@include fontSize(26px);
+		}
+
+		@media (min-width: $desktop){
+			@include fontSize(35px);
+		}
+	}
+
+	&__top{
+		@include fullBackground;
+		background-color: #454545;
+		background-image: url(/images/about-bck.jpg);
+		width: 100%;
+		position: relative;
+		color: #fff;
+		text-align: center;
+		padding: 3em 0 4em;
+
+		@media (min-width: $tablet-min){
+			padding: 3em 0 5em;
+		}
+
+		@media (min-width: $desktop){
+			padding: 3em 0 7em;
+		}
+	}
+
+	&__logo{
+		display: block;
+		width: 100px;
+		margin: 0 auto;
+
+		@media (min-width: $tablet-min){
+			width: 150px;
+		}
+
+		@media (min-width: $desktop){
+			width: 200px;
+		}
+	}
+
+	&__subtitle{
+		@include OswaldBold;
+		@include fontSize(14px);
+
+		width: 85%;
+		max-width: 650px;
+		margin: 1em auto;
+
+		@media (min-width: $tablet-min){
+			@include fontSize(20px);
+		}
+
+		@media (min-width: $desktop){
+			@include fontSize(26px);
+		}
+
+		& .red{
+			color: $red;
+		}
+	}
+
+	&__find{
+		display: block;
+		margin: -1.5em auto 0;
+
+		@media (min-width: $tablet-min){
+			margin: -2.5em auto 0;
+		}
+
+		@media (min-width: $desktop){
+			margin: -4.5em auto 0;
+		}
+
+		&__item{
+			width: 60%;
+			text-align: center;
+			margin: 0 0 2em;
+
+			@media (min-width: $tablet-min){
+				width: 30%;
+			}
+			@media (min-width: $desktop){
+				width: 25%;
+			}
+
+		}
+
+		&__title{
+			@include OswaldRegular;
+			@include fontSize(12px);
+			margin: 0.75em 0;
+			text-transform: uppercase;
+
+			@media (min-width: $tablet-min){
+				@include fontSize(20px);
+			}
+
+			@media (min-width: $desktop){
+				@include fontSize(29px);
+			}
+		}
+
+		&__description{
+			@include fontSize(12px);
+
+			@media (min-width: $tablet-min){
+				@include fontSize(14px);
+			}
+
+			@media (min-width: $desktop){
+				@include fontSize(16px);
+			}
+		}
+	}
+
+	&__link{
+		@include display-flex;
+		@include justify-content(center);
+		@include align-items(center);
+		width: 70px;
+		height: 70px;
+		text-decoration: none;
+		margin: 0 auto 1em;
+
+		@media (min-width: $tablet-min){
+			width: 100px;
+			height: 100px;
+		}
+
+		@media (min-width: $desktop){
+			width: 160px;
+			height: 160px;
+		}
+	}
+
+	&__icon{
+		@include display-flex;
+		@include justify-content(center);
+		@include align-items(center);
+		@include border-radius(50%);
+		@include fontSize (45px);
+		box-shadow: 2px 2px 15px #000;
+		width: 100%;
+		height: 100%;
+		background-color: $red;
+		color: #fff;
+		overflow: hidden;
+		
+		@include animation(growUp 0.5s 0.1s);
+		animation-timing-function: linear;
+
+		@media (min-width: $tablet-min){
+			@include fontSize(60px);
+			box-shadow: 3px 3px 18px #000;
+		}
+
+		@media (min-width: $desktop){
+			@include fontSize(110px);
+			box-shadow: 3px 3px 22px #000;
+		}
+
+		& i{
+			text-shadow: 1px 1px 6px #000;
+		}
+	}
+
+	&__mision-vision{
+		@include fullBackground;
+		color: #fff;
+		text-align: center;
+
+		@media (min-width: $tablet-min){
+			background-image: url(/images/mision-vision-bck.jpg);
+		}
+
+		&__title{
+			@include OswaldRegular;
+			@include fontSize(24px);
+			margin: 0 0 1em;
+			text-transform: uppercase;
+
+			@media (min-width: $tablet-min){
+				@include fontSize(32px);
+			}
+
+			@media (min-width: $desktop){
+				@include fontSize(48px);
+			}
+
+		}
+
+		&__description{
+			@include fontSize(12px);
+
+
+			@media (min-width: $tablet-min){
+				@include fontSize(15px);
+			}
+
+			@media (min-width: $desktop){
+				@include fontSize(16px);
+			}
+		}
+	}
+
+	&__mision{
+		@include box-sizing(border-box);
+		@include fullBackground;
+		background-image: url(/images/mision-vision-bck.jpg);
+		background-position: center left;
+		width: 100%;
+		padding: 3.5em 10% 4.5em;
+		margin: 0 0 1em;
+		box-shadow: 2px 2px 10px #000;
+
+		@media (min-width: $tablet-min){
+			background-image: none;
+			width: 50%;
+			padding: 5.5em 5% 6.5em;
+			margin: 0;
+			box-shadow: none;
+		}
+	}
+
+	&__vision{
+		@include box-sizing(border-box);
+		@include fullBackground;
+		background-image: url(/images/mision-vision-bck.jpg);
+		background-position: center right;
+		width: 100%;
+		padding: 3.5em 10% 4.5em;
+
+
+		@media (min-width: $tablet-min){
+			background-image: none;
+			width: 50%;
+			padding: 5.5em 5% 6.5em;
+		}
+	}
+}
+
+body.desktop{
+	.about{
+		&__icon{
+			@include transition(all 0.25s ease-in-out);
+		}
+		&__link{
+			&:hover{
+				& .about__icon{
+					color: $red;
+					background-color: #fff;
+				}
+			}
+		}
+	}
+	
+}
+
+@media (max-width: $tablet-min - 1){
+	@include keyframes (growUp) {
+		0% {
+			width: 0;
+			height: 0;
+
+			@include fontSize (0px);
+		}
+		85%, 100% {
+			width: 100%;
+			height: 100%;
+
+			@include fontSize (45px);
+		}
+		95% {
+			width: 90%;
+			height: 90%;
+
+			@include fontSize (40px);
+		}
+	}
+}
+
+@media (min-width: $tablet-min){
+	@include keyframes (growUp) {
+		0% {
+			width: 0;
+			height: 0;
+
+			@include fontSize (0px);
+		}
+		85%, 100% {
+			width: 100%;
+			height: 100%;
+
+			@include fontSize(60px);
+		}
+		95% {
+			width: 90%;
+			height: 90%;
+
+			@include fontSize (55px);
+		}
+	}
+}
+@media (min-width: $desktop){
+	@include keyframes (growUp) {
+		0% {
+			width: 0;
+			height: 0;
+
+			@include fontSize (0px);
+		}
+		85%, 100% {
+			width: 100%;
+			height: 100%;
+
+			@include fontSize (110px);
+		}
+		95% {
+			width: 90%;
+			height: 90%;
+
+			@include fontSize (105px);
+		}
+	}
+}
