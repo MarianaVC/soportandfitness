@@ -23,16 +23,6 @@ var Activities = function(){
 				videoCont.append(obj);
 				$(obj).append(source);
 
-			/*
-				videoP = document.getElementById('video-player');
-				videoP.addEventListener('loadeddata', function() {
-					videoCont.addClass("loaded");
-					//videoPlayer = videojs('video-player');
-					//videoPlayer.play();// Video is loaded and can be played
-					videoP.play();
-				}, false);
-			*/
-
 			});
 		}
 		else{
@@ -45,15 +35,26 @@ var Activities = function(){
 		target = $(e.currentTarget);
 		id = target.find('video').attr('id');
 		videoP = document.getElementById(id);
-		videoP.play();
+		playPromise = videoP.play();
+
+		if (playPromise !== undefined) {
+			playPromise.then(_ => {
+				target.data('loaded', true);
+			})
+			.catch(error => {
+				console.log(error);
+			});
+		}
 	}
 
 	function stopVideo(e){
 		e.preventDefault();
 		target = $(e.currentTarget);
-		id = target.find('video').attr('id');
-		videoP = document.getElementById(id);
-		videoP.pause();
+		if(target.data('loaded')){
+			id = target.find('video').attr('id');
+			videoP = document.getElementById(id);
+			videoP.pause();
+		}
 	}
 
 	function start(){

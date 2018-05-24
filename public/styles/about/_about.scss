@@ -112,7 +112,7 @@
 		&__title{
 			@include OswaldRegular;
 			@include fontSize(12px);
-			margin: 0.75em 0;
+			margin: 0.75em 0 0.3em;
 			text-transform: uppercase;
 
 			@media (min-width: $tablet-min){
@@ -126,6 +126,7 @@
 
 		&__description{
 			@include fontSize(12px);
+			line-height: 1.2;
 
 			@media (min-width: $tablet-min){
 				@include fontSize(14px);

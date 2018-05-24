@@ -3,27 +3,27 @@
 
 	background-image: url(/images/promos.jpg);
 	background-color: #000;
-	background-position: 100% 50%;
+	background-position: 90% 50%;
 	width:100%;
 	height: 200px;
-	padding: 2em 0;
-
+	padding: 4em 0 2em;
+	@include box-sizing(border-box);
 
 	@media (min-width: $desktop){
 		height: 400px;
 		background-position: 50%;
+		padding: 2em 0;
 	}
 
 	&__container{
 		@include display-flex;
 		@include justify-content(flex-end);
-		@include align-items(flex-end);
+		@include align-items(center);
 		@include container;
-		padding: 0 2em;
+		padding: 0 1em;
 		height: 100%;
 
 		@media (min-width: $desktop){
-			@include align-items(center);
 			padding: 0;
 		}
 	}
@@ -33,11 +33,11 @@
 		max-width: 220px;
 		text-align: center;
 		color: #fff;
-		padding: 1em;
 
 		@media (min-width: $desktop){
 			text-align: right;
 			max-width: 300px;
+			padding: 1em;
 		}
 	}
 
@@ -58,6 +58,7 @@
 		@include fontSize(17px);
 		text-transform: uppercase;
 		letter-spacing: 0.2em;
+		line-height: 1;
 		& span{
 			font-size: 1.2em;
 		}

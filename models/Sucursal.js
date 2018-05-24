@@ -11,19 +11,63 @@ var Sucursal = new keystone.List('Sucursal',{
 	track: {createdAt:true,createdBy:true,updatedAt:true,updatedBy:true},
 	sigular: 'Sucursal',
 	plural: 'Sucursales',
-  label: 'Sucursal',	
+  label: 'Sucursal',
+  autokey: { path: 'slug', from:'name', unique:true }
 });
 
 
 Sucursal.add('Sucursal',{
-  name: { type: String, required: true, initial: true, label: 'Nombre' },
-  address: { type: String, initial: true, required: true, label: 'Dirección'},
-  latitude: { type: String, initial: true, required: true, label:'Altitud'},
-  longitude: { type: String, initial: true, required: true, label: 'Longitud'},
-  telephone: { type: String, initial: true, required: true, label: 'Teléfono'},
-  opening_soon: { type: Boolean, initial: true, required: true, label: '¿Es próxima apertura?'},
-  image: { type: Types.CloudinaryImage, initial: true, publicID: 'slug', label:'Imagen principal' },
-  schedule_image: { type: Types.CloudinaryImage, initial: true, publicID: 'slug', label:'Imagen de horario' },
+  name: {
+    type: String,
+    required: true,
+    initial: true,
+    label: 'Nombre'
+  },
+  address: {
+    type: String,
+    initial: false,
+    required: true,
+    default: 'Dirección',
+    label: 'Dirección'
+  },
+  latitude: {
+    type: String,
+    initial: false,
+    required: true,
+    default: 'Altitud',
+    label:'Altitud'
+  },
+  longitude: {
+    type: String,
+    initial: false,
+    required: true,
+    default: 'Longitud',
+    label: 'Longitud'
+  },
+  telephone: {
+    type: String,
+    initial: false,
+    required: true,
+    default: 'Teléfono',
+    label: 'Teléfono'
+  },
+  opening_soon: {
+    type: Boolean,
+    initial: false,
+    label: '¿Es próxima apertura?'
+  },
+  image: {
+    type: Types.CloudinaryImage,
+    initial: false,
+    publicID: 'slug',
+    label:'Imagen principal' 
+  },
+  schedule_image: {
+    type: Types.CloudinaryImage,
+    initial: false,
+    publicID: 'slug',
+    label:'Imagen de horario' 
+  },
 });
 
 /**

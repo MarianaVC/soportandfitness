@@ -27,17 +27,18 @@ var Home = function(){
 
 	function playVideo(){
 		if( $("body").hasClass("desktop") ) {
-			$(".full-screen-video").each(function(){
+			$(".full-screen-video").each(function(i){
 				var videoCont = $(this);
+				var id = 'video-player' + i;
 				var attributes = {
-					'id': 'video-player',
+					'id': id,
 					'class': 'video-js vjs-default-skin',
 					'width': 1920,
 					'height': 1080,
 					'poster': videoCont.data('poster'),
 					'controls': false,
 					'preload': 'auto',
-					'autoplay': false,
+					'autoplay': true,
 					'loop': true,
 					'muted': true,
 					'data-setup': '{ "controls": false, "preload": "auto" }'
@@ -51,18 +52,41 @@ var Home = function(){
 				$(obj).append(source);
 
 
-				videoP = document.getElementById('video-player');
+				var videoP = document.getElementById(id);
 				videoP.addEventListener('loadeddata', function() {
+
+					var promise = videoP.play();
 					videoCont.addClass("loaded");
-					//videoPlayer = videojs('video-player');
-					//videoPlayer.play();// Video is loaded and can be played
-					videoP.play();
+
+					if (promise !== undefined) {
+						promise.then(_ => {
+							console.log('va, ' + id);
+
+						}).catch(error => {
+							var btnPlay = videoCont.find('.play');
+							btnPlay.addClass('active');
+							btnPlay.data('video', id);
+							btnPlay.on('click', manualPlay);
+						});
+					}
+
 				}, false);
 			});
 		}
 		else{
 			$(".full-screen-video").remove();
 		}
+	}
+
+	function manualPlay(e){
+		e.preventDefault();
+		var target = $(e.currentTarget);
+		var id = target.data('video');
+		var videoCont = target.closest('.full-screen-video');
+		var videoP = document.getElementById(id);
+		target.removeClass('active');
+		videoP.play();
+		videoCont.addClass('loaded');
 	}
 
 	function start(){

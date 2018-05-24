@@ -45,6 +45,24 @@ strong{
 		opacity: 1;
 	}
 
+	& .play{
+		background: transparent;
+		border: none;
+		outline: none;
+		position: absolute;
+		z-index: 5;
+		color: #fff;
+		cursor: pointer;
+		right: 50%;
+		bottom: -100px;
+		&.active{
+			bottom: 90px;
+		}
+
+		@include transition(opacity 0.5s);
+		@include transform(translate3d(50%, 50%, 0));
+	}
+
 	& video {
 		position: absolute;
 		top: 50%;

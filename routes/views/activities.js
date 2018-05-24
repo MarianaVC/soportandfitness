@@ -9,6 +9,24 @@ exports = module.exports = function (req, res) {
 	// item in the header navigation.
 	locals.section = 'activities';
 
+	locals.data = {
+		activities: []
+	}
+
+	view.on('init', function(next) {
+		var q = keystone.list('FitnessActivity').model.find().populate('sucursal');
+		q.exec(function(err,results){
+			if (err) return res.err(err);
+			if (!results){
+				return res.status(404).render('errors/404');
+			}
+
+			locals.data.activities = results;
+
+			next();
+		});
+	});
+
 	// Render the view
 	view.render('activities');
 };

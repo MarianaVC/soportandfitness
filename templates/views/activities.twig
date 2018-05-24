@@ -34,102 +34,46 @@
 			<h1 class="activities__title">Actividades fitness</h1>
 
 			<ul class="activities-list">
+			{% for activity in  data.activities %}
 				<li class="activities-list__item">
-					<button id="popup-1" class="activities-list__btn openPopup">
-						<div class="activityVideo activities-list__video" data-video="/videos/hover.mp4" data-poster="/images/activity.jpg"></div>
-						<img src="/images/activity.jpg" alt="" class="activities-list__img">
-						<h2 class="activities-list__title"><span class="hover">Entrenamiento en suspensión</span></h2>
+					<button id="popup-{{ loop.index }}" class="activities-list__btn openPopup">
+						<div class="activityVideo activities-list__video" data-video="/videos/{{ activity.video.filename }}" data-poster="{{ activity.image.url }}"></div>
+						<img src="{{ activity.image.url }}" alt="" class="activities-list__img">
+						<h2 class="activities-list__title"><span class="hover">{{ activity.name }}</span></h2>
 					<!-- popup -->
 						<div class="activity-popup popupContent">
 							<div class="activity-popup__top">
 								<div class="activity-popup__top__left">
-									<h2 class="activity-popup__title">Entrenamiento en suspensión</h2>
+									<h2 class="activity-popup__title">{{ activity.name }}</h2>
 								</div>
 								<div class="activity-popup__top__right">
 									<span class="activity-popup__icon-calories"></span>
-									<p class="activity-popup__calories">700 calorías quemadas por clase</p>
+									<p class="activity-popup__calories">{{ activity.calories }} calorías quemadas por clase</p>
 								</div>
 							</div>
 							<div class="activity-popup__bottom">
 								<div class="activity-popup__bottom__left">
-									<p class="activity-popup__description">Lorem ipsum dolor sit amet, vis ex dolore suscipit recusabo. Nam eros diceret ut, eu mei dicat eirmod. Sed elit interesset ne. Ex audiam scriptorem pro, ius erant phaedrum honestatis cu.</p>
+									<p class="activity-popup__description">{{ activity.description }}</p>
 								</div>
 								<div class="activity-popup__bottom__right">
 									<div class="activity-popup__branches">
 										<p class="activity-popup__subtitle">Encuéntrala en:</p>
-										<a href="#" class="activity-popup__branch" title="Sucursal Ajusco">Sucursal Ajusco</a>
+										<p>
+										{% for suc in  activity.sucursal %}
+											<a href="/sucursales/#{{ suc.slug }}" class="activity-popup__branch" title="{{ suc.name }}">{{ suc.name }}</a>
+										{% endfor %}
+										</p>
 									</div>
-									<a href="#" class="activity-popup__play" title="Ver video"><span class="activity-popup__icon-play"></span></a>
+								{% if activity.video_link %}
+									<a href="{{ activity.video_link }}" target="_blank" class="activity-popup__play" title="Ver video"><span class="activity-popup__icon-play"></span></a>
+								{% endif %}
 								</div>
 							</div>
 						</div>
 					<!-- /popup -->
 					</button>
 				</li>
-				<li class="activities-list__item">
-					<button id="popup-2" class="activities-list__btn openPopup">
-						<div class="activityVideo activities-list__video" data-video="/videos/hover.mp4" data-poster="/images/activity.jpg"></div>
-						<img src="/images/activity.jpg" alt="" class="activities-list__img">
-						<h2 class="activities-list__title"><span class="hover">Actividad 2</span></h2>
-					<!-- popup -->
-						<div class="activity-popup popupContent">
-							<div class="activity-popup__top">
-								<div class="activity-popup__top__left">
-									<h2 class="activity-popup__title">Actividad 2</h2>
-								</div>
-								<div class="activity-popup__top__right">
-									<span class="activity-popup__icon-calories"></span>
-									<p class="activity-popup__calories">700 calorías quemadas por clase</p>
-								</div>
-							</div>
-							<div class="activity-popup__bottom">
-								<div class="activity-popup__bottom__left">
-									<p class="activity-popup__description">Lorem ipsum dolor sit amet, vis ex dolore suscipit recusabo. Nam eros diceret ut, eu mei dicat eirmod. Sed elit interesset ne. Ex audiam scriptorem pro, ius erant phaedrum honestatis cu.</p>
-								</div>
-								<div class="activity-popup__bottom__right">
-									<div class="activity-popup__branches">
-										<p class="activity-popup__subtitle">Encuéntrala en:</p>
-										<a href="#" class="activity-popup__branch" title="Sucursal Ajusco">Sucursal Ajusco</a>
-									</div>
-									<a href="#" class="activity-popup__play" title="Ver video"><span class="activity-popup__icon-play"></span></a>
-								</div>
-							</div>
-						</div>
-					<!-- /popup -->
-					</button>
-				</li>
-				<li class="activities-list__item">
-					<button id="popup-3" class="activities-list__btn openPopup">
-						<div class="activityVideo activities-list__video" data-video="/videos/hover.mp4" data-poster="/images/activity.jpg"></div>
-						<img src="/images/activity.jpg" alt="" class="activities-list__img">
-						<h2 class="activities-list__title"><span class="hover">Actividad 3</span></h2>
-					<!-- popup -->
-						<div class="activity-popup popupContent">
-							<div class="activity-popup__top">
-								<div class="activity-popup__top__left">
-									<h2 class="activity-popup__title">Actividad 3</h2>
-								</div>
-								<div class="activity-popup__top__right">
-									<span class="activity-popup__icon-calories"></span>
-									<p class="activity-popup__calories">700 calorías quemadas por clase</p>
-								</div>
-							</div>
-							<div class="activity-popup__bottom">
-								<div class="activity-popup__bottom__left">
-									<p class="activity-popup__description">Lorem ipsum dolor sit amet, vis ex dolore suscipit recusabo. Nam eros diceret ut, eu mei dicat eirmod. Sed elit interesset ne. Ex audiam scriptorem pro, ius erant phaedrum honestatis cu.</p>
-								</div>
-								<div class="activity-popup__bottom__right">
-									<div class="activity-popup__branches">
-										<p class="activity-popup__subtitle">Encuéntrala en:</p>
-										<a href="#" class="activity-popup__branch" title="Sucursal Ajusco">Sucursal Ajusco</a>
-									</div>
-									<a href="#" class="activity-popup__play" title="Ver video"><span class="activity-popup__icon-play"></span></a>
-								</div>
-							</div>
-						</div>
-					<!-- /popup -->
-					</button>
-				</li>
+			{% endfor %}
 			</ul>
 
 		</div>
@@ -140,8 +84,10 @@
 		<div class="popup__content">
 			<div id="popContent"></div>
 			<button class="popup__btn popup__btn--close closePopup">x</button>
+		{% if data.activities.length > 1 %}
 			<button class="popup__btn popup__btn--prev prevPopup"><</button>
 			<button class="popup__btn popup__btn--next nextPopup">></button>
+		{% endif %}
 		</div>
 	</div>
 

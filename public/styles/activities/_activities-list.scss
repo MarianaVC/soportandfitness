@@ -75,9 +75,11 @@
 		line-height: 1.25;
 
 		& .hover{
-			display: inline-block;
+			display: table-caption;
 			position: relative;
 			z-index: 1;
+			padding: 0.25em 0;
+			
 			&:before{
 				content:'';
 				display: block;

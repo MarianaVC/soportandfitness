@@ -20,21 +20,19 @@ var FitnessActivity = new keystone.List('FitnessActivity',{
 var storage = new keystone.Storage({
   adapter: keystone.Storage.Adapters.FS,
   fs: {
-    path: 'uploads',
-    publicPath: '/public/uploads/',
+    path: 'public/videos',
+    publicPath: 'videos',
   }
 });
 
 FitnessActivity.add('FitnessActivity',{
   name: { type: String, required: true, initial: true, label: 'Nombre' },
-  description: {type: Types.Html, wysiwyg: true, label: 'Descripción'},
-  facts: {type: Types.Html, wysiwyg: true,label: 'Ficha técnica'},  
+  description: {type: String, wysiwyg: true, label: 'Descripción'},
   calories: { type: String, initial: true, required: true, label:'Calorías quemadas'},
-  image: {type: Types.CloudinaryImage, initial: true, required: true, label: 'Imagen principal'},
-  pdf: {type: Types.File, storage:storage, required: false, initial:true ,label: 'PDF'},
+  image: {type: Types.CloudinaryImage, initial: false, required: false, label: 'Imagen principal (400x400)'},
+  video: {type: Types.File, storage:storage, required: false, initial: false ,label: 'Video hover'},
   sucursal: {type: Types.Relationship, ref: 'Sucursal', many:true},
-  video_link :{ type: String, initial: true, required: true, label:'Link youtube'}, 
-  
+  video_link :{ type: String, initial: false, required: false, label:'Link youtube'},
 });
 
 /**
