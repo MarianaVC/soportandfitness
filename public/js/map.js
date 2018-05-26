@@ -14,16 +14,23 @@ var PinMap = function(){
 	var MINZOOM = 13;
 	var MINVAL = 1;
 	var MAXVAL = 11;
+	var infoWindow;
 	var _pin = {'lat':'19.432608','lng':'-99.133209','name':'Lomas Estrella','phone':'0123456789'}
 
 	function initMap() {
+		var pinArray = $("#map").data('pin');
+		lat = parseFloat(pinArray[0].lat);
+		lng = parseFloat(pinArray[0].lng);
+
+		infoWindow = new google.maps.InfoWindow();
+		
 		map = new google.maps.Map(document.getElementById('map'), {
 			zoom: ZOOM,
 			maxZoom: MAXZOOM,
 			minZoom:MINZOOM,
-			center: {lat: lat, lng: lng}//ubicación por default
+			center: {lat: lat, lng: lng}
 		});
-		placeMarker(map, _pin);
+		printMarkers(pinArray);
 	}
 
 	function placeMarker(map, pin){
@@ -37,15 +44,15 @@ var PinMap = function(){
 			url: '/images/pin.png',
 			size: new google.maps.Size(40, 50),
 			origin: new google.maps.Point(0, 0),
-			anchor: new google.maps.Point(20, 25),
-			scaledSize: new google.maps.Size(20, 25)
+			anchor: new google.maps.Point(30, 38),
+			scaledSize: new google.maps.Size(30, 38)
 		}));
 
-		var infoWindow = new google.maps.InfoWindow({
-			content: dataMarker(pin)
-		});
-
 		marker.addListener('click', function() {
+			infoWindow.close();
+			infoWindow = new google.maps.InfoWindow({
+				content: dataMarker(pin)
+			});
 			infoWindow.open(map, marker);
 		});
 	}
@@ -68,7 +75,6 @@ var PinMap = function(){
 		if(mapOptions.name){
 			data.farmacia = mapOptions.name;
 		}
-		console.log(data)
 		$.ajax({
 			type:'POST',
 			url:url,
@@ -79,7 +85,6 @@ var PinMap = function(){
 		})
 		.done(function(data,textStatus,jqXHR){
 			if(jqXHR.status==200){
-				console.log(data);
 				if(data.Listado){
 					printMarkers(data.Listado);
 				}
@@ -100,15 +105,7 @@ var PinMap = function(){
 	function printMarkers(pins) {
 		//pintamos cada uno de los pines que recibimos de back
 		for (i = 0; i < pins.length; i++) {
-			var srtPin = 'l' + pins[i].latitud + ',ln' + pins[i].longitud;
-			if(!latlngPins.includes(srtPin)){
-
-				// se agrega un string de las coordenadas del pin al arreglo para no pintar pines repetidos
-				latlngPins.push(srtPin);
-
-				//hacemos uso de la función que pinta un pin, que utiliza initSingleMap
-				placeMarker(map,pins[i]);
-			}
+			placeMarker(map,pins[i]);
 		}
 	}
 

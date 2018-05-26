@@ -25,34 +25,63 @@
 
 	<link rel="canonical" href="http://{{ url.fullUrl }}">
 
+	<style type="text/css">
+		{% for slide in data.slides %}
+			.slide-{{ loop.index }} {
+				background-image: url({{ slide.image_mobile.cloudinaryURL }});
+			}
+			@media all and (min-width: 768px){
+				.slide-{{ loop.index }} {
+					background-image: url({{ slide.image.cloudinaryURL }});
+				}
+			}
+		{% endfor %}
+	</style>
+
 {% endblock %}
 
 {% block content %}
 	<div class="home">
 	<!-- slider -->
 		<ul class="main-slider mainSlider owl-carousel">
-			<li class="main-slider__item" style="background-image:url(/images/slide-1.jpg);">
-
-				<div class="main-slider__video">
-					<div id="slide-1" class="full-screen-video"
-						 data-video="/videos/test.mp4"
-						 data-poster=''>
-						 <button class="play">Play</button>
+		{% for slide in data.slides %}
+			{% if slide.type_slide == 'Video' %}
+				<li class="main-slider__item slide-{{ loop.index }}">
+					<div class="main-slider__video">
+						<div id="slide-{{ loop.index }}" class="full-screen-video"
+							 data-video="/videos/{{ slide.video.filename }}"
+							 data-poster='{{ slide.image.cloudinaryURL }}'>
+							 <button class="play">Play</button>
+						</div>
 					</div>
-				</div>
-				<div class="main-slider__container main-slider__container--video"></div>
-			</li>
-			<li class="main-slider__item">
-				<a href="/" class="main-slider__only-image" style="background-image:url(/images/slide-2.jpg);"></a>
-			</li>
-			<li class="main-slider__item" style="background-image:url(/images/slide-1.jpg);">
-				<div class="main-slider__container">
-					<div class="main-slider__data">
-						<h1 class="main-slider__title">Entrenamiento en suspensión</h1>
-						<p class="main-slider__description">Rompe los obstáculos</p>
+					<div class="main-slider__container main-slider__container--video"></div>
+				</li>
+			{% endif %}
+			{% if slide.type_slide == 'Imagen' %}
+				<li class="main-slider__item main-slider__item--image slide-{{ loop.index }}">
+					<a href="{{ slide.url }}{% if slide.file %}/#{{ slide.file.filename }}{% endif %}" class="main-slider__only-image"></a>
+				</li>
+			{% endif %}
+			{% if slide.type_slide == 'Imagen con texto' %}
+				<li class="main-slider__item slide-{{ loop.index }}">
+					<div class="main-slider__container">
+						<div class="main-slider__data">
+						{% if loop.index == 1 %}
+							<h1 class="main-slider__title">{{ slide.title }}</h1>
+						{% else %}
+							<h2 class="main-slider__title">{{ slide.title }}</h2>
+						{% endif %}
+						{% if slide.description %}
+							<p class="main-slider__description">{{ slide.description }}</p>
+						{% endif %}
+						{% if slide.button and slide.button_url %}
+							<a href="{{ slide.button_url }}" class="main-slider__button button" title="{{ slide.button }}">{{ slide.button }}</a>
+						{% endif %}
+						</div>
 					</div>
-				</div>
-			</li>
+				</li>
+			{% endif %}
+		{% endfor %}
 		</ul>
 	<!-- /slider -->
 
@@ -92,7 +121,11 @@
 					<p class="visit-block__description">Las mejores instalaciones</br>creadas para ti</p>
 				</div>
 				<div class="visit-block__right">
-					<div id="map" class="visit-block__map map"></div>
+					<div id="map"
+					  class="visit-block__map map"
+					  data-pin='[{% for branch in data.branches %}{% if loop.index > 1 %},{% endif %}{"lat":"{{ branch.latitude }}","lng":"{{ branch.longitude }}","name":"{{ branch.name }}","phone":"{{ branch.telephone}}"}
+					  {% endfor %}]'
+					></div>
 					<p class="visit-block__description">Próximas aperturas: Metepec, Puebla-Torres, Miramontes</p>
 				</div>
 			</div>

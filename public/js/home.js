@@ -60,7 +60,6 @@ var Home = function(){
 
 					if (promise !== undefined) {
 						promise.then(_ => {
-							console.log('va, ' + id);
 
 						}).catch(error => {
 							var btnPlay = videoCont.find('.play');

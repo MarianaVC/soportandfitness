@@ -53,6 +53,16 @@
 		&--close{
 			right: 0.5em;
 			top: 0.5em;
+
+			@media (min-width: $tablet-min){
+				right: 1em;
+				top: 1em;
+			}
+
+			@media (min-width: $desktop){
+				right: 1.5em;
+				top: 1.5em;
+			}
 		}
 		&--prev{
 			left: 0;

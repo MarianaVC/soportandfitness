@@ -48,7 +48,7 @@
 								</div>
 								<div class="activity-popup__top__right">
 									<span class="activity-popup__icon-calories"></span>
-									<p class="activity-popup__calories">{{ activity.calories }} calorías quemadas por clase</p>
+									<p class="activity-popup__calories">{{ activity.calories }} calorías por clase</p>
 								</div>
 							</div>
 							<div class="activity-popup__bottom">
@@ -60,7 +60,10 @@
 										<p class="activity-popup__subtitle">Encuéntrala en:</p>
 										<p>
 										{% for suc in  activity.sucursal %}
+										<!--
 											<a href="/sucursales/#{{ suc.slug }}" class="activity-popup__branch" title="{{ suc.name }}">{{ suc.name }}</a>
+										-->
+											{% if loop.index > 1 %},{% endif %}<span>{{ suc.name }}</span>
 										{% endfor %}
 										</p>
 									</div>

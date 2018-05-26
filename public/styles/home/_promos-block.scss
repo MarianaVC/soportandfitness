@@ -9,6 +9,10 @@
 	padding: 4em 0 2em;
 	@include box-sizing(border-box);
 
+	@media (min-width: $tablet-min){
+		height: 300px;
+	}
+
 	@media (min-width: $desktop){
 		height: 400px;
 		background-position: 50%;

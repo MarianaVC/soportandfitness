@@ -15,7 +15,7 @@ var FitnessActivity = new keystone.List('FitnessActivity',{
 });
 
 /**
- * Local storage for pdfs
+ * Local storage for videos
  */
 var storage = new keystone.Storage({
   adapter: keystone.Storage.Adapters.FS,
