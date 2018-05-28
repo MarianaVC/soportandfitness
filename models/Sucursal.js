@@ -51,6 +51,13 @@ Sucursal.add('Sucursal',{
     default: 'Teléfono',
     label: 'Teléfono'
   },
+  telephone2: {
+    type: String,
+    initial: false,
+    required: false,
+    default: 'Teléfono Secundario',
+    label: 'Teléfono Secundario'
+  },
   opening_soon: {
     type: Boolean,
     initial: false,

@@ -1,0 +1,254 @@
+.contact{
+	background-color: #fff;
+	padding: 0;
+
+	&__container{
+		@include container;
+		@include display-flex;
+		@include flex-wrap(wrap);
+		@include justify-content(space-between);
+
+		&--block{
+			display: block;
+		}
+	}
+
+	&__title{
+		@include OswaldRegular;
+		@include fontSize(16px);
+		text-transform: uppercase;
+		color: $red;
+		margin: 1em 0 1em 1em;
+		
+		@media (min-width: $tablet-min){
+			@include fontSize(26px);
+		}
+
+		@media (min-width: $desktop){
+			@include fontSize(35px);
+		}
+	}
+
+	&__branches{
+		@include box-sizing(border-box);
+		background-color: #000;
+		color: #fff;
+		padding: 1em;
+		
+		@media (min-width: $tablet-min){
+			padding: 1em 2em;
+		}
+	}
+
+	&__branch{
+		@include box-sizing(border-box);
+		display: block;
+		padding: 0 0 0 2em;
+		width: 50%;
+		position: relative;
+		margin: 1em 0;
+		
+		@media (min-width: $tablet-min){
+			width: 33%;
+			padding: 0 0 0 2.5em;
+			margin: 1.5em 0;
+		}
+
+		@media (min-width: $desktop){
+			width: 30%;
+			padding: 0 0 0 3em;
+			margin: 2em 0;
+		}
+
+		&__title{
+			@include OswaldRegular;
+			@include fontSize(14px);
+			text-transform: uppercase;
+			position: relative;
+
+			&:before{
+				display: block;
+				content: '';
+				position: absolute;
+				bottom: 0;
+				left: -20px;
+				width: 15px;
+				height: 21px;
+				background-size: contain;
+				background-repeat: no-repeat;
+				background-position: center bottom;
+				background-image: url(/images/pin.png);
+
+				@media (min-width: $tablet-min){
+					left: -26px;
+					width: 20px;
+					height: 30px;
+				}
+
+				@media (min-width: $desktop){
+					left: -42px;
+					width: 32px;
+					height: 44px;
+				}
+			}
+
+			@media (min-width: $tablet-min){
+				@include fontSize(20px);
+			}
+
+			@media (min-width: $desktop){
+				@include fontSize(30px);
+			}
+		}
+
+		&__address{
+			@include OswaldRegular;
+			@include fontSize(12px);
+
+			@media (min-width: $tablet-min){
+				@include fontSize(17px);
+			}
+
+			@media (min-width: $desktop){
+				@include fontSize(26px);
+			}
+		}
+
+		&__phone{
+			@include OswaldRegular;
+			@include fontSize(12px);
+			position: relative;
+
+			&:before{
+				display: block;
+				content: '';
+				position: absolute;
+				bottom: 2px;
+				left: -17px;
+				width: 12px;
+				height: 12px;
+				background-size: contain;
+				background-repeat: no-repeat;
+				background-position: center bottom;
+				background-image: url(/images/phone.png);
+
+				@media (min-width: $tablet-min){
+					left: -21px;
+					width: 15px;
+					height: 15px;
+				}
+
+				@media (min-width: $desktop){
+					left: -35px;
+					width: 25px;
+					height: 25px;
+				}
+			}
+
+			@media (min-width: $tablet-min){
+				@include fontSize(17px);
+			}
+
+			@media (min-width: $desktop){
+				@include fontSize(26px);
+			}
+
+			& span{
+				position: relative;
+				display: inline-block;
+				margin: 0 0.5em 0 0;
+
+				&:before{
+					display: block;
+					content: '';
+					position: absolute;
+					background-color: $red;
+					left: 0;
+					right: 0.35em;
+					height: 2px;
+					bottom: -2px;
+				}
+			}
+		}
+	}
+
+	&__map{
+	}
+
+	&__soon{
+		@include OswaldSemi;
+		@include fontSize(12px);
+		@include box-sizing(border-box);
+		background-color: #000;
+		color: #fff;
+		text-transform: uppercase;
+		padding: 0.5em 1em;
+		text-align: center;
+		
+		@media (min-width: $tablet-min){
+			@include fontSize(17px);
+			text-align: left;
+		}
+
+		@media (min-width: $desktop){
+			@include fontSize(22px);
+		}
+	}
+
+	&__half{
+		width: 100%;
+
+		&--image{
+			@include fullBackground;
+			background-image: url(/images/contact-bck.jpg);
+			min-height: 60px;
+		}
+		
+		@media (min-width: $tablet-min){
+			width: 50%;
+		}
+	}
+
+	&__form{
+		position: relative;
+		width: 71.5%;
+		margin: -0.5em auto 2em;
+
+		@media (min-width: $tablet-min){
+			margin: 2em auto;
+		}
+
+		&__title{
+			@include OswaldRegular;
+			@include fontSize(15px);
+			text-transform: uppercase;
+			position: relative;
+			display: inline;
+			color: #fff;
+			margin: 0.5em 0;
+			background-color: $red;
+			padding: 0.15em 0.5em;
+
+			@media (min-width: $tablet-min){
+				@include fontSize(20px);
+			}
+
+			@media (min-width: $desktop){
+				@include fontSize(27px);
+			}
+		}
+
+		&__inputs{
+			width: 90%;
+			margin: 1.5em auto 0;
+
+			@media (min-width: $tablet-min){
+				margin: 2em auto 0;
+			}
+
+			@media (min-width: $desktop){
+				margin: 2.5em auto 0;
+			}
+		}
+	}
+}

@@ -1,0 +1,123 @@
+{% extends "../layouts/base.twig" %}
+
+{% block head %}
+
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+
+	<title>Contacto | Sport & Fitness</title>
+
+	<!-- Facebook / whatsapp Open Graph meta tags -->
+	<meta property="og:type" content="website"/>
+	<meta property="og:title" content="Contacto | Sport & Fitness"/>
+	<meta property="og:image" content="http://{{ url.fullUrl }}/static/site/img/share/Contacto.jpg"/>
+	<meta property="og:url" content="http://{{ url.fullUrl }}"/>
+	<meta property="og:description" content=""/>
+	<meta property="og:site_name" content="Sport & Fitness"/>
+
+	<!-- Twitter Card meta tags -->
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="Contacto | Sport & Fitness"/>
+	<meta name="twitter:image" content="http://{{ url.fullUrl }}/static/noticias/img/share/Contacto.jpg"/>
+	<meta name="twitter:site" content="http://{{ url.fullUrl }}"/>
+	<meta name="twitter:description" content=""/>
+	<meta name="twitter:creator" content="@"/>
+
+	<link rel="canonical" href="http://{{ url.fullUrl }}">
+
+{% endblock %}
+
+{% block content %}
+
+	<div class="contact">
+		<div class="contact__container contact__container--block">
+			<h1 class="contact__title">Contacto</h1>
+		</div>
+		<div class="contact__branches">
+			<div class="contact__container">
+				<div class="contact__branch">
+					<h2 class="contact__branch__title">Plaza Básica</h2>
+					<div class="contact__branch__address">
+						<p>Eje 5 Sur (Av. Leyes de Reforma)</p>
+						<p>Esquina Baratillo.</p>
+						<p>Col. Ejidos del Moral</p>
+					</div>
+					<div class="contact__branch__phone">
+						<span>5600-4912</span>
+					</div>
+				</div>
+				<div class="contact__branch">
+					<h2 class="contact__branch__title">Plaza Básica</h2>
+					<div class="contact__branch__address">
+						<p>Eje 5 Sur (Av. Leyes de Reforma)</p>
+						<p>Esquina Baratillo.</p>
+						<p>Col. Ejidos del Moral</p>
+					</div>
+					<div class="contact__branch__phone">
+						<span>5600-4912</span>
+						<span>5600-4912</span>
+					</div>
+				</div>
+				<div class="contact__branch">
+					<h2 class="contact__branch__title">Plaza Básica</h2>
+					<div class="contact__branch__address">
+						<p>Eje 5 Sur (Av. Leyes de Reforma)</p>
+						<p>Esquina Baratillo.</p>
+						<p>Col. Ejidos del Moral</p>
+					</div>
+					<div class="contact__branch__phone">
+						<span>5600-4912</span>
+						<span>5600-4912</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="contact__container">
+			<div id="map"
+			  class="contact__map map"
+			  data-pin='[{% for branch in data.branches %}{% if loop.index > 1 %},{% endif %}{"lat":"{{ branch.latitude }}","lng":"{{ branch.longitude }}","name":"{{ branch.name }}","phone":"{{ branch.telephone}}"}
+			  {% endfor %}]'
+			></div>
+		</div>
+		<div class="contact__soon">
+			<div class="contact__container contact__container--block">
+				<p>Próximas aperturas: </p>
+			</div>
+		</div>
+		<div class="contact__container">
+			<div class="contact__half contact__half--image"></div>
+			<div class="contact__half">
+				<form class="contact__form">
+					<h3 class="contact__form__title">Contacta con nosotros</h3>
+					<div class="contact__form__inputs">
+						<div class="input input--padding">
+							<input type="text" name="name" placeholder="Nombre" class="input__text">
+						</div>
+						<div class="input">
+							<input type="email" name="email" placeholder="Correo electrónico" class="input__text">
+						</div>
+						<div class="input input--padding">
+							<input type="tel" name="phone" placeholder="Teléfono celular" maxlength="10" class="input__text">
+						</div>
+						<div class="input">
+							<textarea name="message" placeholder="¿Cómo se enteró de nosotros?" class="input__text input--textarea"></textarea>
+						</div>
+						<div class="input input--text-right">
+							<button class="input__submit btnSubmit">Enviar</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+{% endblock %}
+
+{% block js %}
+	<script src="/js/contact.js"></script>
+
+	<script type="text/javascript" src="/js/map.js"></script>
+	<script async defer
+	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnQNdZNCZJVCZr7Uy4YQdNNihMKC7-xaY&callback=PinMap.start">
+	</script>
+{% endblock %}
