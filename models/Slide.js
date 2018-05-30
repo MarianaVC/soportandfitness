@@ -46,7 +46,7 @@ Slide.add({
     options: ['Video', 'Imagen', 'Imagen con texto'],
     default: 'Video',
     required: true,
-    initial: true,
+    initial: false,
   },
   title: {
     type: String,
@@ -146,5 +146,5 @@ Slide.schema.virtual('image.cloudinaryURL').get(function () {
  * Registration
  */
 
-Slide.defaultColumns = 'title, image';
+Slide.defaultColumns = 'name';
 Slide.register();

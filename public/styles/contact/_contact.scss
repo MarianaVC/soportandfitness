@@ -61,7 +61,7 @@
 		}
 
 		&__title{
-			@include OswaldRegular;
+			@include OswaldSemi;
 			@include fontSize(14px);
 			text-transform: uppercase;
 			position: relative;
@@ -195,6 +195,12 @@
 		}
 	}
 
+	&__form-container{
+		@include display-flex;
+		@include flex-wrap(wrap);
+		width: 100%;
+	}
+
 	&__half{
 		width: 100%;
 
@@ -216,6 +222,10 @@
 
 		@media (min-width: $tablet-min){
 			margin: 2em auto;
+		}
+
+		@media (min-width: $desktop){
+			margin: 2em 0 2em 5em;
 		}
 
 		&__title{

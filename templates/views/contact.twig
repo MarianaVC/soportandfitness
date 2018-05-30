@@ -72,19 +72,17 @@
 				</div>
 			</div>
 		</div>
-		<div class="contact__container">
-			<div id="map"
-			  class="contact__map map"
-			  data-pin='[{% for branch in data.branches %}{% if loop.index > 1 %},{% endif %}{"lat":"{{ branch.latitude }}","lng":"{{ branch.longitude }}","name":"{{ branch.name }}","phone":"{{ branch.telephone}}"}
-			  {% endfor %}]'
-			></div>
-		</div>
+		<div id="map"
+		  class="contact__map map"
+		  data-pin='[{% for branch in data.branches %}{% if loop.index > 1 %},{% endif %}{"lat":"{{ branch.latitude }}","lng":"{{ branch.longitude }}","name":"{{ branch.name }}","phone":"{{ branch.telephone}}"}
+		  {% endfor %}]'
+		></div>
 		<div class="contact__soon">
 			<div class="contact__container contact__container--block">
 				<p>Próximas aperturas: </p>
 			</div>
 		</div>
-		<div class="contact__container">
+		<div class="contact__form-container">
 			<div class="contact__half contact__half--image"></div>
 			<div class="contact__half">
 				<form class="contact__form">

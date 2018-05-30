@@ -24,7 +24,8 @@ Sucursal.add('Sucursal',{
     label: 'Nombre'
   },
   address: {
-    type: String,
+    type: Types.Html,
+    wysiwyg: false,
     initial: false,
     required: true,
     default: 'Dirección',

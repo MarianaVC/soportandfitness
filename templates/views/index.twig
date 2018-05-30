@@ -59,7 +59,7 @@
 			{% endif %}
 			{% if slide.type_slide == 'Imagen' %}
 				<li class="main-slider__item main-slider__item--image slide-{{ loop.index }}">
-					<a href="{{ slide.url }}{% if slide.file %}/#{{ slide.file.filename }}{% endif %}" class="main-slider__only-image"></a>
+					<a href="{{ slide.link }}{% if slide.file %}/#{{ slide.file.filename }}{% endif %}" class="main-slider__only-image"></a>
 				</li>
 			{% endif %}
 			{% if slide.type_slide == 'Imagen con texto' %}
