@@ -1,0 +1,360 @@
+.partners{
+	background-color: #fff;
+	padding: 0;
+
+	&__container{
+		@include container;
+		@include display-flex;
+		@include flex-wrap(wrap);
+
+		&--block{
+			display: block;
+		}
+	}
+
+	&__title{
+		@include OswaldRegular;
+		@include fontSize(16px);
+		text-transform: uppercase;
+		color: $red;
+		margin: 0.5em 0 0.5em 1em;
+		display: none;
+		@media (min-width: $tablet-min){
+			@include fontSize(30px);
+			display: inline-block;
+		}
+
+		@media (min-width: $desktop){
+			@include fontSize(57px);
+		}
+	}
+
+	&__full{
+		@include display-flex;
+		@include fullBackground;
+		@include align-items(center);
+		@include justify-content(center);
+		@include flex-wrap(wrap);
+		background-color: #000;
+		background-image: url(/images/partners-bck.jpg);
+		position: relative;
+		overflow: hidden;
+	}
+
+	&__imgs{
+		@include box-sizing(border-box);
+		padding: 1em 2em;
+		display: none;
+		width: 100%;
+		
+		@media (min-width: $tablet-min){
+			display: block;
+			width: 85%;
+		}
+
+		@media (min-width: $desktop){
+			width: 58.33%;
+		}
+
+		.partners-1{
+			display: block;
+			position: relative;
+			width: 55%;
+
+			opacity: 0;
+			top: -4em;
+			left: -6em;
+
+			@include transition(opacity  1s ease-in-out, top  1s ease-in-out, left  1s ease-in-out);
+			@include transition-delay(0.5s);
+
+			@media (min-width: $tablet-min){
+				&.active{
+					opacity: 1;
+					top: 0;
+					left: 0;
+					//@include animation(visible-1 0.75s linear 0.5s);
+				}
+			}
+		}
+		.partners-2{
+			display: block;
+			position: relative;
+			width: 60%;
+			margin: -30% 0 0 40%;
+
+			opacity: 0;
+			top: 2em;
+			left: 5em;
+
+			@include transition(opacity  0.75s ease-in-out, top  0.75s ease-in-out, left  0.75s ease-in-out);
+			@include transition-delay(0.75s);
+
+			@media (min-width: $tablet-min){
+				&.active{
+					opacity: 1;
+					top: 0;
+					left: 0;
+					//@include animation(visible-2 0.75s linear 1s);
+				}
+			}
+		}
+		.partners-3{
+			display: block;
+			position: relative;
+			width: 52%;
+			margin: -25% 0 0 0;
+
+			opacity: 0;
+			top: 6em;
+			left: -7em;
+
+			@include transition(opacity  0.90s ease-in-out, top  0.90s ease-in-out, left  0.90s ease-in-out);
+			@include transition-delay(0.85s);
+
+			@media (min-width: $tablet-min){
+				&.active{
+					opacity: 1;
+					top: 0;
+					left: 0;
+					//@include animation(visible-3 0.75s linear 0.85s);
+				}
+			}
+		}
+		.partners-4{
+			display: block;
+			position: relative;
+			width: 72%;
+			margin: -21% 0 0 14%;
+
+			opacity: 0;
+			top: -6em;
+			left: 8em;
+
+			@include transition(opacity  1.10s ease-in-out, top  1.10s ease-in-out, left  1.10s ease-in-out);
+			@include transition-delay(0.35s);
+
+			@media (min-width: $tablet-min){
+				&.active{
+					opacity: 1;
+					top: 0;
+					left: 0;
+					//@include animation(visible-4 0.75s linear 0.35s);
+				}
+			}
+		}
+	}
+
+	&__intro{
+		@include box-sizing(border-box);
+		width: 100%;
+		color: #fff;
+		text-align: center;
+		padding: 1.5em 2em;
+		overflow: hidden;
+		
+		@media (min-width: $tablet-min){
+			display: block;
+		}
+
+		@media (min-width: $desktop){
+			width: 41.66%;
+		}
+	}
+
+	&__subtitle{
+		@include OswaldRegular;
+		@include fontSize(12px);
+		text-transform: uppercase;
+		position: relative;
+
+		opacity: 0;
+		right: -100%;
+
+		@include transition(opacity 0.4s ease-in-out, right 1.25s ease-in-out);
+		@include transition-delay(0.25s);
+
+		&.active{
+			opacity: 1;
+			right: 0;
+		}
+
+		@media (min-width: $tablet-min){
+			@include fontSize(26px);
+		}
+
+		@media (min-width: $desktop){
+			@include fontSize(35px);
+		}
+	}
+
+	&__logo{
+		display: block;
+		max-width: 115px;
+		margin: 1em auto;
+		position: relative;
+
+		opacity: 0;
+		width: 0;
+
+		@include transition(opacity  1s ease-in-out, width  1s ease-in-out);
+
+		&.active{
+			width: 40%;
+			opacity: 1;
+		}
+
+		@media (min-width: $tablet-min){
+			max-width: 180px;
+		}
+
+		@media (min-width: $desktop){
+			max-width: 260px;
+			margin: 1.75em auto;
+		}
+	}
+	&__description{
+		@include OswaldRegular;
+		@include fontSize(12px);
+		max-width: 22em;
+		margin: 0 auto;
+		position: relative;
+
+		opacity: 0;
+		bottom: -50%;
+
+		@include transition(opacity  1.25s ease-in-out, bottom  1.5s ease-in-out);
+		@include transition-delay(0.25s);
+
+		&.active{
+			opacity: 1;
+			bottom: 0;
+		}
+
+		@media (min-width: $tablet-min){
+			@include fontSize(16px);
+		}
+
+		@media (min-width: $desktop){
+			@include fontSize(20px);
+		}
+	}
+	&__partner{
+		@include box-sizing(border-box);
+		padding: 2.5em;
+		background-color: #fff;
+		width: 50%;
+
+		&.active{
+			& img{
+				opacity: 1;
+				width: 100%;
+			}
+		}
+
+
+
+		& img{
+			@include setImg;
+			opacity: 0;
+			width: 0%;
+			margin: 0 auto;
+
+			@include transition(opacity  0.5s ease-in-out, width  0.5s ease-in-out);
+			@include transition-delay(0.25s);
+		}
+
+		&:nth-child(1),
+		&:nth-child(4),
+		&:nth-child(5),
+		&:nth-child(8),
+		&:nth-child(9),
+		&:nth-child(12),
+		&:nth-child(13),
+		&:nth-child(16),
+		&:nth-child(17),
+		&:nth-child(20),
+		&:nth-child(21),
+		&:nth-child(24),
+		&:nth-child(25),
+		&:nth-child(28),
+		&:nth-child(29){
+			background-color: #eeeded;
+		}
+
+		@media (min-width: $tablet-min){
+			width: 33.33%;
+			padding: 2em 3.5em;
+			background-color: #fff;
+			&:nth-child(1),
+			&:nth-child(4),
+			&:nth-child(5),
+			&:nth-child(8),
+			&:nth-child(9),
+			&:nth-child(12),
+			&:nth-child(13),
+			&:nth-child(16),
+			&:nth-child(17),
+			&:nth-child(20),
+			&:nth-child(21),
+			&:nth-child(24),
+			&:nth-child(25),
+			&:nth-child(28),
+			&:nth-child(29){
+				background-color: #fff;
+			}
+		}
+	}
+}
+
+@include keyframes (visible-1) {
+	0% {
+		opacity: 0;
+		top: -1em;
+		left: -3em;
+	}
+	100% {
+		opacity: 1;
+		top: 0;
+		left: 0;
+	}
+}
+
+@include keyframes (visible-2) {
+	0% {
+		opacity: 0;
+		top: 0;
+		left: 3em;
+	}
+	100% {
+		opacity: 1;
+		top: 0;
+		left: 0;
+	}
+}
+
+@include keyframes (visible-3) {
+	0% {
+		opacity: 0;
+		top: 1em;
+		left: -2em;
+	}
+	100% {
+		opacity: 1;
+		top: 0;
+		left: 0;
+	}
+}
+
+@include keyframes (visible-4) {
+	0% {
+		opacity: 0;
+		top: -1em;
+		left: 2em;
+	}
+	100% {
+		opacity: 1;
+		top: 0;
+		left: 0;
+	}
+}

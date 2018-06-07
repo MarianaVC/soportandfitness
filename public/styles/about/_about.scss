@@ -267,7 +267,7 @@
 body.desktop{
 	.about{
 		&__icon{
-			@include transition(all 0.25s ease-in-out);
+			@include transition(color  0.25s ease-in-out, background-color  0.25s ease-in-out, width  0.25s ease-in-out, height  0.25s ease-in-out, font-size  0.25s ease-in-out);
 		}
 		&__link{
 			&:hover{

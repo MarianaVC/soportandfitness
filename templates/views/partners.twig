@@ -1,0 +1,84 @@
+{% extends "../layouts/base.twig" %}
+
+{% block head %}
+
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+
+	<title>Convenios | Sport & Fitness</title>
+
+	<!-- Facebook / whatsapp Open Graph meta tags -->
+	<meta property="og:type" content="website"/>
+	<meta property="og:title" content="Convenios | Sport & Fitness"/>
+	<meta property="og:image" content="http://{{ url.fullUrl }}/static/site/img/share/Convenios.jpg"/>
+	<meta property="og:url" content="http://{{ url.fullUrl }}"/>
+	<meta property="og:description" content=""/>
+	<meta property="og:site_name" content="Sport & Fitness"/>
+
+	<!-- Twitter Card meta tags -->
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="Convenios | Sport & Fitness"/>
+	<meta name="twitter:image" content="http://{{ url.fullUrl }}/static/noticias/img/share/Convenios.jpg"/>
+	<meta name="twitter:site" content="http://{{ url.fullUrl }}"/>
+	<meta name="twitter:description" content=""/>
+	<meta name="twitter:creator" content="@"/>
+
+	<link rel="canonical" href="http://{{ url.fullUrl }}">
+
+{% endblock %}
+
+{% block content %}
+
+	<div class="partners">
+		<div class="partners__container partners__container--block">
+			<h1 class="partners__title">CONOCE NUESTROS CONVENIOS</h1>
+		</div>
+		<div class="partners__full">
+			<div class="partners__imgs">
+				<img src="/images/partners-1.png" alt="Sport & Fitness | Convenios" class="partners-1 animatedBlock">
+				<img src="/images/partners-2.png" alt="Sport & Fitness | Convenios" class="partners-2 animatedBlock">
+				<img src="/images/partners-3.png" alt="Sport & Fitness | Convenios" class="partners-3 animatedBlock">
+				<img src="/images/partners-4.png" alt="Sport & Fitness | Convenios" class="partners-4 animatedBlock">
+			</div>
+			<div class="partners__intro">
+				<h2 class="partners__subtitle animatedBlock">Conoce los beneficios de ser usuario</h2>
+				<img src="/images/logo.svg" alt="Sport & Fitness" class="partners__logo animatedBlock">
+				<p class="partners__description animatedBlock">A ti que ya eres usuario de Sport and Fitness, conoce los beneficios que tienes gracias a tu preferencia y si aun no eres usuario Sport and Fitness ¡Únete!</p>
+			</div>
+		</div>
+		<div class="partners__container">
+			<div class="partners__partner animatedBlock">
+				<img src="/images/logo-test.png">
+			</div>
+			<div class="partners__partner animatedBlock">
+				<img src="/images/logo-test.png">
+			</div>
+			<div class="partners__partner animatedBlock">
+				<img src="/images/logo-test.png">
+			</div>
+			<div class="partners__partner animatedBlock">
+				<img src="/images/logo-test.png">
+			</div>
+			<div class="partners__partner animatedBlock">
+				<img src="/images/logo-test.png">
+			</div>
+			<div class="partners__partner animatedBlock">
+				<img src="/images/logo-test.png">
+			</div>
+			<div class="partners__partner animatedBlock">
+				<img src="/images/logo-test.png">
+			</div>
+			<div class="partners__partner animatedBlock">
+				<img src="/images/logo-test.png">
+			</div>
+			<div class="partners__partner animatedBlock">
+				<img src="/images/logo-test.png">
+			</div>
+		</div>
+	</div>
+
+{% endblock %}
+
+{% block js %}
+	<script src="/js/partners.js"></script>
+{% endblock %}
