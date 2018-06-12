@@ -1,0 +1,37 @@
+.installations{
+	background-color: #fff;
+	padding: 0;
+
+	&__container{
+		@include container;
+		@include display-flex;
+		@include flex-wrap(wrap);
+
+		&--block{
+			display: block;
+		}
+	}
+
+	&__content{
+		width: 100%;
+		background-color: #000;
+		color: #fff;
+	}
+
+	&__title{
+		@include OswaldRegular;
+		@include fontSize(16px);
+		text-transform: uppercase;
+		color: $red;
+		margin: 0.5em 0 0.5em 1em;
+
+		@media (min-width: $tablet-min){
+			@include fontSize(30px);
+			display: inline-block;
+		}
+
+		@media (min-width: $desktop){
+			@include fontSize(57px);
+		}
+	}
+}

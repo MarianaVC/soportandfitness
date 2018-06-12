@@ -29,62 +29,68 @@
 
 {% block content %}
 
-	<div class="about">
-		<div class="about__container about__container--block">
-			<h1 class="about__title">Quiénes somos</h1>
+	<div class="installations">
+		<div class="installations__container installations__container--block">
+			<h1 class="installations__title">Instalaciones</h1>
 		</div>
-		<div class="about__top">
-			<div class="about__container about__container--block">
-				<img src="/images/logo.svg" alt="Sport & Fitness" class="about__logo">
-				<h2 class="about__subtitle"><span class="red">Sport & Fitness</span> es un complejo deportivo creado por <span class="red">especialistas en el deporte</span>, que brinda a los usuarios una opción de <span class="red">gimnasios de la mejor calidad.</span></h2>
+		<ul class="installations__menu">
+			<li class="installations__item active">
+				<button class="installations__btn" title="Test">Test</button>
+			</li>
+			<li class="installations__item">
+				<button class="installations__btn" title="Test">Test</button>
+			</li>
+			<li class="installations__item">
+				<button class="installations__btn" title="Test">Test</button>
+			</li>
+			<li class="installations__item">
+				<button class="installations__btn" title="Test">Test</button>
+			</li>
+			<li class="installations__item">
+				<button class="installations__btn" title="Test">Test</button>
+			</li>
+		</ul>
+		<div class="installations-branch">
+			<div class="installations__container">
+				<button class="installations-branch__title">
+					<span class="text">Test</span>
+					<span class="image" style="background-image: url(/images/contact-bck.jpg);"></span>
+				</button>
+				<div class="installations-branch__content">
+					<ul class="installations-branch__description">
+						<li class="installations-branch__description__item">Sauna</li>
+						<li class="installations-branch__description__item">Valet Parking</li>
+						<li class="installations-branch__description__item">Asesoramiento de entrenamiento</li>
+					</ul>
+					<ul class="installations-branch__gallery">
+						<li class="installations-branch__gallery__item">
+							<button class="installations-branch__gallery__button openPopup">
+								<img src="/images/activity.jpg">
+							<!-- popup -->
+								<div class="installations-popup popupContent">
+									<img src="/images/activity.jpg">
+								</div>
+							<!-- /popup -->
+							</button>
+						</li>
+					</ul>
+				</div>
 			</div>
 		</div>
-		<div class="about__find">
-			<div class="about__container">
-				<div class="about__find__item">
-					<a href="#" title="" class="about__link">
-						<div class="about__icon">
-							<i class="icon-building"></i>
-						</div>
-					</a>
-					<h4 class="about__find__title">Instalaciones</h4>
-					<p class="about__find__description">Redondea tu experiencia con una gama de más de 30 actividades Fitness de diferentes tipos como: Box, zumba, cycle, funcional, bachata, yoga y muchas otras sin ningún costo extra, más de 160 clases al mes por sucursal.</p>
-				</div>
-				<div class="about__find__item">
-					<a href="#" title="" class="about__link">
-						<div class="about__icon">
-							<i class="icon-weight"></i>
-						</div>
-					</a>
-					<h4 class="about__find__title">Equipo</h4>
-					<p class="about__find__description">Redondea tu experiencia con una gama de más de 30 actividades Fitness de diferentes tipos como: Box, zumba, cycle, funcional, bachata, yoga y muchas otras sin ningún costo extra, más de 160 clases al mes por sucursal.</p>
-				</div>
-				<div class="about__find__item">
-					<a href="#" title="" class="about__link">
-						<div class="about__icon">
-							<i class="icon-check-list"></i>
-						</div>
-					</a>
-					<h4 class="about__find__title">Actividades</h4>
-					<p class="about__find__description">Redondea tu experiencia con una gama de más de 30 actividades Fitness de diferentes tipos como: Box, zumba, cycle, funcional, bachata, yoga y muchas otras sin ningún costo extra, más de 160 clases al mes por sucursal.</p>
-				</div>
-			</div>
-		</div>
-		<div class="about__mision-vision">
-			<div class="about__container">
-				<div class="about__mision">
-					<h3 class="about__mision-vision__title">Misión</h3>
-					<p class="about__mision-vision__description">Nuestra misión es contribuir al desarrollo integral de los socios mediante servicios que fortalecerán la salud física y mental, atendiendo los máximos estándares de calidad y excelencia deportiva. Para ello contamos con las mejores instalaciones, los equipos más modernos y eficientes del mercado, al igual que, con los instructores mejor calificados.</p>
-				</div>
-				<div class="about__vision">
-					<h3 class="about__mision-vision__title">Visión</h3>
-					<p class="about__mision-vision__description">Ser la mejor opción de gimnasios en la ciudad de México, distinguiéndonos por la excelencia de nuestros servicios y altos niveles de calidad en tecnología, que satisfagan al cliente, buscando siempre una superación tanto personal como en equipo. De igual forma fomentar la motivación de nuestros socios.</p>
-				</div>
-			</div>
+	</div>
+
+	<div id="popup" class="popup">
+		<div class="popup__overlay closePopup"></div>
+		<div class="popup__content">
+			<div id="popContent"></div>
+			<button class="popup__btn popup__btn--close closePopup">x</button>
+			<button class="popup__btn popup__btn--prev prevPopup"><</button>
+			<button class="popup__btn popup__btn--next nextPopup">></button>
 		</div>
 	</div>
 
 {% endblock %}
 
 {% block js %}
+	<script src="/js/popup.js"></script>
 {% endblock %}
