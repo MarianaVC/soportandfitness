@@ -1,0 +1,58 @@
+{% extends "../layouts/base.twig" %}
+
+{% block head %}
+
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+
+	<title>Promociones | Sport & Fitness</title>
+
+	<!-- Facebook / whatsapp Open Graph meta tags -->
+	<meta property="og:type" content="website"/>
+	<meta property="og:title" content="Promociones | Sport & Fitness"/>
+	<meta property="og:image" content="http://{{ url.fullUrl }}/static/site/img/share/Promociones.jpg"/>
+	<meta property="og:url" content="http://{{ url.fullUrl }}"/>
+	<meta property="og:description" content=""/>
+	<meta property="og:site_name" content="Sport & Fitness"/>
+
+	<!-- Twitter Card meta tags -->
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="Promociones | Sport & Fitness"/>
+	<meta name="twitter:image" content="http://{{ url.fullUrl }}/static/noticias/img/share/Promociones.jpg"/>
+	<meta name="twitter:site" content="http://{{ url.fullUrl }}"/>
+	<meta name="twitter:description" content=""/>
+	<meta name="twitter:creator" content="@"/>
+
+	<link rel="canonical" href="http://{{ url.fullUrl }}">
+
+{% endblock %}
+
+{% block content %}
+
+	<div class="promos">
+		<div class="promos__container promos__container--block">
+			<h1 class="promos__title">Promociones</h1>
+		</div>
+		<div class="promos__content">
+			<div class="promos__container promos__container--block">
+				<p class="promos__description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+				<ul class="promos__list">
+					{% for promo in  data.promo %}
+						<li class="promos__item animatedBlock">
+							<picture>
+								<source srcset="{{ promo.image_mobile.cloudinaryURL }}" media="(max-width: 960px)">
+								<source srcset="{{ promo.image.cloudinaryURL }}">
+								<img srcset="{{ promo.image_mobile.cloudinaryURL }}" alt="{{ promo.alt }}">
+							</picture>
+						</li>
+					{% endfor %}
+				</ul>
+			</div>
+		</div>
+	</div>
+
+{% endblock %}
+
+{% block js %}
+	<script src="/js/partners.js"></script>
+{% endblock %}
