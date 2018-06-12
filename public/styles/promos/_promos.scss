@@ -1,0 +1,119 @@
+.promos{
+	background-color: #fff;
+	padding: 0;
+
+	&__container{
+		@include container;
+		@include display-flex;
+		@include flex-wrap(wrap);
+
+		&--block{
+			display: block;
+		}
+	}
+
+	&__content{
+		width: 100%;
+		background-color: #000;
+		color: #fff;
+	}
+
+	&__title{
+		@include OswaldRegular;
+		@include fontSize(16px);
+		text-transform: uppercase;
+		color: $red;
+		margin: 0.5em 0 0.5em 1em;
+
+		@media (min-width: $tablet-min){
+			@include fontSize(30px);
+			display: inline-block;
+		}
+
+		@media (min-width: $desktop){
+			@include fontSize(57px);
+		}
+	}
+
+	&__description{
+		@include fontSize(12px);
+		max-width: 90%;
+		margin: 0 auto;
+		padding: 3.75em 0;
+		position: relative;
+		text-align: center;
+
+		@media (min-width: $tablet-min){
+			@include fontSize(16px);
+			max-width: 80%;
+		}
+
+		@media (min-width: $desktop){
+			@include fontSize(20px);
+		}
+	}
+	
+	&__list{
+		@include display-flex;
+		@include flex-wrap(wrap);
+		@include justify-content(space-around);
+		width: 100%;
+		padding: 0 0 3em;
+	}
+	
+	&__item{
+		@include box-sizing(border-box);
+		width: 100%;
+		max-width: 320px;
+		padding: 2em 15%;
+		margin: 1em 0;
+		position: relative;
+		@include transition(padding  1s ease-in-out);
+
+		@media (min-width: $tablet-min){
+			max-width: initial;
+		}
+
+		&.active{
+			@include animation(visible-1 0.5s linear);
+			padding: 2em;
+		}
+
+		&:before{
+			display: block;
+			content: '';
+			position: absolute;
+			left: 5em;
+			right: 5em;
+			bottom: 0;
+			border-bottom: 1px solid #fff;
+
+			@media (min-width: $tablet-min){
+				left: 0;
+				right: 0;
+			}
+		}
+
+		& img, & picture{
+			@include setImg;
+		}
+	}
+}
+
+@include keyframes (visible-1) {
+	0% {
+		padding: 2em 15%;
+	}
+	80% {
+		padding: 2em 1em;
+	}
+	90% {
+		padding: 2em 2.5em;
+	}
+	95% {
+		padding: 2em 1.5em;
+	}
+	100% {
+		padding: 2em 2em;
+	}
+}
