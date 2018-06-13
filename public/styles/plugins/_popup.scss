@@ -50,6 +50,14 @@
 		cursor: pointer;
 		font-family: monospace;
 
+		&--img{
+			background: transparent;
+			padding: 0;
+			& img{
+				@include setImg;
+			}
+		}
+
 		&--close{
 			right: 0.5em;
 			top: 0.5em;
@@ -83,6 +91,11 @@ body.desktop{
 			@include transition(background 0.35s ease-in-out);
 			&:hover{
 				background: #000;
+			}
+			&--img{
+				&:hover{
+					background: transparent;
+				}
 			}
 		}
 	}

@@ -33,34 +33,71 @@
 		<div class="installations__container installations__container--block">
 			<h1 class="installations__title">Instalaciones</h1>
 		</div>
-		<ul class="installations__menu">
-			<li class="installations__item active">
-				<button class="installations__btn" title="Test">Test</button>
-			</li>
-			<li class="installations__item">
-				<button class="installations__btn" title="Test">Test</button>
-			</li>
-			<li class="installations__item">
-				<button class="installations__btn" title="Test">Test</button>
-			</li>
-			<li class="installations__item">
-				<button class="installations__btn" title="Test">Test</button>
-			</li>
-			<li class="installations__item">
-				<button class="installations__btn" title="Test">Test</button>
-			</li>
-		</ul>
+		<div class="installations__scroll menuScroll">
+			<ul class="installations__menu menuScrollInner">
+				<li class="installations__item">
+					<button class="installations__btn toggleBranch test-1 active" data-target="test-1" title="Test">Test</button>
+				</li>
+				<li class="installations__item">
+					<button class="installations__btn toggleBranch test-2" data-target="test-2" title="Test">Test</button>
+				</li>
+				<li class="installations__item">
+					<button class="installations__btn toggleBranch test-1" data-target="test-1" title="Test">Test</button>
+				</li>
+				<li class="installations__item">
+					<button class="installations__btn toggleBranch test-2" data-target="test-2" title="Test">Test</button>
+				</li>
+				<li class="installations__item">
+					<button class="installations__btn toggleBranch test-1" data-target="test-1" title="Test">Test</button>
+				</li>
+				<li class="installations__item">
+					<button class="installations__btn toggleBranch test-2" data-target="test-2" title="Test">Test</button>
+				</li>
+				<li class="installations__item">
+					<button class="installations__btn toggleBranch test-1" data-target="test-1" title="Test">Test</button>
+				</li>
+			</ul>
+			<span class="menuControl left"><<</span>
+			<span class="menuControl right">>></span>
+		</div>
 		<div class="installations-branch">
 			<div class="installations__container">
-				<button class="installations-branch__title">
+				<button class="installations-branch__title test-1 active toggleBranch" data-target="test-1">
 					<span class="text">Test</span>
 					<span class="image" style="background-image: url(/images/contact-bck.jpg);"></span>
 				</button>
-				<div class="installations-branch__content">
+				<div id="test-1" class="installations-branch__content active targetBranch">
 					<ul class="installations-branch__description">
 						<li class="installations-branch__description__item">Sauna</li>
 						<li class="installations-branch__description__item">Valet Parking</li>
 						<li class="installations-branch__description__item">Asesoramiento de entrenamiento</li>
+					</ul>
+					<ul class="installations-branch__gallery">
+						<li class="installations-branch__gallery__item">
+							<button class="installations-branch__gallery__button openPopup">
+								<img src="/images/contact-bck.jpg">
+							<!-- popup -->
+								<div class="installations-popup popupContent">
+									<img src="/images/contact-bck.jpg">
+								</div>
+							<!-- /popup -->
+							</button>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="installations-branch">
+			<div class="installations__container">
+				<button class="installations-branch__title test-2 toggleBranch" data-target="test-2">
+					<span class="text">Test 2</span>
+					<span class="image" style="background-image: url(/images/contact-bck.jpg);"></span>
+				</button>
+				<div id="test-2" class="installations-branch__content targetBranch">
+					<ul class="installations-branch__description">
+						<li class="installations-branch__description__item">Sauna2</li>
+						<li class="installations-branch__description__item">Valet Parking2</li>
+						<li class="installations-branch__description__item">Asesoramiento de entrenamiento2</li>
 					</ul>
 					<ul class="installations-branch__gallery">
 						<li class="installations-branch__gallery__item">
@@ -83,9 +120,9 @@
 		<div class="popup__overlay closePopup"></div>
 		<div class="popup__content">
 			<div id="popContent"></div>
-			<button class="popup__btn popup__btn--close closePopup">x</button>
-			<button class="popup__btn popup__btn--prev prevPopup"><</button>
-			<button class="popup__btn popup__btn--next nextPopup">></button>
+			<button class="popup__btn popup__btn--img popup__btn--close closePopup"><img src="/images/close.svg"></button>
+			<button class="popup__btn popup__btn--img popup__btn--prev prevPopup"><img src="/images/prev.svg"></button>
+			<button class="popup__btn popup__btn--img popup__btn--next nextPopup"><img src="/images/next.svg"></button>
 		</div>
 	</div>
 
@@ -93,4 +130,5 @@
 
 {% block js %}
 	<script src="/js/popup.js"></script>
+	<script src="/js/installations.js"></script>
 {% endblock %}
