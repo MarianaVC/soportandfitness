@@ -17,7 +17,6 @@ Partner.add('Partner',{
   image: { type: Types.CloudinaryImage, initial:true ,publicID: 'slug', label:'Imagen para escritorio' },
   image_mobile: { type: Types.CloudinaryImage, initial:true ,publicID: 'slug', label:'Imagen para teléfono' },
   image_alt: {type: String, initial:true , required: true,label:'Alt de imagen' },
-
 });
 
 

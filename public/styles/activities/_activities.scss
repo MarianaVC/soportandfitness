@@ -11,14 +11,14 @@
 		@include fontSize(16px);
 		text-transform: uppercase;
 		color: $red;
-		margin: 1em 0 1em 1em;
-		
+		margin: 0.5em 0 0.5em 1em;
+
 		@media (min-width: $tablet-min){
-			@include fontSize(26px);
+			@include fontSize(30px);
 		}
 
 		@media (min-width: $desktop){
-			@include fontSize(35px);
+			@include fontSize(57px);
 		}
 	}
 }

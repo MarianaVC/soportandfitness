@@ -101,8 +101,19 @@
 			@include fontSize(12px);
 			width: 50%;
 			color: #fff;
-			display: list-item;
 			padding: 0 1.25em 0 0;
+			display: block;
+
+			&:before{
+				display: inline-block;
+				content: '';
+				position: relative;
+				width: 0.25em;
+				height: 0.25em;
+				background-color: #fff;
+				margin: 0 0.5em 0.25em 0;
+				@include border-radius(50%);
+			}
 
 			@media (min-width: $tablet-min){
 				@include fontSize(18px);

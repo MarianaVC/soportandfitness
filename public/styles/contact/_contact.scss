@@ -1,3 +1,32 @@
+.response{
+	text-align: center;
+
+	&__title{
+		@include OswaldSemi;
+		@include fontSize(30px);
+	}
+	&__text{
+		margin: 0.5em 0 0;
+		@include fontSize(20px);
+	}
+
+	&.active{
+		@include absolute-full-container;
+		@include display-flex;
+		@include justify-content(center);
+		@include align-items(center);
+		background-color: rgba(255,255,255,0.5);
+	}
+
+	&.error{
+		&__title{
+			color: $red;
+		}
+		&__text{
+		}
+	}
+}
+
 .contact{
 	background-color: #fff;
 	padding: 0;
@@ -19,13 +48,13 @@
 		text-transform: uppercase;
 		color: $red;
 		margin: 1em 0 1em 1em;
-		
+
 		@media (min-width: $tablet-min){
-			@include fontSize(26px);
+			@include fontSize(30px);
 		}
 
 		@media (min-width: $desktop){
-			@include fontSize(35px);
+			@include fontSize(57px);
 		}
 	}
 

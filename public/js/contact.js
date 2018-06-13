@@ -60,6 +60,29 @@ var Contact = function(){
 		e.preventDefault();
 		var form = $(this).closest("form");
 		var isValid = validForm(form);
+		if(isValid){
+			var responseCont = form.find('.response');
+			var responseTitle = responseCont.find('.response__title');
+			var responseText = responseCont.find('.response__text');
+			
+			$(this).hide();
+			
+			$.post(formCont.attr("action"), formCont.serialize(), function (res) {
+
+				if (!res.success) {
+					responseCont.addClass("active");
+					responseCont.addClass("error");
+					responseTitle.html('Mensaje no enviado');
+					responseText.html('Lo sentimos hubo un error. <br>Intenta nuevamente.');
+				}
+				else{
+					responseCont.addClass("active");
+					responseTitle.html('Mensaje enviado');
+					responseText.html('Gracias por contactarnos. <br>En breve nos comunicaremos contigo.');
+				}
+
+			});
+		}
 	}
 
 	function start(){

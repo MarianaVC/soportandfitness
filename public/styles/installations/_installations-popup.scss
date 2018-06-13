@@ -1,26 +1,10 @@
 .installations-popup{
-	@include box-sizing(border-box);
-	position: relative;
-	margin: 0 auto;
-	width: 95vw;
-	max-width: 1170px;
-	margin: 0 auto;
-	height: 70vh;
-	max-height: 1170px;
-
-	@media (min-width: $desktop){
-		height: 90vh;
-	}
-
-	& img{
-		display: block;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		margin: auto;
-		max-width: 100%;
-		max-height: 100%;
-		position: absolute;
-	}
+	display: block;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	max-width: 1200px;
+	max-height: 90vh;
 }
