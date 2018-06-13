@@ -58,7 +58,6 @@ keystone.set('nav', {
 	'usuarios':'ns',
 	'sucursales': 'sucursals',
 	'slides': 'slides',
-	'galerías': 'galleries',
 	'promociones': 'promos',
 	'actividades': 'fitness-activities',
 	'convenios': 'partners'
