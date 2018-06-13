@@ -8,9 +8,18 @@ var Popup = function(){
 		});
 	}
 
+	function fillPopupArrayDina(el){
+		var parent = el.closest('.galleryContainer');
+		var pops = parent.find('.openPopup');
+		pops.each(function(){
+			popupArray.push($(this).attr('id'));
+		});
+	}
+
 	function openPopup(e){
 		e.preventDefault();
 		target = $(e.currentTarget);
+		fillPopupArrayDina(target);
 		actualPopup = popupArray.indexOf(target.attr('id'));
 		content = target.find('.popupContent').clone();
 		$('#popContent').html(content);
@@ -51,7 +60,7 @@ var Popup = function(){
 	}
 
 	function start(){
-		fillPopupArray();
+		//fillPopupArray();
 		$('.openPopup').on('click', openPopup);
 		$('.closePopup').on('click', closePopup);
 		$('.prevPopup').on('click', prevPopup);

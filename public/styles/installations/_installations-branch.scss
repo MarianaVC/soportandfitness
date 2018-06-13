@@ -125,17 +125,19 @@
 		&__item{
 			@include box-sizing(border-box);
 			width: 33.33%;
+			padding: 0.5em;
 		}
 
 		&__button{
-			padding: 0.5em;
-			background: none;
+			@include fullBackground;
+			background-color: transparent;
 			outline: none;
 			border: none;
 			display: block;
 			width: 100%;
 			position: relative;
 			cursor: pointer;
+			padding: 0;
 			&:before{
 				@include absolute-full-container;
 				display: block;
