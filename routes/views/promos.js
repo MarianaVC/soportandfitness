@@ -10,7 +10,7 @@ exports = module.exports = function (req, res) {
 	locals.section = 'promos';
 
 	locals.data = {
-		branches: []
+		promos: []
 	}
 
 	view.on('init', function(next) {
@@ -20,7 +20,7 @@ exports = module.exports = function (req, res) {
 			if (!results){
 				return res.status(404).render('errors/404');
 			}
-			locals.data.branches = results;
+			locals.data.promos = results;
 
 			next();
 		});

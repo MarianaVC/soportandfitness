@@ -38,20 +38,20 @@ Promo.add('Promo',{
 });
 
 /* acomplar url de cloudinary para traer imagen ligera */ 
-Slide.schema.virtual('image_mobile.cloudinaryURL').get(function () {
+Promo.schema.virtual('image_mobile.cloudinaryURL').get(function () {
   if ( this.image_mobile ) {
     image = this.image_mobile;
-    return 'https://res.cloudinary.com/deytb0jub/image/upload/f_auto/q_auto/fl_lossy/v' + image.version + '/' + image.public_id + '.' + image.format;
+    return 'https://res.cloudinary.com/sport-and-fitness-gym/image/upload/f_auto/q_auto/fl_lossy/v' + image.version + '/' + image.public_id + '.' + image.format;
   }
   else{
     return false;
   }
 });
 
-Slide.schema.virtual('image.cloudinaryURL').get(function () {
+Promo.schema.virtual('image.cloudinaryURL').get(function () {
   if ( this.image ) {
     image = this.image;
-    return 'https://res.cloudinary.com/deytb0jub/image/upload/f_auto/q_auto/fl_lossy/v' + image.version + '/' + image.public_id + '.' + image.format;
+    return 'https://res.cloudinary.com/sport-and-fitness-gym/image/upload/f_auto/q_auto/fl_lossy/v' + image.version + '/' + image.public_id + '.' + image.format;
   }
   else{
     return false;

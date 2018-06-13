@@ -25,6 +25,28 @@ ImageGallery.add('ImageGallery',{
 
 });
 
+/* acomplar url de cloudinary para traer imagen ligera */ 
+ImageGallery.schema.virtual('image_mobile.cloudinaryURL').get(function () {
+  if ( this.image_mobile ) {
+    image = this.image_mobile;
+    return 'https://res.cloudinary.com/sport-and-fitness-gym/image/upload/f_auto/q_auto/fl_lossy/v' + image.version + '/' + image.public_id + '.' + image.format;
+  }
+  else{
+    return false;
+  }
+});
+
+ImageGallery.schema.virtual('image.cloudinaryURL').get(function () {
+  if ( this.image ) {
+    image = this.image;
+    return 'https://res.cloudinary.com/sport-and-fitness-gym/image/upload/f_auto/q_auto/fl_lossy/v' + image.version + '/' + image.public_id + '.' + image.format;
+  }
+  else{
+    return false;
+  }
+});
+
+
 /**
  * Registration
  */
