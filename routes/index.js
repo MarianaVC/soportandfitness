@@ -39,7 +39,6 @@ exports = module.exports = function (app) {
 	app.get('/nosotros', routes.views.about);
 	app.get('/contacto', routes.views.contact);
 	app.get('/convenios', routes.views.partners);
-	app.get('/instalaciones', routes.views.facilities);
 	app.get('/promociones', routes.views.promos);
 	app.get('/instalaciones', routes.views.installations);
 
