@@ -70,12 +70,20 @@ Sucursal.add('Sucursal',{
     publicID: 'slug',
     label:'Imagen principal' 
   },
-  schedule_image: {
-    type: Types.CloudinaryImage,
+  services: {
+    type: Types.Html,
+    wysiwyg: false,
+    initial: false,
+    required: false,
+    default: 'Servicios',
+    label: 'Servicios'
+  }, 
+  gallery: {
+    type: Types.CloudinaryImages,
     initial: false,
     publicID: 'slug',
-    label:'Imagen de horario' 
-  },
+    label:'Imágenes de galería' 
+  },  
 });
 
 /* acomplar url de cloudinary para traer imagen ligera */ 
