@@ -7,16 +7,22 @@ var Types = keystone.Field.Types;
  */
 
 var Home = new keystone.List('Home',{
-	map: {name:'title'},
+	map: {name:'image'},
 	noedit: true,
 	nocreate: true,
-	hidden: true
+	sigular: 'Imagen home',
+	plural: 'Imágenes home',
+  	label: 'Imagen home',	
 });
 
 
 Home.add({
-  title: { type: String, required: true },
-
+  image: {
+    type: Types.CloudinaryImage,
+    initial: false,
+    publicID: 'slug',
+    label:'Imagen de promoción' 
+  },
 });
 
 /**
