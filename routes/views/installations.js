@@ -10,7 +10,8 @@ exports = module.exports = function (req, res) {
 	// item in the header navigation.
 	locals.section = 'installations';
 	locals.data = {
-		branches: []
+		branches: [],
+		next_branches: []
 	}
 	view.on('init', function(next) {
 		var q = keystone.list('Sucursal').model.find();
@@ -19,7 +20,14 @@ exports = module.exports = function (req, res) {
 			if (!results){
 				return res.status(404).render('errors/404');
 			}
-			locals.data.branches = results;
+			for(i in results){
+				if(results[i].opening_soon){
+					locals.data.next_branches.push(results[i]);
+				}
+				else{
+					locals.data.branches.push(results[i]);
+				}
+			}
 
 			next();
 		});

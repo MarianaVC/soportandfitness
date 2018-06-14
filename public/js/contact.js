@@ -59,15 +59,15 @@ var Contact = function(){
 	function sendForm(e){
 		e.preventDefault();
 		var form = $(this).closest("form");
-		var isValid = validForm(form);
-		if(isValid){
+		var hasError = validForm(form);
+		if(!hasError){
 			var responseCont = form.find('.response');
 			var responseTitle = responseCont.find('.response__title');
 			var responseText = responseCont.find('.response__text');
 			
 			$(this).hide();
 
-			$.post(formCont.attr("action"), formCont.serialize(), function (res) {
+			$.post(form.attr("action"), form.serialize(), function (res) {
 
 				if (!res.success) {
 					responseCont.addClass("active");
@@ -80,6 +80,10 @@ var Contact = function(){
 					responseCont.addClass("active");
 					responseTitle.html('Mensaje enviado');
 					responseText.html('Gracias por contactarnos. <br>En breve nos comunicaremos contigo.');
+					
+					if(res.file.length>0){
+						window.open("http://166.62.37.170" + res.file,'Descargar promoción','width=900,height=500,left=200,top=200');
+					}
 				}
 
 			});

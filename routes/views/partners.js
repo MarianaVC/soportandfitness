@@ -20,7 +20,7 @@ exports = module.exports = function (req, res) {
 			if (!results){
 				return res.status(404).render('errors/404');
 			}
-			locals.data.slides = results;
+			locals.data.partners = results;
 			next();
 		});
 	});

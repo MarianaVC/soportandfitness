@@ -12,6 +12,7 @@ exports = module.exports = function (req, res) {
 	locals.data = {
 		slides: [],
 		branches: [],
+		next_branches: [],
 		home:''
 	}
 
@@ -26,7 +27,7 @@ exports = module.exports = function (req, res) {
 			next();
 		});
 	});
-
+	
 	view.on('init', function(next) {
 		var q = keystone.list('Sucursal').model.find();
 		q.exec(function(err,results){
@@ -34,7 +35,14 @@ exports = module.exports = function (req, res) {
 			if (!results){
 				return res.status(404).render('errors/404');
 			}
-			locals.data.branches = results;
+			for(i in results){
+				if(results[i].opening_soon){
+					locals.data.next_branches.push(results[i]);
+				}
+				else{
+					locals.data.branches.push(results[i]);
+				}
+			}
 
 			next();
 		});

@@ -59,7 +59,7 @@
 			{% endif %}
 			{% if slide.type_slide == 'Imagen' %}
 				<li class="main-slider__item main-slider__item--image slide-{{ loop.index }}">
-					<a href="{{ slide.link }}{% if slide.file %}/#{{ slide.file.filename }}{% endif %}" class="main-slider__only-image"></a>
+					<a href="{% if slide.file %}/contacto/?slide={{ slide.id }}/#form{% else %}{{ slide.link }}{% endif %}" class="main-slider__only-image"></a>
 				</li>
 			{% endif %}
 			{% if slide.type_slide == 'Imagen con texto' %}
@@ -75,7 +75,7 @@
 							<p class="main-slider__description">{{ slide.description }}</p>
 						{% endif %}
 						{% if slide.button and slide.button_url %}
-							<a href="{{ slide.button_url }}" class="main-slider__button button" title="{{ slide.button }}">{{ slide.button }}</a>
+							<a href="{% if slide.file %}/contacto/?slide={{ slide.id }}/#form{% else %}{{ slide.button_url }}{% endif %}" class="main-slider__button button" title="{{ slide.button }}">{{ slide.button }}</a>
 						{% endif %}
 						</div>
 					</div>
@@ -102,7 +102,7 @@
 	<!-- /fitness -->
 
 	<!-- promos -->
-		<div class="promos-block">
+		<div class="promos-block" style="background-image: url({{ data.home.image.url }});">
 			<div class="promos-block__container">
 				<div class="promos-block__data">
 					<p class="promos-block__description">Conoce <span>nuestras</span></p>
@@ -126,7 +126,15 @@
 					  data-pin='[{% for branch in data.branches %}{% if loop.index > 1 %},{% endif %}{"lat":"{{ branch.latitude }}","lng":"{{ branch.longitude }}","name":"{{ branch.name }}","phone":"{{ branch.telephone}}"}
 					  {% endfor %}]'
 					></div>
-					<p class="visit-block__description">Próximas aperturas: Metepec, Puebla-Torres, Miramontes</p>
+
+				{% if data.next_branches %}
+					<p class="visit-block__description">
+						Próximas aperturas:
+						{% for branch in data.next_branches %}
+							{% if loop.index > 1 %},{% endif %}{{ branch.name }}
+						{% endfor %}
+					</p>
+				{% endif %}
 				</div>
 			</div>
 		</div>

@@ -88,7 +88,7 @@
 			@include flex-wrap(wrap);
 			@include box-sizing(border-box);
 			list-style: initial;
-			padding: 1em 2em;
+			padding: 1.5em 2em;
 
 			@media (min-width: $tablet-min){
 				width: 100%;

@@ -53,16 +53,26 @@
 		  data-pin='[{% for branch in data.branches %}{% if loop.index > 1 %},{% endif %}{"lat":"{{ branch.latitude }}","lng":"{{ branch.longitude }}","name":"{{ branch.name }}","phone":"{{ branch.telephone}}"}
 		  {% endfor %}]'
 		></div>
+	{% if data.next_branches %}
 		<div class="contact__soon">
 			<div class="contact__container contact__container--block">
-				<p>Próximas aperturas: </p>
+					<p>
+						Próximas aperturas:
+						{% for branch in data.next_branches %}
+							{% if loop.index > 1 %},{% endif %}{{ branch.name }}
+						{% endfor %}
+					</p>
 			</div>
 		</div>
-		<div class="contact__form-container">
+	{% endif %}
+		<div id="form" class="contact__form-container">
 			<div class="contact__half contact__half--image"></div>
 			<div class="contact__half">
 				<form class="contact__form" action="/contacto">
 					<h3 class="contact__form__title">Contacta con nosotros</h3>
+					<input type="hidden" name="action" value="contacto">
+					<input type="hidden" name="slide" value="{{ data.slide }}">
+					<input type="hidden" name="file" value="{{ data.file }}">
 					<div class="contact__form__inputs">
 						<div class="input input--padding">
 							<input type="text" name="name" placeholder="Nombre" class="input__text">
@@ -82,8 +92,8 @@
 					</div>
 					<div class="response">
 						<div>
-							<span class="response__title"></span>
-							<span class="response__text"></span>
+							<p class="response__title"></p>
+							<p class="response__text"></p>
 						</div>
 					</div>
 				</form>

@@ -42,7 +42,7 @@
 							<picture>
 								<source srcset="{{ promo.image_mobile.cloudinaryURL }}" media="(max-width: 960px)">
 								<source srcset="{{ promo.image.cloudinaryURL }}">
-								<img srcset="{{ promo.image_mobile.cloudinaryURL }}" alt="{{ promo.alt }}">
+								<img src="{{ promo.image.cloudinaryURL }}" alt="{{ promo.alt }}">
 							</picture>
 						</li>
 					{% endfor %}

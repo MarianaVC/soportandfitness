@@ -35,7 +35,7 @@
 		</div>
 		<div class="installations__scroll menuScroll">
 			<ul class="installations__menu menuScrollInner">
-				{% for installation in  data.installations %}
+				{% for installation in  data.branches %}
 					<li class="installations__item">
 						<button class="installations__btn toggleBranch branch-{{ loop.index }} {% if loop.index == 1 %}active{% endif%}" data-target="branch-{{ loop.index }}">{{ installation.name }}</button>
 					</li>
@@ -44,7 +44,7 @@
 			<span class="menuControl left"><<</span>
 			<span class="menuControl right">>></span>
 		</div>
-	{% for installation in  data.installations %}
+	{% for installation in  data.branches %}
 		<div class="installations-branch">
 			<div class="installations__container">
 				<button class="installations-branch__title branch-{{ loop.index }} {% if loop.index == 1 %}active{% endif%} toggleBranch" data-target="branch-{{ loop.index }}">
@@ -57,7 +57,7 @@
 				</button>
 				<div id="branch-{{ loop.index }}" class="installations-branch__content {% if loop.index == 1 %}active{% endif%} targetBranch">
 					<div class="installations-branch__description">
-						{{ installation.servicesMark }}
+						{{ installation.services }}
 					</div>
 					<ul class="installations-branch__gallery galleryContainer">
 						{% for photo in  installation.gallery %}

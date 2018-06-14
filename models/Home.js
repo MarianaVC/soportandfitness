@@ -25,6 +25,16 @@ Home.add({
   },
 });
 
+Home.schema.virtual('image.cloudinaryURL').get(function () {
+  if ( this.image ) {
+    image = this.image;
+    return 'https://res.cloudinary.com/sport-and-fitness-gym/image/upload/f_auto/q_auto/fl_lossy/v' + image.version + '/' + image.public_id + '.' + image.format;
+  }
+  else{
+    return false;
+  }
+});
+
 /**
  * Registration
  */

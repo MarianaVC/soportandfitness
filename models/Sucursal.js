@@ -25,7 +25,7 @@ Sucursal.add('Sucursal',{
   },
   address: {
     type: Types.Html,
-    wysiwyg: false,
+    wysiwyg: true,
     initial: false,
     required: true,
     default: 'Dirección',
@@ -72,7 +72,7 @@ Sucursal.add('Sucursal',{
   },
   services: {
     type: Types.Html,
-    wysiwyg: false,
+    wysiwyg: true,
     initial: false,
     required: false,
     default: 'Servicios',

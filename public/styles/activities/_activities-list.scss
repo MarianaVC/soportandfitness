@@ -67,7 +67,7 @@
 		position: absolute;
 		left: 0;
 		right: 0;
-		bottom: 0.5em;
+		bottom: 0.75em;
 		color: #fff;
 		text-shadow: 0 0 10px #000000;
 		text-align: left;
@@ -75,10 +75,11 @@
 		line-height: 1.25;
 
 		& .hover{
-			display: table-caption;
+			@include box-sizing(border-box);
+			display: inline;
 			position: relative;
 			z-index: 1;
-			padding: 0.25em 0;
+			padding: 0.25em 0.25em 0.25em 0;
 			
 			&:before{
 				content:'';
@@ -88,10 +89,10 @@
 				top: 0;
 				bottom: 0;
 				left: -1em;
-				right: calc(100% + 1em);
+				right: 20em;
 				background-color: $red;
 
-				@include transition(all 0.35s ease-in-out);
+				@include transition(right 0.35s ease-in-out);
 			}
 			
 		}

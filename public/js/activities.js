@@ -38,10 +38,10 @@ var Activities = function(){
 		playPromise = videoP.play();
 
 		if (playPromise !== undefined) {
-			playPromise.then(_ => {
+			playPromise.then(function(){
 				target.data('loaded', true);
 			})
-			.catch(error => {
+			.catch(function(error){
 				console.log(error);
 			});
 		}
