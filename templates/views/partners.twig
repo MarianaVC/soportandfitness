@@ -47,33 +47,11 @@
 			</div>
 		</div>
 		<div class="partners__container">
-			<div class="partners__partner animatedBlock">
-				<img src="/images/logo-test.png">
-			</div>
-			<div class="partners__partner animatedBlock">
-				<img src="/images/logo-test.png">
-			</div>
-			<div class="partners__partner animatedBlock">
-				<img src="/images/logo-test.png">
-			</div>
-			<div class="partners__partner animatedBlock">
-				<img src="/images/logo-test.png">
-			</div>
-			<div class="partners__partner animatedBlock">
-				<img src="/images/logo-test.png">
-			</div>
-			<div class="partners__partner animatedBlock">
-				<img src="/images/logo-test.png">
-			</div>
-			<div class="partners__partner animatedBlock">
-				<img src="/images/logo-test.png">
-			</div>
-			<div class="partners__partner animatedBlock">
-				<img src="/images/logo-test.png">
-			</div>
-			<div class="partners__partner animatedBlock">
-				<img src="/images/logo-test.png">
-			</div>
+			{% for partner in  data.partners %}
+				<div class="partners__partner animatedBlock">
+					<img src="{{ partner.image.cloudinaryURL }}" alt="{{ partner.image_alt }}">
+				</div>
+			{% endfor %}
 		</div>
 	</div>
 

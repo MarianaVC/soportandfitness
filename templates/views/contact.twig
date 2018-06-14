@@ -35,41 +35,17 @@
 		</div>
 		<div class="contact__branches">
 			<div class="contact__container">
-				<div class="contact__branch">
-					<h2 class="contact__branch__title">Plaza Básica</h2>
-					<div class="contact__branch__address">
-						<p>Eje 5 Sur (Av. Leyes de Reforma)</p>
-						<p>Esquina Baratillo.</p>
-						<p>Col. Ejidos del Moral</p>
+				{% for branch in  data.branches %}
+					<div class="contact__branch animatedBlock">
+						<h2 class="contact__branch__title">{{ branch.name }}</h2>
+						<div class="contact__branch__address">
+							{{ branch.address }}
+						</div>
+						<div class="contact__branch__phone">
+							<span>{{ branch.telephone }}</span> <span>{{ branch.telephone2 }}</span>
+						</div>
 					</div>
-					<div class="contact__branch__phone">
-						<span>5600-4912</span>
-					</div>
-				</div>
-				<div class="contact__branch">
-					<h2 class="contact__branch__title">Plaza Básica</h2>
-					<div class="contact__branch__address">
-						<p>Eje 5 Sur (Av. Leyes de Reforma)</p>
-						<p>Esquina Baratillo.</p>
-						<p>Col. Ejidos del Moral</p>
-					</div>
-					<div class="contact__branch__phone">
-						<span>5600-4912</span>
-						<span>5600-4912</span>
-					</div>
-				</div>
-				<div class="contact__branch">
-					<h2 class="contact__branch__title">Plaza Básica</h2>
-					<div class="contact__branch__address">
-						<p>Eje 5 Sur (Av. Leyes de Reforma)</p>
-						<p>Esquina Baratillo.</p>
-						<p>Col. Ejidos del Moral</p>
-					</div>
-					<div class="contact__branch__phone">
-						<span>5600-4912</span>
-						<span>5600-4912</span>
-					</div>
-				</div>
+				{% endfor %}
 			</div>
 		</div>
 		<div id="map"
@@ -85,7 +61,7 @@
 		<div class="contact__form-container">
 			<div class="contact__half contact__half--image"></div>
 			<div class="contact__half">
-				<form class="contact__form">
+				<form class="contact__form" action="/contacto">
 					<h3 class="contact__form__title">Contacta con nosotros</h3>
 					<div class="contact__form__inputs">
 						<div class="input input--padding">

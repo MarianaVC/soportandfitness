@@ -35,106 +35,46 @@
 		</div>
 		<div class="installations__scroll menuScroll">
 			<ul class="installations__menu menuScrollInner">
-				<li class="installations__item">
-					<button class="installations__btn toggleBranch test-1 active" data-target="test-1" title="Test">Test</button>
-				</li>
-				<li class="installations__item">
-					<button class="installations__btn toggleBranch test-2" data-target="test-2" title="Test">Test</button>
-				</li>
+				{% for installation in  data.installations %}
+					<li class="installations__item">
+						<button class="installations__btn toggleBranch branch-{{ loop.index }} {% if loop.index == 1 %}active{% endif%}" data-target="branch-{{ loop.index }}">{{ installation.name }}</button>
+					</li>
+				{% endfor %}
 			</ul>
 			<span class="menuControl left"><<</span>
 			<span class="menuControl right">>></span>
 		</div>
+	{% for installation in  data.installations %}
 		<div class="installations-branch">
 			<div class="installations__container">
-				<button class="installations-branch__title test-1 active toggleBranch" data-target="test-1">
-					<span class="text">Test</span>
-					<span class="image" style="background-image: url(/images/contact-bck.jpg);"></span>
+				<button class="installations-branch__title branch-{{ loop.index }} {% if loop.index == 1 %}active{% endif%} toggleBranch" data-target="branch-{{ loop.index }}">
+					<span class="text">{{ installation.name }}</span>
+					{% for photo in  installation.gallery %}
+						{% if loop.index == 1 %}
+							<span class="image" style="background-image: url({{ photo.url }});"></span>
+						{% endif %}
+					{% endfor %}
 				</button>
-				<div id="test-1" class="installations-branch__content active targetBranch">
-					<ul class="installations-branch__description">
-						<li class="installations-branch__description__item">Sauna</li>
-						<li class="installations-branch__description__item">Valet Parking</li>
-						<li class="installations-branch__description__item">Asesoramiento de entrenamiento</li>
-					</ul>
+				<div id="branch-{{ loop.index }}" class="installations-branch__content {% if loop.index == 1 %}active{% endif%} targetBranch">
+					<div class="installations-branch__description">
+						{{ installation.servicesMark }}
+					</div>
 					<ul class="installations-branch__gallery galleryContainer">
-						<li class="installations-branch__gallery__item">
-							<button id="popup-2-1" class="installations-branch__gallery__button openPopup" style="background-image: url(/images/contact-bck.jpg);">
-								<img src="/images/blank.png">
-							<!-- popup -->
-								<img src="/images/contact-bck.jpg" class="installations-popup popupContent">
-							<!-- /popup -->
-							</button>
-						</li>
-						<li class="installations-branch__gallery__item">
-							<button id="popup-2-2" class="installations-branch__gallery__button openPopup" style="background-image: url(/images/activity.jpg);">
-								<img src="/images/blank.png">
-							<!-- popup -->
-								<img src="/images/activity.jpg" class="installations-popup popupContent">
-							<!-- /popup -->
-							</button>
-						</li>
+						{% for photo in  installation.gallery %}
+							<li class="installations-branch__gallery__item">
+								<button id="popup-{{ installation.id }}-{{ loop.index }}" class="installations-branch__gallery__button openPopup" style="background-image: url({{ photo.url }});">
+									<img src="/images/blank.png">
+								<!-- popup -->
+									<img src="{{ photo.url }}" class="installations-popup popupContent">
+								<!-- /popup -->
+								</button>
+							</li>
+						{% endfor %}
 					</ul>
 				</div>
 			</div>
 		</div>
-		<div class="installations-branch">
-			<div class="installations__container">
-				<button class="installations-branch__title test-2 toggleBranch" data-target="test-2">
-					<span class="text">Test 2</span>
-					<span class="image" style="background-image: url(/images/contact-bck.jpg);"></span>
-				</button>
-				<div id="test-2" class="installations-branch__content targetBranch">
-					<ul class="installations-branch__description">
-						<li class="installations-branch__description__item">Sauna2</li>
-						<li class="installations-branch__description__item">Valet Parking2</li>
-						<li class="installations-branch__description__item">Asesoramiento de entrenamiento2</li>
-					</ul>
-					<ul class="installations-branch__gallery galleryContainer">
-						<li class="installations-branch__gallery__item">
-							<button id="popup-1" class="installations-branch__gallery__button openPopup">
-								<img src="/images/activity.jpg">
-							<!-- popup -->
-								<div class="installations-popup popupContent">
-									<img src="/images/activity.jpg">
-								</div>
-							<!-- /popup -->
-							</button>
-						</li>
-						<li class="installations-branch__gallery__item">
-							<button id="popup-2" class="installations-branch__gallery__button openPopup">
-								<img src="/images/contact-bck.jpg">
-							<!-- popup -->
-								<div class="installations-popup popupContent">
-									<img src="/images/contact-bck.jpg">
-								</div>
-							<!-- /popup -->
-							</button>
-						</li>
-						<li class="installations-branch__gallery__item">
-							<button id="popup-3" class="installations-branch__gallery__button openPopup">
-								<img src="/images/activity.jpg">
-							<!-- popup -->
-								<div class="installations-popup popupContent">
-									<img src="/images/activity.jpg">
-								</div>
-							<!-- /popup -->
-							</button>
-						</li>
-						<li class="installations-branch__gallery__item">
-							<button id="popup-4" class="installations-branch__gallery__button openPopup">
-								<img src="/images/contact-bck.jpg">
-							<!-- popup -->
-								<div class="installations-popup popupContent">
-									<img src="/images/contact-bck.jpg">
-								</div>
-							<!-- /popup -->
-							</button>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</div>
+	{% endfor %}
 	</div>
 
 	<div id="popup" class="popup">

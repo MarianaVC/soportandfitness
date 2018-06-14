@@ -81,21 +81,25 @@
 	}
 
 	&__description{
-		@include display-flex;
-		@include flex-wrap(wrap);
-		@include box-sizing(border-box);
-		list-style: initial;
-		padding: 1em 2em;
+		width: 100%;
 
-		@media (min-width: $tablet-min){
-			width: 100%;
+		& ul{
+			@include display-flex;
+			@include flex-wrap(wrap);
+			@include box-sizing(border-box);
+			list-style: initial;
+			padding: 1em 2em;
+
+			@media (min-width: $tablet-min){
+				width: 100%;
+			}
+
+			@media (min-width: $desktop){
+				width: 80%;
+			}
 		}
 
-		@media (min-width: $desktop){
-			width: 80%;
-		}
-
-		&__item{
+		& li{
 			@include box-sizing(border-box);
 			@include OswaldLight;
 			@include fontSize(12px);

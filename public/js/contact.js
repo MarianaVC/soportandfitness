@@ -66,7 +66,7 @@ var Contact = function(){
 			var responseText = responseCont.find('.response__text');
 			
 			$(this).hide();
-			
+
 			$.post(formCont.attr("action"), formCont.serialize(), function (res) {
 
 				if (!res.success) {
@@ -75,6 +75,7 @@ var Contact = function(){
 					responseTitle.html('Mensaje no enviado');
 					responseText.html('Lo sentimos hubo un error. <br>Intenta nuevamente.');
 				}
+				
 				else{
 					responseCont.addClass("active");
 					responseTitle.html('Mensaje enviado');
