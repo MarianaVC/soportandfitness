@@ -49,11 +49,7 @@
 			<div class="installations__container">
 				<button class="installations-branch__title branch-{{ loop.index }} {% if loop.index == 1 %}active{% endif%} toggleBranch" data-target="branch-{{ loop.index }}">
 					<span class="text">{{ installation.name }}</span>
-					{% for photo in  installation.gallery %}
-						{% if loop.index == 1 %}
-							<span class="image" style="background-image: url({{ photo.url }});"></span>
-						{% endif %}
-					{% endfor %}
+					<span class="image" style="background-image: url({{ installation.image.cloudinaryURL }});"></span>
 				</button>
 				<div id="branch-{{ loop.index }}" class="installations-branch__content {% if loop.index == 1 %}active{% endif%} targetBranch">
 					<div class="installations-branch__description">
