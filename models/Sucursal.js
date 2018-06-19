@@ -83,7 +83,13 @@ Sucursal.add('Sucursal',{
     initial: false,
     publicID: 'slug',
     label:'Imágenes de galería' 
-  },  
+  },
+  video_link :{
+    type: String,
+    initial: false,
+    required: false,
+    label:'Link youtube'
+  }
 });
 
 /* acomplar url de cloudinary para traer imagen ligera */ 

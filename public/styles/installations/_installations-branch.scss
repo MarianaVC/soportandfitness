@@ -81,14 +81,18 @@
 	}
 
 	&__description{
+		@include box-sizing(border-box);
+		@include display-flex;
+		@include align-items(center);
 		width: 100%;
+		padding: 1.5em 0;
 
 		& ul{
 			@include display-flex;
 			@include flex-wrap(wrap);
 			@include box-sizing(border-box);
 			list-style: initial;
-			padding: 1.5em 2em;
+			padding: 0 2em;
 
 			@media (min-width: $tablet-min){
 				width: 100%;
@@ -131,6 +135,38 @@
 		}
 	}
 
+	&__video{
+		position: relative;
+		width: 100%;
+		text-align: center;
+		margin: 0.5em 1em 0;
+		@media (min-width: $tablet-min){
+			width: 100%;
+		}
+
+		@media (min-width: $desktop){
+			width: 20%;
+			margin: 0 1em;
+			text-align: right;
+		}
+	}
+	&__play{
+		display: inline-block;
+	}
+	&__icon-play{
+		width: 85px;
+		height: 60px;
+		display: block;
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-image: url(/images/play.png);
+
+		@media (min-width: $desktop){
+			width: 115px;
+			height: 80px;
+		}
+	}
 	&__gallery{
 		@include display-flex;
 		@include flex-wrap(wrap);

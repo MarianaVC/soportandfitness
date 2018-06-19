@@ -68,6 +68,7 @@ var Contact = function(){
 			$(this).hide();
 
 			$.post(form.attr("action"), form.serialize(), function (res) {
+				$("#formInputs").remove();
 
 				if (!res.success) {
 					responseCont.addClass("active");
@@ -78,16 +79,25 @@ var Contact = function(){
 				
 				else{
 					responseCont.addClass("active");
-					responseTitle.html('Mensaje enviado');
-					responseText.html('Gracias por contactarnos. <br>En breve nos comunicaremos contigo.');
+					var responseStr = '<p>Gracias por contactarnos. <br>En breve nos comunicaremos contigo.</p>'
+
 					
 					if(res.file.length>0){
-						window.open("http://166.62.37.170" + res.file,'Descargar promoción','width=900,height=500,left=200,top=200');
+						responseStr += '<a id="btnDownload" href="http://166.62.37.170' + res.file + '" class="button" target="_blank" download>Descargar cupón</a>';
+						//responseStr += '<a id="btnDownload" href="http://localhost:3000' + res.file + '" class="button" target="_blank" download>Descargar cupón</a>';
+						//window.open("http://166.62.37.170" + ,'Descargar promoción','width=900,height=500,left=200,top=200');
 					}
+					responseTitle.html('Mensaje enviado');
+					responseText.html(responseStr);
+					$('#btnDownload').on('click', removeBtn);
 				}
 
 			});
 		}
+	}
+
+	function removeBtn(e){
+		$(this).remove();
 	}
 
 	function start(){

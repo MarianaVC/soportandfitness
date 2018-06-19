@@ -124,6 +124,7 @@
 			background-color: #000;
 			color: #fff;
 			cursor: default;
+			z-index: 1;
 			&:before{
 				opacity: 1;
 				background-image: url(/images/t-black.svg);

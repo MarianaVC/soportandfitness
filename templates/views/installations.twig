@@ -54,6 +54,11 @@
 				<div id="branch-{{ loop.index }}" class="installations-branch__content {% if loop.index == 1 %}active{% endif%} targetBranch">
 					<div class="installations-branch__description">
 						{{ installation.services }}
+					{% if installation.video_link %}
+						<div class="installations-branch__video">
+							<a href="{{ installation.video_link }}" target="_blank" class="installations-branch__play" title="Ver video"><span class="installations-branch__icon-play"></span></a>
+						</div>
+					{% endif %}
 					</div>
 					<ul class="installations-branch__gallery galleryContainer">
 						{% for photo in  installation.gallery %}

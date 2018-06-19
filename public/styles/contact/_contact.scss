@@ -9,12 +9,16 @@
 		margin: 0.5em 0 0;
 		@include fontSize(20px);
 	}
-
+	& .button{
+		margin: 1em auto 0;
+	}
 	&.active{
-		@include absolute-full-container;
 		@include display-flex;
 		@include justify-content(center);
 		@include align-items(center);
+		position: relative;
+		padding: 1em 0;
+		margin: 1em 0;
 		background-color: rgba(255,255,255,0.75);
 	}
 
