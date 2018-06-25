@@ -16,6 +16,12 @@ var Home = new keystone.List('Home',{
 
 
 Home.add({
+  name: {
+    label:'Imágenes home',
+    type: String, initial:true,
+    required: true,
+    default: 'Imágenes home'
+  },
   image: {
     type: Types.CloudinaryImage,
     initial: false,
@@ -101,5 +107,5 @@ Home.schema.virtual('partner_4.cloudinaryURL').get(function () {
 /**
  * Registration
  */
-
+Home.defaultColumns = 'name';
 Home.register();
