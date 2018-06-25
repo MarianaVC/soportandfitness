@@ -146,5 +146,5 @@ Slide.schema.virtual('image.cloudinaryURL').get(function () {
  * Registration
  */
 
-Slide.defaultColumns = 'name';
+Slide.defaultColumns = 'name, title';
 Slide.register();

@@ -14,7 +14,7 @@ exports = module.exports = function (req, res) {
 		next_branches: []
 	}
 	view.on('init', function(next) {
-		var q = keystone.list('Sucursal').model.find();
+		var q = keystone.list('Sucursal').model.find().where('published', true);
 		q.exec(function(err,results){
 			if (err) return res.err(err);
 			if (!results){

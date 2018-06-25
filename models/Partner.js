@@ -63,5 +63,5 @@ Partner.schema.virtual('image.cloudinaryURL').get(function () {
 
 
 
-Partner.defaultColumns = 'desktop_image, mobile_image';
+Partner.defaultColumns = 'name, published';
 Partner.register();

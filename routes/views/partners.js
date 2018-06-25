@@ -15,7 +15,7 @@ exports = module.exports = function (req, res) {
 	}
 
 	view.on('init', function(next) {
-		var q = keystone.list('Partner').model.find().populate('partner');
+		var q = keystone.list('Partner').model.find().where('published', true);
 		q.exec(function(err,results){
 			if (err) return res.err(err);
 			if (!results){
