@@ -10,20 +10,22 @@
 	<!-- Facebook / whatsapp Open Graph meta tags -->
 	<meta property="og:type" content="website"/>
 	<meta property="og:title" content="Contacto | Sport & Fitness"/>
-	<meta property="og:image" content="http://{{ url.fullUrl }}/static/site/img/share/Contacto.jpg"/>
-	<meta property="og:url" content="http://{{ url.fullUrl }}"/>
+	<meta property="og:image" content="{{ url.fullUrl }}/static/site/img/share/Contacto.jpg"/>
+	<meta property="og:url" content="{{ url.fullUrl }}"/>
 	<meta property="og:description" content=""/>
 	<meta property="og:site_name" content="Sport & Fitness"/>
 
 	<!-- Twitter Card meta tags -->
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:title" content="Contacto | Sport & Fitness"/>
-	<meta name="twitter:image" content="http://{{ url.fullUrl }}/static/noticias/img/share/Contacto.jpg"/>
-	<meta name="twitter:site" content="http://{{ url.fullUrl }}"/>
+	<meta name="twitter:image" content="{{ url.fullUrl }}/static/noticias/img/share/Contacto.jpg"/>
+	<meta name="twitter:site" content="{{ url.fullUrl }}"/>
 	<meta name="twitter:description" content=""/>
 	<meta name="twitter:creator" content="@"/>
 
-	<link rel="canonical" href="http://{{ url.fullUrl }}">
+	<link rel="canonical" href="{{ url.fullUrl }}">
+
+	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 {% endblock %}
 
@@ -86,6 +88,9 @@
 						<div class="input">
 							<textarea name="message" placeholder="¿Cómo se enteró de nosotros?" class="input__text input--textarea"></textarea>
 						</div>
+						<div class="input">
+							<div class="g-recaptcha" data-sitekey="6Leui2AUAAAAAK1Q1_PFEcWRRxY3UsLoMzeufdf4"></div>
+						</div>
 						<div class="input input--text-right">
 							<button class="input__submit btnSubmit">Enviar</button>
 						</div>
@@ -108,6 +113,6 @@
 
 	<script type="text/javascript" src="/js/map.js"></script>
 	<script async defer
-	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnQNdZNCZJVCZr7Uy4YQdNNihMKC7-xaY&callback=PinMap.start">
+	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIPZrIdhEx6FTsek2y9HfGnctyRmXdnBI&callback=PinMap.start">
 	</script>
 {% endblock %}

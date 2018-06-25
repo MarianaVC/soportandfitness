@@ -10,7 +10,8 @@ exports = module.exports = function (req, res) {
 	locals.section = 'partners';
 
 	locals.data = {
-		partners: []
+		partners: [],
+		home: []
 	}
 
 	view.on('init', function(next) {
@@ -21,6 +22,19 @@ exports = module.exports = function (req, res) {
 				return res.status(404).render('errors/404');
 			}
 			locals.data.partners = results;
+			next();
+		});
+	});
+
+	view.on('init', function(next) {
+		var q = keystone.list('Home').model.findOne();
+		q.exec(function(err,results){
+			if (err) return res.err(err);
+			if (!results){
+				return res.status(404).render('errors/404');
+			}
+			locals.data.home = results;
+
 			next();
 		});
 	});

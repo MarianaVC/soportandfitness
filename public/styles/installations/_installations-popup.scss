@@ -5,6 +5,10 @@
 	right: 0;
 	bottom: 0;
 	margin: auto;
-	max-width: 1200px;
+	max-width: 90vw;
 	max-height: 90vh;
+
+	@media (min-width: $desktop-container){
+		max-width: 1200px;
+	}
 }

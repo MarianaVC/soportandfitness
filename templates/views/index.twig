@@ -10,20 +10,20 @@
 	<!-- Facebook / whatsapp Open Graph meta tags -->
 	<meta property="og:type" content="website"/>
 	<meta property="og:title" content="Home | Sport & Fitness"/>
-	<meta property="og:image" content="http://{{ url.fullUrl }}/static/site/img/share/home.jpg"/>
-	<meta property="og:url" content="http://{{ url.fullUrl }}"/>
+	<meta property="og:image" content="{{ url.fullUrl }}/static/site/img/share/home.jpg"/>
+	<meta property="og:url" content="{{ url.fullUrl }}"/>
 	<meta property="og:description" content=""/>
 	<meta property="og:site_name" content="Sport & Fitness"/>
 
 	<!-- Twitter Card meta tags -->
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:title" content="Home | Sport & Fitness"/>
-	<meta name="twitter:image" content="http://{{ url.fullUrl }}/static/noticias/img/share/home.jpg"/>
-	<meta name="twitter:site" content="http://{{ url.fullUrl }}"/>
+	<meta name="twitter:image" content="{{ url.fullUrl }}/static/noticias/img/share/home.jpg"/>
+	<meta name="twitter:site" content="{{ url.fullUrl }}"/>
 	<meta name="twitter:description" content=""/>
 	<meta name="twitter:creator" content="@"/>
 
-	<link rel="canonical" href="http://{{ url.fullUrl }}">
+	<link rel="canonical" href="{{ url.fullUrl }}">
 
 	<style type="text/css">
 		{% for slide in data.slides %}
@@ -149,7 +149,7 @@
 
 	<script type="text/javascript" src="/js/map.js"></script>
 	<script async defer
-	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnQNdZNCZJVCZr7Uy4YQdNNihMKC7-xaY&callback=PinMap.start">
+	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIPZrIdhEx6FTsek2y9HfGnctyRmXdnBI&callback=PinMap.start">
 	</script>
 
 {% endblock %}

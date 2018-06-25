@@ -59,12 +59,34 @@ var Popup = function(){
 		$('#' + pop).trigger('click');
 	}
 
+	function keyGalleryEvent(e){
+		if(e.keyCode == 27){ /* flecha izquierda */
+			closePopup(e);
+		}
+		else if(e.keyCode == 39){ /* flecha derecha */
+			prevPopup(e);
+		}
+		else if(e.keyCode == 37){ /* flecha izquierda */
+			nextPopup(e);
+		} 
+	}
+
 	function start(){
 		//fillPopupArray();
+		$(document).keyup(keyGalleryEvent);
 		$('.openPopup').on('click', openPopup);
 		$('.closePopup').on('click', closePopup);
 		$('.prevPopup').on('click', prevPopup);
 		$('.nextPopup').on('click', nextPopup);
+		$('#popContent').swipe( {
+			swipeLeft:function(event, direction, distance, duration, fingerCount) {
+				prevPopup(event);
+			},
+			swipeRight:function(event, direction, distance, duration, fingerCount) {
+				nextPopup(event);
+			},
+			threshold:0
+		});
 	}
 	
 	return{

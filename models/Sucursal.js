@@ -89,6 +89,11 @@ Sucursal.add('Sucursal',{
     initial: false,
     required: false,
     label:'Link youtube'
+  },
+  published: {
+    type: Types.Boolean,
+    default: true,
+    label: "Publicar"
   }
 });
 

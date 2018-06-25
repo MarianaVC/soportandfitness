@@ -57,14 +57,32 @@ exports = module.exports = function (req, res) {
 	});
 
 	view.on('post', { action: 'contacto' }, function (next) {
+		// g-recaptcha-response is the key that browser will generate upon form submit.
+		// if its blank or null means user has not selected the captcha, so return the error.
+		if(req.body['g-recaptcha-response'] === undefined || req.body['g-recaptcha-response'] === '' || req.body['g-recaptcha-response'] === null) {
+			return res.send({"responseCode" : 1,"responseDesc" : "Please select captcha"});
+		}
 
-		request({}, function(error,response,body) {
+		// Put your secret key here.
+		var secretKey = "6Leui2AUAAAAAJME_eAPwD0PrB2xnMRSpYB-Jq2y";
+		
+		// req.connection.remoteAddress will provide IP address of connected user.
+		var verificationUrl = "https://www.google.com/recaptcha/api/siteverify?secret=" + secretKey + "&response=" + req.body['g-recaptcha-response'] + "&remoteip=" + req.connection.remoteAddress;
+		// Hitting GET request to the URL, Google will respond with success or error scenario.
+
+		request(verificationUrl, function(error,response,body) {
+			var body = JSON.parse(body);
 			var name = req.body.name;
 			var email = req.body.email;
 			var phone = req.body.phone
 			var message = req.body.message;
 			var file = req.body.file;
 			var slide = req.body.slide;
+
+			// Success will be true or false depending upon captcha validation.
+			if(body.success !== undefined && !body.success) {
+				return res.send({"responseCode" : 1,"responseDesc" : "Failed captcha verification"});
+			}
 
 			if(file.length){
 				file = '/files/' + file;

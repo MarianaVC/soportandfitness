@@ -14,8 +14,23 @@ var Partner = new keystone.List('Partner',{
 });
 
 Partner.add('Partner',{
-  image: { type: Types.CloudinaryImage, initial:true ,publicID: 'slug', label:'Imagen para escritorio' },
-  image_alt: {type: String, initial:true , required: true,label:'Alt de imagen' },
+  name: {
+    type: String,
+    initial:true,
+    required: true,
+    label:'Nombre'
+  },
+  image: {
+    type: Types.CloudinaryImage,
+    initial:true,
+    publicID: 'slug',
+    label:'Imagen para escritorio'
+  },
+  published: {
+    type: Types.Boolean,
+    default: true,
+    label: "Publicar"
+  }
 });
 
 

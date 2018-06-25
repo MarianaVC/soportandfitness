@@ -10,20 +10,20 @@
 	<!-- Facebook / whatsapp Open Graph meta tags -->
 	<meta property="og:type" content="website"/>
 	<meta property="og:title" content="Instalaciones | Sport & Fitness"/>
-	<meta property="og:image" content="http://{{ url.fullUrl }}/static/site/img/share/Instalaciones.jpg"/>
-	<meta property="og:url" content="http://{{ url.fullUrl }}"/>
+	<meta property="og:image" content="{{ url.fullUrl }}/static/site/img/share/Instalaciones.jpg"/>
+	<meta property="og:url" content="{{ url.fullUrl }}"/>
 	<meta property="og:description" content=""/>
 	<meta property="og:site_name" content="Sport & Fitness"/>
 
 	<!-- Twitter Card meta tags -->
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:title" content="Instalaciones | Sport & Fitness"/>
-	<meta name="twitter:image" content="http://{{ url.fullUrl }}/static/noticias/img/share/Instalaciones.jpg"/>
-	<meta name="twitter:site" content="http://{{ url.fullUrl }}"/>
+	<meta name="twitter:image" content="{{ url.fullUrl }}/static/noticias/img/share/Instalaciones.jpg"/>
+	<meta name="twitter:site" content="{{ url.fullUrl }}"/>
 	<meta name="twitter:description" content=""/>
 	<meta name="twitter:creator" content="@"/>
 
-	<link rel="canonical" href="http://{{ url.fullUrl }}">
+	<link rel="canonical" href="{{ url.fullUrl }}">
 
 {% endblock %}
 
@@ -91,6 +91,7 @@
 {% endblock %}
 
 {% block js %}
+	<script src="/js/jquery.touchSwipe.min.js"></script>
 	<script src="/js/popup.js"></script>
 	<script src="/js/installations.js"></script>
 {% endblock %}

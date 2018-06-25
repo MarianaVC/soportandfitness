@@ -22,11 +22,9 @@ Contact.add('Contact',{
   readed: { type: Boolean, initial: false}
 });
 
+Contact.defaultColumns = 'name|40%, readed|30%, createdAt|30%';
+
 /**
  * Registration
  */
-
-
-
-Contact.defaultColumns = 'name, email';
 Contact.register();
