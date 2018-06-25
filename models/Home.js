@@ -7,7 +7,6 @@ var Types = keystone.Field.Types;
  */
 
 var Home = new keystone.List('Home',{
-	map: {name:'image'},
 	nocreate: true,
 	sigular: 'Imagen home',
 	plural: 'Imágenes home',
