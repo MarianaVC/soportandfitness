@@ -52,7 +52,7 @@
 				top: 0;
 				bottom: 0;
 				width: 34px;
-				background-size: cover;
+				@include background-size(cover);
 				background-repeat: no-repeat;
 				right: -33px;
 				background-image: url(/images/t-title.svg);
@@ -157,7 +157,7 @@
 		width: 85px;
 		height: 60px;
 		display: block;
-		background-size: contain;
+		@include background-size(contain);
 		background-repeat: no-repeat;
 		background-position: center;
 		background-image: url(/images/play.png);
@@ -208,7 +208,7 @@
 				background-image: url(/images/lupe.svg);
 				background-repeat: no-repeat;
 				background-position: center;
-				background-size: 55%;
+				@include background-size(55%);
 				@include border-radius(50%);
 				@include transition(background-color 0.25s ease-in-out);
 				

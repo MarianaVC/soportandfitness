@@ -99,6 +99,7 @@
 		outline: none;
 		padding: 0.5em 1em;
 		cursor: pointer;
+		overflow: visible;
 		@include transition(color 0.25s ease-in-out, background-color 0.25s ease-in-out);
 
 		&:before, &:after{
@@ -109,15 +110,15 @@
 			bottom: 0;
 			width: 39px;
 			opacity: 0;
-			background-size: 100% 100%;
+			@include background-size(cover);
 			background-repeat: no-repeat;
 			@include transition(opacity 0.25s ease-in-out);
 		}
 		&:before{
-			left: -38px;
+			left: -37px;
 		}
 		&:after{
-			right: -38px;
+			right: -37px;
 		}
 
 		&.active{
@@ -127,11 +128,11 @@
 			z-index: 1;
 			&:before{
 				opacity: 1;
-				background-image: url(/images/t-black.svg);
+				background: url(/images/t-black.svg);
 			}
 			&:after{
 				opacity: 1;
-				background-image: url(/images/t-black-1.svg);
+				background: url(/images/t-black-1.svg);
 			}
 		}
 
@@ -140,11 +141,11 @@
 			color: #fff;
 			&:before{
 				opacity: 1;
-				background-image: url(/images/t-red.svg);
+				background: url(/images/t-red.svg);
 			}
 			&:after{
 				opacity: 1;
-				background-image: url(/images/t-red-1.svg);
+				background: url(/images/t-red-1.svg);
 			}
 		}
 	}

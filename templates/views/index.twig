@@ -118,7 +118,7 @@
 			<div class="visit-block__container">
 				<div class="visit-block__left">
 					<a href="/contacto" class="visit-block__button button" title="Ponte en contacto">Ponte en contacto</a>
-					<p class="visit-block__description">Las mejores instalaciones</br>creadas para ti</p>
+					<p class="visit-block__description">Las mejores instalaciones<br/>creadas para ti</p>
 				</div>
 				<div class="visit-block__right">
 					<div id="map"
@@ -131,7 +131,7 @@
 					<p class="visit-block__description">
 						Próximas aperturas:
 						{% for branch in data.next_branches %}
-							{% if loop.index > 1 %},{% endif %}{{ branch.name }}
+							{{ branch.name }}{% if loop.index < data.next_branches.length %},{% endif %}
 						{% endfor %}
 					</p>
 				{% endif %}

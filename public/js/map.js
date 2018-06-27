@@ -9,7 +9,7 @@ var PinMap = function(){
 	var lat = 19.432608;
 	var lng = -99.133209;
 	var latlngPins = [];
-	var ZOOM = 15;
+	var ZOOM = 13;
 	var MAXZOOM = 17;
 	var MINZOOM = 13;
 	var MINVAL = 1;
@@ -26,11 +26,12 @@ var PinMap = function(){
 		
 		map = new google.maps.Map(document.getElementById('map'), {
 			zoom: ZOOM,
-			maxZoom: MAXZOOM,
-			minZoom:MINZOOM,
 			center: {lat: lat, lng: lng}
 		});
 		printMarkers(pinArray);
+
+		$(".moveMap").addClass('active');
+		$(".moveMap").on('click', centerMap);
 	}
 
 	function placeMarker(map, pin){
@@ -65,43 +66,6 @@ var PinMap = function(){
 		return str;
 	}
 
-	function callMarkers(mapOptions){
-		var url = mapOptions.url;
-		var data = {};
-		data.latitud = lat;
-		data.longitud = lng;
-		data.radio = getRadio(map.zoom);
-
-		if(mapOptions.name){
-			data.farmacia = mapOptions.name;
-		}
-		$.ajax({
-			type:'POST',
-			url:url,
-			data: data,
-			headers:{
-				'X-CSRFToken':$("[name='csrfmiddlewaretoken']").val()
-			}
-		})
-		.done(function(data,textStatus,jqXHR){
-			if(jqXHR.status==200){
-				if(data.Listado){
-					printMarkers(data.Listado);
-				}
-				
-			}
-			else{
-				$("#mapContainer").remove();
-			}
-		})
-		.fail(function (jqXHR,textStatus,errorTrhown){
-			$("#mapContainer").remove();
-		})
-		.always(function (){
-			$("#mapContainer .loader").remove();
-		});
-	}
-
 	function printMarkers(pins) {
 		//pintamos cada uno de los pines que recibimos de back
 		for (i = 0; i < pins.length; i++) {
@@ -109,8 +73,21 @@ var PinMap = function(){
 		}
 	}
 
-	function getRadio(zoom){
-		return parseInt((((zoom-MAXZOOM)/(MINZOOM-MAXZOOM))*(MAXVAL-MINVAL))+MINVAL);
+	function centerMap(e){
+		e.preventDefault();
+		var target = $(e.currentTarget);
+		var lat = parseFloat(target.data('lat'));
+		var lng = parseFloat(target.data('lng'));
+		var center = new google.maps.LatLng(lat, lng);
+		var top = ($("#map").offset().top) - $("#header").height();
+
+		map.panTo(center);
+		map.setZoom(15);
+
+		$('html, body').animate({
+			scrollTop: top
+		}, 1000);
+		
 	}
 
 	function start(){

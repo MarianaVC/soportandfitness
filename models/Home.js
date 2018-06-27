@@ -10,7 +10,7 @@ var Home = new keystone.List('Home',{
 	nocreate: true,
 	sigular: 'Imagen home',
 	plural: 'Imágenes home',
-  	label: 'Imagen home',	
+  	label: 'Información Homes',	
 });
 
 
@@ -19,13 +19,13 @@ Home.add({
     label:'Imágenes home',
     type: String, initial:true,
     required: true,
-    default: 'Imágenes home'
+    default: 'Información Homes'
   },
   image: {
     type: Types.CloudinaryImage,
     initial: false,
     publicID: 'slug',
-    label:'Imagen de promoción' 
+    label:'Imagen de promoción (home general)' 
   },
   partner_1: {
     type: Types.CloudinaryImage,
@@ -50,6 +50,62 @@ Home.add({
     initial: false,
     publicID: 'slug',
     label:'Imagen home convenios (4)' 
+  },
+  us_fold: {
+    type: Types.Html,
+    wysiwyg: true,
+    initial: false,
+    required: true,
+    default: 'Fold Nosotros',
+    label: 'Fold Nosotros'
+  },
+  us_insta: {
+    type: Types.Html,
+    wysiwyg: false,
+    initial: false,
+    required: true,
+    default: 'Nosotros - Instalaciones',
+    label: 'Nosotros - Instalaciones'
+  },
+  us_team: {
+    type: Types.Html,
+    wysiwyg: false,
+    initial: false,
+    required: true,
+    default: 'Nosotros - Equipo',
+    label: 'Nosotros - Equipo'
+  },
+  us_activities: {
+    type: Types.Html,
+    wysiwyg: false,
+    initial: false,
+    required: true,
+    default: 'Nosotros - Actividades',
+    label: 'Nosotros - Actividades'
+  },
+  us_mision: {
+    type: Types.Html,
+    wysiwyg: false,
+    initial: false,
+    required: true,
+    default: 'Nosotros - Misión',
+    label: 'Nosotros - Misión'
+  },
+  us_vision: {
+    type: Types.Html,
+    wysiwyg: false,
+    initial: false,
+    required: true,
+    default: 'Nosotros - Visión',
+    label: 'Nosotros - Visión'
+  },
+  promos_fold: {
+    type: Types.Html,
+    wysiwyg: true,
+    initial: false,
+    required: true,
+    default: 'Fold Promociones',
+    label: 'Fold Promociones'
   },
 });
 

@@ -43,6 +43,11 @@
 		position: relative;
 		text-align: center;
 
+		& .red, & strong{
+			@include DosisRegular;
+			color: $red;
+		}
+
 		@media (min-width: $tablet-min){
 			@include fontSize(16px);
 			max-width: 80%;

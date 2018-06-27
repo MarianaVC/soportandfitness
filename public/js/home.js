@@ -51,7 +51,6 @@ var Home = function(){
 				videoCont.append(obj);
 				$(obj).append(source);
 
-
 				var videoP = document.getElementById(id);
 				videoP.addEventListener('loadeddata', function() {
 
@@ -59,9 +58,9 @@ var Home = function(){
 					videoCont.addClass("loaded");
 
 					if (promise !== undefined) {
-						promise.then(_ => {
+						promise.then(function(_){
 
-						}).catch(error => {
+						}).catch(function(error){
 							var btnPlay = videoCont.find('.play');
 							btnPlay.addClass('active');
 							btnPlay.data('video', id);

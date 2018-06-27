@@ -76,7 +76,7 @@
 			position: absolute;
 			right: 2em;
 			bottom: 2.5em;
-			background-size: contain;
+			@include background-size(contain);
 			background-repeat: no-repeat;
 			background-position: right bottom;
 

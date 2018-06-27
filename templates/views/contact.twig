@@ -39,7 +39,7 @@
 			<div class="contact__container">
 				{% for branch in  data.branches %}
 					<div class="contact__branch animatedBlock">
-						<h2 class="contact__branch__title">{{ branch.name }}</h2>
+						<h2 class="contact__branch__title moveMap" data-lat="{{ branch.latitude }}" data-lng="{{ branch.longitude }}">{{ branch.name }}</h2>
 						<div class="contact__branch__address">
 							{{ branch.address }}
 						</div>
@@ -61,7 +61,7 @@
 					<p>
 						Próximas aperturas:
 						{% for branch in data.next_branches %}
-							{% if loop.index > 1 %},{% endif %}{{ branch.name }}
+							{{ branch.name }}{% if loop.index < data.next_branches.length %},{% endif %}
 						{% endfor %}
 					</p>
 			</div>

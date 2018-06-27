@@ -78,7 +78,7 @@
 			@include fontSize(26px);
 		}
 
-		& .red{
+		& .red, & strong{
 			color: $red;
 		}
 	}

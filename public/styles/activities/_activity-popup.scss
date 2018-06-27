@@ -89,7 +89,7 @@
 		height: 50px;
 		display: block;
 		margin: 0 auto 0.5em;
-		background-size: contain;
+		@include background-size(contain);
 		background-repeat: no-repeat;
 		background-position: center;
 		background-image: url(/images/calories.png);
@@ -221,7 +221,7 @@
 		width: 85px;
 		height: 60px;
 		display: block;
-		background-size: contain;
+		@include background-size(contain);
 		background-repeat: no-repeat;
 		background-position: center;
 		background-image: url(/images/play.png);
