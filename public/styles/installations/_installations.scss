@@ -10,6 +10,7 @@
 	font-size: 1.5em;
     line-height: 1;
     cursor: pointer;
+    z-index: 2;
 	&.active{
 		display: block;
 	}
@@ -77,6 +78,10 @@
 		width: -moz-max-content;    /* Firefox/Gecko */
 		width: -webkit-max-content; /* Chrome */
 		position: relative;
+	}
+	
+	&__branches{
+		margin-top: -3px;
 	}
 	
 	&__item{

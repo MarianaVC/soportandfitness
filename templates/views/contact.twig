@@ -2,25 +2,25 @@
 
 {% block head %}
 
-	<meta name="description" content="">
-	<meta name="keywords" content="">
+	<meta name="description" content="{{ data.home.contact_meta_description }}">
+	<meta name="keywords" content="{{ data.home.contact_keywords }}">
 
 	<title>Contacto | Sport & Fitness</title>
 
 	<!-- Facebook / whatsapp Open Graph meta tags -->
 	<meta property="og:type" content="website"/>
 	<meta property="og:title" content="Contacto | Sport & Fitness"/>
-	<meta property="og:image" content="{{ url.fullUrl }}/static/site/img/share/Contacto.jpg"/>
+	<meta property="og:image" content="{{ data.home.contact_share_image.url }}"/>
 	<meta property="og:url" content="{{ url.fullUrl }}"/>
-	<meta property="og:description" content=""/>
+	<meta property="og:description" content="{{ data.home.contact_share }}"/>
 	<meta property="og:site_name" content="Sport & Fitness"/>
 
 	<!-- Twitter Card meta tags -->
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:title" content="Contacto | Sport & Fitness"/>
-	<meta name="twitter:image" content="{{ url.fullUrl }}/static/noticias/img/share/Contacto.jpg"/>
+	<meta name="twitter:image" content="{{ data.home.contact_share_image.url }}"/>
 	<meta name="twitter:site" content="{{ url.fullUrl }}"/>
-	<meta name="twitter:description" content=""/>
+	<meta name="twitter:description" content="{{ data.home.contact_share }}"/>
 	<meta name="twitter:creator" content="@"/>
 
 	<link rel="canonical" href="{{ url.fullUrl }}">
@@ -86,7 +86,7 @@
 							<input type="tel" name="phone" placeholder="Teléfono celular" maxlength="10" class="input__text">
 						</div>
 						<div class="input">
-							<textarea name="message" placeholder="¿Cómo se enteró de nosotros?" class="input__text input--textarea"></textarea>
+							<textarea name="message" placeholder="¿Cómo podemos ayudarte?" class="input__text input--textarea"></textarea>
 						</div>
 						<div class="input">
 							<div class="g-recaptcha" data-sitekey="6Leui2AUAAAAAK1Q1_PFEcWRRxY3UsLoMzeufdf4"></div>

@@ -244,6 +244,8 @@
 		padding: 2.5em;
 		background-color: #fff;
 		width: 50%;
+		border: none;
+		outline: none;
 
 		&.active{
 			& img{
@@ -251,8 +253,6 @@
 				width: 100%;
 			}
 		}
-
-
 
 		& img{
 			@include setImg;
@@ -304,6 +304,24 @@
 				background-color: #fff;
 			}
 		}
+	}
+	&__popup{
+		display: block;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		margin: auto;
+		max-width: 90vw;
+		max-height: 90vh;
+
+		@media (min-width: $desktop-container){
+			max-width: 1200px;
+		}
+	}
+
+	& .partners__popup{
+		display: none;
 	}
 }
 

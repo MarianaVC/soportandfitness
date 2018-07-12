@@ -14,8 +14,22 @@ exports = module.exports = function (req, res) {
 		branches: [],
 		next_branches: [],
 		slide: '',
-		file: ''
+		file: '',
+		home: []
 	}
+
+	view.on('init', function(next) {
+		var q = keystone.list('Home').model.findOne();
+		q.exec(function(err,results){
+			if (err) return res.err(err);
+			if (!results){
+				return res.status(404).render('errors/404');
+			}
+			locals.data.home = results;
+
+			next();
+		});
+	});
 
 	view.on('init', function(next) {
 		var q = keystone.list('Sucursal').model.find();

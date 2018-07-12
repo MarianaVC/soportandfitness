@@ -2,25 +2,25 @@
 
 {% block head %}
 
-	<meta name="description" content="">
-	<meta name="keywords" content="">
+	<meta name="description" content="{{ data.home.insta_meta_description }}">
+	<meta name="keywords" content="{{ data.home.insta_keywords }}">
 
 	<title>Instalaciones | Sport & Fitness</title>
 
 	<!-- Facebook / whatsapp Open Graph meta tags -->
 	<meta property="og:type" content="website"/>
 	<meta property="og:title" content="Instalaciones | Sport & Fitness"/>
-	<meta property="og:image" content="{{ url.fullUrl }}/static/site/img/share/Instalaciones.jpg"/>
+	<meta property="og:image" content="{{ data.home.insta_share_image.url }}"/>
 	<meta property="og:url" content="{{ url.fullUrl }}"/>
-	<meta property="og:description" content=""/>
+	<meta property="og:description" content="{{ data.home.insta_share }}"/>
 	<meta property="og:site_name" content="Sport & Fitness"/>
 
 	<!-- Twitter Card meta tags -->
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:title" content="Instalaciones | Sport & Fitness"/>
-	<meta name="twitter:image" content="{{ url.fullUrl }}/static/noticias/img/share/Instalaciones.jpg"/>
+	<meta name="twitter:image" content="{{ data.home.insta_share_image.url }}"/>
 	<meta name="twitter:site" content="{{ url.fullUrl }}"/>
-	<meta name="twitter:description" content=""/>
+	<meta name="twitter:description" content="{{ data.home.insta_share }}"/>
 	<meta name="twitter:creator" content="@"/>
 
 	<link rel="canonical" href="{{ url.fullUrl }}">
@@ -44,38 +44,41 @@
 			<span class="menuControl left"><<</span>
 			<span class="menuControl right">>></span>
 		</div>
-	{% for installation in  data.branches %}
-		<div class="installations-branch">
-			<div class="installations__container">
-				<button class="installations-branch__title branch-{{ loop.index }} {% if loop.index == 1 %}active{% endif%} toggleBranch" data-target="branch-{{ loop.index }}">
-					<span class="text">{{ installation.name }}</span>
-					<span class="image" style="background-image: url({{ installation.image.cloudinaryURL }});"></span>
-				</button>
-				<div id="branch-{{ loop.index }}" class="installations-branch__content {% if loop.index == 1 %}active{% endif%} targetBranch">
-					<div class="installations-branch__description">
-						{{ installation.services }}
-					{% if installation.video_link %}
-						<div class="installations-branch__video">
-							<a href="{{ installation.video_link }}" target="_blank" class="installations-branch__play" title="Ver video"><span class="installations-branch__icon-play"></span></a>
+		<div class="installations__branches">
+		{% for installation in  data.branches %}
+			<div class="installations-branch">
+				<div class="installations__container">
+					<button class="installations-branch__title branch-{{ loop.index }} {% if loop.index == 1 %}active{% endif%} toggleBranch" data-target="branch-{{ loop.index }}">
+						<span class="text">{{ installation.name }}</span>
+						<span class="image" style="background-image: url({{ installation.image.cloudinaryURL }});"></span>
+					</button>
+					<div id="branch-{{ loop.index }}" class="installations-branch__content {% if loop.index == 1 %}active{% endif%} targetBranch">
+						<div class="installations-branch__description">
+							{{ installation.services }}
+						{% if installation.video_link %}
+							<div class="installations-branch__video">
+								<a href="https://www.google.com/maps/search/?api=1&query={{ installation.latitude }},{{ installation.longitude }}" target="_blank" class="installations-branch__pin" title="Ir a Maps"><span class="installations-branch__icon-pin"></span></a>
+								<a href="{{ installation.video_link }}" target="_blank" class="installations-branch__play" title="Ver video"><span class="installations-branch__icon-play"></span></a>
+							</div>
+						{% endif %}
 						</div>
-					{% endif %}
+						<ul class="installations-branch__gallery galleryContainer">
+							{% for photo in  installation.gallery %}
+								<li class="installations-branch__gallery__item">
+									<button id="popup-{{ installation.id }}-{{ loop.index }}" class="installations-branch__gallery__button openPopup" style="background-image: url({{ photo.url }});">
+										<img src="/images/blank.png">
+									<!-- popup -->
+										<img src="{{ photo.url }}" class="installations-popup popupContent">
+									<!-- /popup -->
+									</button>
+								</li>
+							{% endfor %}
+						</ul>
 					</div>
-					<ul class="installations-branch__gallery galleryContainer">
-						{% for photo in  installation.gallery %}
-							<li class="installations-branch__gallery__item">
-								<button id="popup-{{ installation.id }}-{{ loop.index }}" class="installations-branch__gallery__button openPopup" style="background-image: url({{ photo.url }});">
-									<img src="/images/blank.png">
-								<!-- popup -->
-									<img src="{{ photo.url }}" class="installations-popup popupContent">
-								<!-- /popup -->
-								</button>
-							</li>
-						{% endfor %}
-					</ul>
 				</div>
 			</div>
+		{% endfor %}
 		</div>
-	{% endfor %}
 	</div>
 
 	<div id="popup" class="popup">

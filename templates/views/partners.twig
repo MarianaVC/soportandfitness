@@ -2,25 +2,25 @@
 
 {% block head %}
 
-	<meta name="description" content="">
-	<meta name="keywords" content="">
+	<meta name="description" content="{{ data.home.partners_meta_description }}">
+	<meta name="keywords" content="{{ data.home.partners_keywords }}">
 
 	<title>Convenios | Sport & Fitness</title>
 
 	<!-- Facebook / whatsapp Open Graph meta tags -->
 	<meta property="og:type" content="website"/>
 	<meta property="og:title" content="Convenios | Sport & Fitness"/>
-	<meta property="og:image" content="{{ url.fullUrl }}/static/site/img/share/Convenios.jpg"/>
+	<meta property="og:image" content="{{ data.home.partners_share_image.url }}"/>
 	<meta property="og:url" content="{{ url.fullUrl }}"/>
-	<meta property="og:description" content=""/>
+	<meta property="og:description" content="{{ data.home.partners_share }}"/>
 	<meta property="og:site_name" content="Sport & Fitness"/>
 
 	<!-- Twitter Card meta tags -->
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:title" content="Convenios | Sport & Fitness"/>
-	<meta name="twitter:image" content="{{ url.fullUrl }}/static/noticias/img/share/Convenios.jpg"/>
+	<meta name="twitter:image" content="{{ data.home.partners_share_image.url }}"/>
 	<meta name="twitter:site" content="{{ url.fullUrl }}"/>
-	<meta name="twitter:description" content=""/>
+	<meta name="twitter:description" content="{{ data.home.partners_share }}"/>
 	<meta name="twitter:creator" content="@"/>
 
 	<link rel="canonical" href="{{ url.fullUrl }}">
@@ -56,10 +56,22 @@
 		</div>
 		<div class="partners__container">
 			{% for partner in  data.partners %}
-				<div class="partners__partner animatedBlock">
+				<button class="partners__partner animatedBlock openPopup">
 					<img src="{{ partner.image.cloudinaryURL }}" alt="{{ partner.name }}">
-				</div>
+				<!-- popup -->
+					<img src="{{ partner.image_pop.cloudinaryURL }}" alt="{{ partner.name }}" class="partners__popup popupContent">
+				<!-- /popup -->
+				</button>
 			{% endfor %}
+		</div>
+	</div>
+
+
+	<div id="popup" class="popup">
+		<div class="popup__overlay closePopup"></div>
+		<div class="popup__content">
+			<div id="popContent"></div>
+			<button class="popup__btn popup__btn--img popup__btn--close closePopup"><img src="/images/close.svg"></button>
 		</div>
 	</div>
 
@@ -67,4 +79,5 @@
 
 {% block js %}
 	<script src="/js/partners.js"></script>
+	<script src="/js/popup.js"></script>
 {% endblock %}

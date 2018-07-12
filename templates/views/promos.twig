@@ -2,25 +2,25 @@
 
 {% block head %}
 
-	<meta name="description" content="">
-	<meta name="keywords" content="">
+	<meta name="description" content="{{ data.home.promos_meta_description }}">
+	<meta name="keywords" content="{{ data.home.promos_keywords }}">
 
 	<title>Promociones | Sport & Fitness</title>
 
 	<!-- Facebook / whatsapp Open Graph meta tags -->
 	<meta property="og:type" content="website"/>
 	<meta property="og:title" content="Promociones | Sport & Fitness"/>
-	<meta property="og:image" content="{{ url.fullUrl }}/static/site/img/share/Promociones.jpg"/>
+	<meta property="og:image" content="{{ data.home.promos_share_image.url }}"/>
 	<meta property="og:url" content="{{ url.fullUrl }}"/>
-	<meta property="og:description" content=""/>
+	<meta property="og:description" content="{{ data.home.promos_share }}"/>
 	<meta property="og:site_name" content="Sport & Fitness"/>
 
 	<!-- Twitter Card meta tags -->
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:title" content="Promociones | Sport & Fitness"/>
-	<meta name="twitter:image" content="{{ url.fullUrl }}/static/noticias/img/share/Promociones.jpg"/>
+	<meta name="twitter:image" content="{{ data.home.promos_share_image.url }}"/>
 	<meta name="twitter:site" content="{{ url.fullUrl }}"/>
-	<meta name="twitter:description" content=""/>
+	<meta name="twitter:description" content="{{ data.home.promos_share }}"/>
 	<meta name="twitter:creator" content="@"/>
 
 	<link rel="canonical" href="{{ url.fullUrl }}">
@@ -35,7 +35,7 @@
 		</div>
 		<div class="promos__content">
 			<div class="promos__container promos__container--block">
-				<p class="promos__description">{{ data.home.promos_fold }}</p>
+				<div class="promos__description">{{ data.home.promos_fold }}</div>
 				<ul class="promos__list">
 					{% for promo in  data.promos %}
 						<li class="promos__item animatedBlock">
