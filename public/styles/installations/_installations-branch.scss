@@ -146,8 +146,10 @@
 		}
 
 		@media (min-width: $desktop){
+			@include box-sizing(border-box);
 			width: 20%;
-			margin: 0 1em;
+			margin: 0;
+			padding: 0 1em;
 			text-align: right;
 		}
 	}

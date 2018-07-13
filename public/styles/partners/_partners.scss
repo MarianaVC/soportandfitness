@@ -246,7 +246,8 @@
 		width: 50%;
 		border: none;
 		outline: none;
-
+		cursor: pointer;
+		
 		&.active{
 			& img{
 				opacity: 1;
