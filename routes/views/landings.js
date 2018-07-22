@@ -15,7 +15,9 @@ exports = module.exports = function (req, res) {
 	var url = '';
 
 	view.on('init', function(next) {
-		var q = keystone.list('Landing').model.findOne();
+		var q = keystone.list('Landing').model.findOne({
+			published: true
+		});
 		q.exec(function(err,results){
 			if (err) return res.err(err);
 			if (!results){

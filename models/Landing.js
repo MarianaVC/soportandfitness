@@ -132,6 +132,11 @@ Landing.add(
       initial: false,
       label: "Archivo de descarga"
     },
+    published: {
+      type: Types.Boolean,
+      default: true,
+      label: "Publicar"
+    }
   }
 );
 

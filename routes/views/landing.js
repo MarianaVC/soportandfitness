@@ -19,7 +19,8 @@ exports = module.exports = function (req, res) {
 
 	view.on('init', function(next) {
 		var q = keystone.list('Landing').model.findOne({
-			slug: locals.filters.landing
+			slug: locals.filters.landing,
+			published: true
 		});
 		q.exec(function(err,results){
 			if (err) return res.err(err);
