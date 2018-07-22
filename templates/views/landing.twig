@@ -1,0 +1,86 @@
+{% extends "../layouts/base.twig" %}
+
+{% block head %}
+
+	<meta name="description" content="{{ data.landing.meta_description }}">
+	<meta name="keywords" content="{{ data.landing.keywords }}">
+
+	<title>{{ data.landing.name }} | Especiales | Sport & Fitness</title>
+
+	<!-- Facebook / whatsapp Open Graph meta tags -->
+	<meta property="og:type" content="website"/>
+	<meta property="og:title" content="{{ data.landing.name }} | Especiales | Sport & Fitness"/>
+	<meta property="og:image" content="{{ data.landing.share_image.url }}"/>
+	<meta property="og:url" content="{{ url.fullUrl }}"/>
+	<meta property="og:description" content="{{ data.landing.share }}"/>
+	<meta property="og:site_name" content="Sport & Fitness"/>
+
+	<!-- Twitter Card meta tags -->
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="{{ data.landing.name }} | Especiales | Sport & Fitness"/>
+	<meta name="twitter:image" content="{{ data.landing.share_image.url }}"/>
+	<meta name="twitter:site" content="{{ url.fullUrl }}"/>
+	<meta name="twitter:description" content="{{ data.landing.share }}"/>
+	<meta name="twitter:creator" content="@"/>
+
+	<link rel="canonical" href="{{ url.fullUrl }}">
+
+	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+{% endblock %}
+
+{% block content %}
+	<div class="landing">
+		<div class="landing__top">
+			<div class="landing__container">
+				<h1 class="landing__title">{{ data.landing.title }}</h1>
+				<h2 class="landing__subtitle">{{ data.landing.subtitle }}</h2>
+			</div>
+		</div>
+
+		<div class="landing__detail" style="background-image: url({{ data.landing.image.cloudinaryURL }});">
+			<div class="landing__container">
+				<form class="landing__form" action="/contacto">
+					<img src="/images/logo.svg" class="landing__form__img" alt="Sport & Fitness">
+					<div id="formInputs" class="landing__form__inputs">
+						<input type="hidden" name="action" value="contacto">
+						<input type="hidden" name="file" value="{{ data.landing.file.filename }}">
+						<input type="hidden" name="slide" value="{{ data.landing.name }}">
+						<input type="hidden" name="message" value="Descarga de archivo">
+						<div class="input">
+							<input type="text" name="name" placeholder="Nombre" class="input__text">
+						</div>
+						<div class="input">
+							<input type="email" name="email" placeholder="Correo electrónico" class="input__text">
+						</div>
+						<div class="input">
+							<input type="tel" name="phone" placeholder="Teléfono celular" maxlength="10" class="input__text">
+						</div>
+						<div class="input">
+							<div class="g-recaptcha" data-sitekey="6Leui2AUAAAAAK1Q1_PFEcWRRxY3UsLoMzeufdf4"></div>
+						</div>
+						<div class="input">
+							<button class="landing__btn landing__btn--full btnSubmit" title="{{ data.landing.btn_form_title }}">{{ data.landing.btn_form_title }}</button>
+						</div>
+					</div>
+					<div class="response">
+						<div>
+							<p class="response__title"></p>
+							<p class="response__text"></p>
+						</div>
+					</div>
+				</form>
+				<div class="landing__description">{{ data.landing.description }}</div>
+				<div class="landing__btn-container">
+					<a class="landing__btn" href="{{ data.landing.btn_1_url }}" title="{{ data.landing.btn_1_title }}">{{ data.landing.btn_1_title }}</a>
+					<a class="landing__btn" href="{{ data.landing.btn_2_url }}" title="{{ data.landing.btn_2_title }}">{{ data.landing.btn_2_title }}</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+{% endblock %}
+
+{% block js %}
+	<script src="/js/contact.js"></script>
+{% endblock %}

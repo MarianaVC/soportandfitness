@@ -4,6 +4,10 @@ $input-outline: #0bb724;
 $placeholder: #c5c5c5;
 $error: $red;
 
+.g-recaptcha{
+	width: 100%;
+	overflow: hidden;
+}
 .input{
 	@include box-sizing(border-box);
 	-webkit-appearance: none;

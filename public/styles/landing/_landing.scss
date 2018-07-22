@@ -1,0 +1,182 @@
+.landing{
+	background-color: #fff;
+	padding: 0;
+
+	&__container{
+		@include container;
+	}
+
+	&__top{
+		@include box-sizing(border-box);
+		padding: 1.5em 2em 2em;
+		width: 90%;
+		max-width: 850px;
+		margin: 0 auto;
+
+		@media (min-width: $desktop){
+			padding: 2em 2em 2.5em;
+		}
+	}
+	
+	&__title{
+		@include Aero;
+		@include fontSize(21px);
+		@include text-shadow(0.08em 0.08em 0.1em rgba(#656565, 0.5));
+		color: $red;
+		text-transform: uppercase;
+		line-height: 1;
+		text-align: center;
+		
+		@media (min-width: $tablet-min){
+			@include fontSize(44px);
+		}
+
+		@media (min-width: $desktop){
+			@include fontSize(66px);
+		}
+	}
+	
+	&__subtitle{
+		@include Aero;
+		@include fontSize(11px);
+		@include text-shadow(0.08em 0.08em 0.1em rgba(#656565, 0.5));
+		color: #000;
+		text-transform: uppercase;
+		line-height: 1;
+		text-align: center;
+		
+		@media (min-width: $tablet-min){
+			@include fontSize(23px);
+		}
+
+		@media (min-width: $desktop){
+			@include fontSize(35px);
+		}
+	}
+	
+	&__detail{
+		@include fullBackground;
+		background-color: rgba(0,0,0,0.25);
+		padding: 2em 4em 2.5em;
+
+		@media (min-width: $tablet-min){
+			padding: 4.5em 4em 2.5em;
+		}
+
+		@media (min-width: $desktop){
+			padding: 14em 4em 2.5em;
+		}
+	}
+	
+	&__form{
+		@include box-sizing(border-box);
+		@include box-shadow(5px 5px 15px rgba(#000,0.6));
+		width: 100%;
+		max-width: 220px;
+		margin: 0 auto;
+		padding: 3em 1.5em 0.5em;
+		border: 5px solid #fff;
+		position: relative;
+		
+		@media (min-width: $tablet-min){
+			max-width: 350px;
+			border: 6px solid #fff;
+		}
+
+		@media (min-width: $desktop){
+			padding: 6.25em 3.5em 0.5em;
+			max-width: 480px;
+			border: 7px solid #fff;
+		}
+		
+		&__img{
+			display: block;
+			width: 55%;
+			position: absolute;
+			left: 50%;
+			top: -3em;
+			@include transform(translate3d(-50%, 0, 0));
+		
+			@media (min-width: $tablet-min){
+				top: -6em;
+			}
+
+			@media (min-width: $desktop){
+				top: -7em;
+			}
+
+		}
+
+		&__inputs{
+			& .input{
+				margin-bottom: 0.5em;
+			}
+			
+			& .input__text{
+				@include border-radius(0);
+			}
+		}
+	}
+	
+	&__btn{
+		@include button(#fff, #000, #fff, $red);
+		@include border-radius(0);
+		@include box-sizing(border-box);
+		width: 150px;
+		text-align: center;
+		margin: 0 1em 1em;
+		@include fontSize(14px);
+
+		@media (min-width: $tablet-min){
+			@include fontSize(18px);
+		}
+
+		@media (min-width: $desktop){
+			@include fontSize(21px);
+		}
+
+		&--full{
+			@include fontSize(15px);
+			width: 100%;
+			margin: 0.25em 0 0;
+
+			@media (min-width: $tablet-min){
+				@include fontSize(20px);
+			}
+			@media (min-width: $desktop){
+				@include fontSize(28px);
+			}
+		}
+	}
+	
+	&__description{
+		@include fontSize(12px);
+		@include OswaldRegular;
+		text-align: center;
+		color: #fff;
+		margin: 2em 0 1.5em;
+
+		@media (min-width: $tablet-min){
+			@include fontSize(16px);
+			padding: 0 2em;
+		}
+
+		@media (min-width: $desktop){
+			@include fontSize(20px);
+			padding: 0 6em;
+		}
+	}
+	
+	&__btn-container{
+		@include display-flex;
+		@include flex-wrap(wrap);
+		@include align-items(center);
+		@include justify-content(center);
+		@include flex-direction(column);
+
+		@media (min-width: $tablet-min){
+			@include fontSize(20px);
+			@include flex-direction(row);
+		}
+	}
+}
