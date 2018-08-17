@@ -131,7 +131,7 @@
 					<p class="visit-block__description">
 						Próximas aperturas:
 						{% for branch in data.next_branches %}
-							{{ branch.name }}{% if loop.index < data.next_branches.length %},{% endif %}
+							{{ branch.name }}{% if loop.index < data.next_branches.length %}, {% endif %}
 						{% endfor %}
 					</p>
 				{% endif %}

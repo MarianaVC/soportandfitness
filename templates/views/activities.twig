@@ -63,7 +63,7 @@
 										<!--
 											<a href="/sucursales/#{{ suc.slug }}" class="activity-popup__branch" title="{{ suc.name }}">{{ suc.name }}</a>
 										-->
-											<span>{{ suc.name }}</span>{% if loop.index < data.next_branches.length %},{% endif %}
+											<span>{{ suc.name }}</span>{% if loop.index < activity.sucursal.length %}, {% endif %}
 										{% endfor %}
 										</p>
 									</div>

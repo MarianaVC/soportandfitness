@@ -11,6 +11,7 @@ var Popup = function(){
 	function fillPopupArrayDina(el){
 		var parent = el.closest('.galleryContainer');
 		var pops = parent.find('.openPopup');
+		popupArray = [];
 		pops.each(function(){
 			popupArray.push($(this).attr('id'));
 		});
