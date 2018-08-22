@@ -7,40 +7,32 @@ exports = module.exports = function (req, res) {
 
 	// locals.section is used to set the currently selected
 	// item in the header navigation.
-	locals.section = 'activities';
+	locals.section = 'landing';
+
+	locals.filters = {
+		landing: req.params.landing
+	};
 
 	locals.data = {
-		activities: [],
-		home: []
+		landing: []
 	}
 
 	view.on('init', function(next) {
-		var q = keystone.list('Home').model.findOne();
+		var q = keystone.list('Landing').model.findOne({
+			slug: locals.filters.landing,
+			published: true
+		});
 		q.exec(function(err,results){
 			if (err) return res.err(err);
 			if (!results){
 				return res.status(404).render('errors/404');
 			}
-			locals.data.home = results;
+			locals.data.landing = results;
 
 			next();
 		});
 	});
-
-	view.on('init', function(next) {
-		var q = keystone.list('FitnessActivity').model.find().populate('sucursal');
-		q.exec(function(err,results){
-			if (err) return res.err(err);
-			if (!results){
-				return res.status(404).render('errors/404');
-			}
-
-			locals.data.activities = results;
-
-			next();
-		});
-	});
-
+	
 	// Render the view
-	view.render('activities');
+	view.render('landing');
 };

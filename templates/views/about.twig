@@ -2,25 +2,25 @@
 
 {% block head %}
 
-	<meta name="description" content="">
-	<meta name="keywords" content="">
+	<meta name="description" content="{{ data.home.us_meta_description }}">
+	<meta name="keywords" content="{{ data.home.us_keywords }}">
 
 	<title>Nosotros | Sport & Fitness</title>
 
 	<!-- Facebook / whatsapp Open Graph meta tags -->
 	<meta property="og:type" content="website"/>
 	<meta property="og:title" content="Nosotros | Sport & Fitness"/>
-	<meta property="og:image" content="{{ url.fullUrl }}/static/site/img/share/Nosotros.jpg"/>
+	<meta property="og:image" content="{{ data.home.us_share_image.url }}"/>
 	<meta property="og:url" content="{{ url.fullUrl }}"/>
-	<meta property="og:description" content=""/>
+	<meta property="og:description" content="{{ data.home.us_share }}"/>
 	<meta property="og:site_name" content="Sport & Fitness"/>
 
 	<!-- Twitter Card meta tags -->
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:title" content="Nosotros | Sport & Fitness"/>
-	<meta name="twitter:image" content="{{ url.fullUrl }}/static/noticias/img/share/Nosotros.jpg"/>
+	<meta name="twitter:image" content="{{ data.home.us_share_image.url }}"/>
 	<meta name="twitter:site" content="{{ url.fullUrl }}"/>
-	<meta name="twitter:description" content=""/>
+	<meta name="twitter:description" content="{{ data.home.us_share }}"/>
 	<meta name="twitter:creator" content="@"/>
 
 	<link rel="canonical" href="{{ url.fullUrl }}">
@@ -60,7 +60,7 @@
 					<p class="about__find__description">{{ data.home.us_team }}</p>
 				</div>
 				<div class="about__find__item">
-					<a href="/actividades" title="" class="about__link">
+					<a href="/actividades-fitness" title="" class="about__link">
 						<div class="about__icon">
 							<i class="icon-check-list"></i>
 						</div>

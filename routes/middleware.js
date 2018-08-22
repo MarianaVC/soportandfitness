@@ -26,7 +26,7 @@ exports.initLocals = function (req, res, next) {
 	res.locals.url = {
 		url: req.url,
 		host: req.get('host'),
-		fullUrl: 'http://sportandfitnessgym.com.mx' + req.originalUrl
+		fullUrl: 'https://sportandfitnessgym.com.mx' + req.originalUrl
 	}
 
 	next();

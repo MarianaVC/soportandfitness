@@ -24,7 +24,13 @@ Partner.add('Partner',{
     type: Types.CloudinaryImage,
     initial:true,
     publicID: 'slug',
-    label:'Imagen para escritorio'
+    label:'Imagen'
+  },
+  image_pop: {
+    type: Types.CloudinaryImage,
+    initial:true,
+    publicID: 'slug',
+    label:'Imagen para popup'
   },
   published: {
     type: Types.Boolean,
@@ -35,9 +41,9 @@ Partner.add('Partner',{
 
 
 /* acomplar url de cloudinary para traer imagen ligera */ 
-Partner.schema.virtual('image_mobile.cloudinaryURL').get(function () {
-  if ( this.image_mobile ) {
-    image = this.image_mobile;
+Partner.schema.virtual('image_pop.cloudinaryURL').get(function () {
+  if ( this.image_pop ) {
+    image = this.image_pop;
     return 'https://res.cloudinary.com/sport-and-fitness-gym/image/upload/f_auto/q_auto/fl_lossy/v' + image.version + '/' + image.public_id + '.' + image.format;
   }
   else{

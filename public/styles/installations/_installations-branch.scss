@@ -1,7 +1,6 @@
 .installations-branch{
 	background-color: #000;
 	color: #fff;
-	margin-top: -3px;
 
 	& .installations-popup{
 		display: none;
@@ -85,6 +84,7 @@
 		@include box-sizing(border-box);
 		@include display-flex;
 		@include align-items(center);
+		@include flex-wrap(wrap);
 		width: 100%;
 		padding: 1.5em 0;
 
@@ -146,8 +146,10 @@
 		}
 
 		@media (min-width: $desktop){
+			@include box-sizing(border-box);
 			width: 20%;
-			margin: 0 1em;
+			margin: 0;
+			padding: 0 1em;
 			text-align: right;
 		}
 	}
@@ -156,17 +158,25 @@
 	}
 	&__icon-play{
 		width: 85px;
-		height: 60px;
+		height: 50px;
 		display: block;
 		@include background-size(contain);
 		background-repeat: no-repeat;
 		background-position: center;
 		background-image: url(/images/play.png);
-
-		@media (min-width: $desktop){
-			width: 115px;
-			height: 80px;
-		}
+	}
+	&__pin{
+		display: inline-block;
+		margin-right: 1em;
+	}
+	&__icon-pin{
+		width: 42px;
+		height: 50px;
+		display: block;
+		@include background-size(contain);
+		background-repeat: no-repeat;
+		background-position: center;
+		background-image: url(/images/pin.svg);
 	}
 	&__gallery{
 		@include display-flex;

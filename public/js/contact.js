@@ -83,7 +83,7 @@ var Contact = function(){
 
 					
 					if(res.file.length>0){
-						responseStr += '<a id="btnDownload" href="http://166.62.37.170' + res.file + '" class="button" target="_blank" download>Descargar cupón</a>';
+						responseStr += '<a id="btnDownload" href="' + res.file + '" class="button" target="_blank" download>Descargar cupón</a>';
 						//responseStr += '<a id="btnDownload" href="http://localhost:3000' + res.file + '" class="button" target="_blank" download>Descargar cupón</a>';
 						//window.open("http://166.62.37.170" + ,'Descargar promoción','width=900,height=500,left=200,top=200');
 					}

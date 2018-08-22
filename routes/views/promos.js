@@ -15,7 +15,7 @@ exports = module.exports = function (req, res) {
 	}
 
 	view.on('init', function(next) {
-		var q = keystone.list('Promo').model.find();
+		var q = keystone.list('Promo').model.find({$and:[{init_date:{$lte: Date.now()}},{end_date:{$gte:Date.now()}}]});
 		q.exec(function(err,results){
 			if (err) return res.err(err);
 			if (!results){
